@@ -437,7 +437,7 @@ class App {
     const completedTasks = this.draft.tasks.filter((t) => t.completed);
 
     let text = `📋 *PARTE DE TRABAJO Y CONTROL HORARIO*\n`;
-    text += `🏢 *${this.settings.companyName || 'Pixel Digital'}*\n`;
+    text += `🏢 *${this.settings.companyName || 'Estudio 01'}*\n`;
     text += `👤 *Operario:* ${operator}\n`;
     text += `📍 *Lugar / Cliente:* ${workplace}\n`;
     text += `📅 *Fecha:* ${date}\n\n`;
@@ -585,7 +585,7 @@ class App {
     const phone = document.getElementById('settingsSupervisorPhone')?.value.trim();
     const company = document.getElementById('settingsCompanyName')?.value.trim();
     this.settings.supervisorPhone = phone ? phone.replace(/\D/g, '') : '34635108640';
-    this.settings.companyName = company || 'Pixel Digital';
+    this.settings.companyName = company || 'Estudio 01';
     StorageService.saveSettings(this.settings);
     this.closeSettingsModal();
     alert('Configuración guardada correctamente.');

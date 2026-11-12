@@ -126,7 +126,7 @@ export class StorageService {
       if (raw) return JSON.parse(raw);
     } catch (e) {}
     return {
-      companyName: 'Pixel Digital',
+      companyName: 'Estudio 01',
       supervisorPhone: '34635108640',
       supervisorName: 'Oficina / Encargado'
     };

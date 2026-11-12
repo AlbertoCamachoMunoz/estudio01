@@ -272,7 +272,7 @@ class AppController {
             <p>${userQuestion}</p>
           </div>
           <div class="ai-chat-msg ai-chat-msg--bot">
-            <span class="ai-chat-sender">🤖 Agente IA Pixel & Web (22:15h · Respuesta en 2s)</span>
+            <span class="ai-chat-sender">🤖 Agente IA Estudio 01 (22:15h · Respuesta en 2s)</span>
             <p>${aiAnswer}</p>
           </div>
         `;
