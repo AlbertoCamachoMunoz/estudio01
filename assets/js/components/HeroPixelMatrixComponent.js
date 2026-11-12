@@ -1,13 +1,14 @@
 /**
  * HeroPixelMatrixComponent
- * Hardware-accelerated interactive pixel cube matrix for the ENTIRE Hero Section.
+ * Hardware-accelerated interactive chessboard grid ("cuadrícula o tablero de ajedrez").
  *
- * Implements the user's progression scale:
- * - Desktop: columns sized 35px, 30px, 25px, 20px, 15px, 10px, 5px (and 3px micro-pixels)
- * - Mobile: columns sized 30px, 20px, 10px, 3px
- *
- * Color spectrum: Electric Blue / Cyan (Left) -> Indigo / Violet (Center) -> Crimson Red (Right)
- * Real-time mouse physics: Repulsion, dynamic scaling, rotation, elastic spring-back & glow.
+ * Requirements:
+ * - Izquierda > Derecha: Columns on the LEFT are VERY LARGE, progressively shrinking to the right.
+ * - Minimal padding between squares ("padding entre cuadrados mínimo", 2.5px grout line).
+ * - Authentic chessboard alternating pattern (solid filled squares vs translucent framed squares).
+ * - Full width coverage with zero empty gaps between columns.
+ * - Color spectrum: Electric Cyan/Blue (Left) -> Indigo/Violet (Center) -> Crimson Red (Right).
+ * - Real-time physics: Subtle breathing float, elastic mouse repulsion & glowing bloom.
  */
 export class HeroPixelMatrixComponent {
   /**
@@ -64,10 +65,10 @@ export class HeroPixelMatrixComponent {
   }
 
   /**
-   * Builds the pixel cubes distribution across the entire Hero width:
-   * - Checkered racing flag pattern ("bandera de carreras ondeándose").
-   * - Derecha > Izquierda: Largest, heaviest cubes on the right (covering up to 35% of the page).
-   * - Strictly decreasing sizes from right to left: NEVER 2 columns/rows of the same size.
+   * Generates a seamless chessboard grid across the full Hero width and height:
+   * - Minimal padding between squares (2.5px).
+   * - Columns on the left are VERY LARGE, progressively shrinking to the right (Izquierda > Derecha).
+   * - Strictly decreasing column sizes (never two columns of the same size).
    */
   generateMatrix() {
     this.cubes = [];
@@ -76,61 +77,62 @@ export class HeroPixelMatrixComponent {
     if (w <= 0 || h <= 0) return;
 
     const isMobile = w < 768;
+    const gap = 2.5; // Minimal padding between squares
 
-    // Progression of sizes strictly decreasing from RIGHT to LEFT (derecha > izquierda)
-    // NEVER 2 columns of the same size.
-    // Rightmost columns (spanning ~35% of page width) are large, solid, and heavy.
-    const rightSizes = isMobile
-      ? [58, 44, 34]
-      : [96, 84, 74, 64, 55];
-    const leftSizes = isMobile
-      ? [24, 15, 8, 3.5]
-      : [46, 38, 30, 22, 15, 9, 5.5, 3.2];
+    // Number of columns: 20 on desktop, 10 on mobile
+    const columnCount = isMobile ? 10 : 20;
+    const sizeStart = isMobile ? 64 : 116;
+    const sizeEnd = isMobile ? 4.5 : 3.5;
+    const power = 1.7; // Power curve for smooth non-linear decay
 
-    // Right 35% zone: spans from x = w * 0.65 to x = w - 24px
-    const rightStartX = w * 0.65;
-    const rightEndX = w - (isMobile ? 12 : 24);
-
-    // Left 65% zone: spans from x = 24px to x = w * 0.61
-    const leftStartX = isMobile ? 12 : 24;
-    const leftEndX = w * 0.61;
-
-    // Compute column centers from right to left
-    const cols = [];
-    for (let i = 0; i < rightSizes.length; i++) {
-      const t = i / Math.max(1, rightSizes.length - 1);
-      const x = rightEndX - (rightEndX - rightStartX) * t;
-      cols.push({ size: rightSizes[i], x: x, index: i });
-    }
-    for (let j = 0; j < leftSizes.length; j++) {
-      const t = j / Math.max(1, leftSizes.length - 1);
-      const x = leftEndX - (leftEndX - leftStartX) * t;
-      cols.push({ size: leftSizes[j], x: x, index: rightSizes.length + j });
+    // 1. Calculate relative decreasing sizes from left (t = 0) to right (t = 1)
+    const rawSizes = [];
+    for (let i = 0; i < columnCount; i++) {
+      const t = i / (columnCount - 1);
+      const s = sizeEnd + (sizeStart - sizeEnd) * Math.pow(1 - t, power);
+      rawSizes.push(s);
     }
 
-    // Populate each column with racing flag checkered squares
-    for (let c = 0; c < cols.length; c++) {
-      const col = cols[c];
+    // 2. Normalize and scale sizes so the columns seamlessly fill width `w` with `gap` padding
+    const rawTotalSize = rawSizes.reduce((acc, val) => acc + val, 0);
+    const availableWidth = w - (columnCount - 1) * gap;
+    const scaleFactor = Math.max(0.5, availableWidth / rawTotalSize);
+
+    const columnSizes = rawSizes.map((s) => Math.round(s * scaleFactor * 10) / 10);
+
+    // 3. Position each column seamlessly side by side with minimal padding
+    let currentX = 0;
+    const columns = [];
+    for (let c = 0; c < columnCount; c++) {
+      const s = columnSizes[c];
+      columns.push({
+        colIndex: c,
+        size: s,
+        x: currentX + s / 2,
+        left: currentX,
+        right: currentX + s,
+      });
+      currentX += s + gap;
+    }
+
+    // 4. Populate each column with chessboard squares from top to bottom
+    for (let c = 0; c < columns.length; c++) {
+      const col = columns[c];
       const s = col.size;
       const progress = Math.max(0, Math.min(1, col.x / w));
       const color = this.getSpectrumColor(progress);
 
-      // Tight gap for racing flag cloth continuity
-      const gapY = Math.max(4, s * 0.08);
-      const stepY = s + gapY;
-      let rows = Math.floor((h - 16) / stepY);
+      const stepY = s + gap;
+      const rows = Math.floor((h - 8) / stepY);
 
-      // Micro-pixels on far left are sampled for lightness & 60 FPS fluidity
-      const stride = s < 6 ? 2 : 1;
+      for (let r = 0; r <= rows; r++) {
+        const cellY = 4 + r * stepY + s / 2;
+        if (cellY + s / 2 > h + 10) continue;
 
-      for (let r = 0; r <= rows; r += stride) {
-        const cellY = 16 + r * stepY + s / 2;
-        if (cellY + s / 2 > h + 20) continue;
-
-        // Checkered racing flag alternating pattern
-        const isChequered = (c + r) % 2 === 0;
-        const baseAlpha = isChequered ? (s > 45 ? 0.44 : 0.36) : (s > 45 ? 0.14 : 0.10);
-        const hasBorder = !isChequered;
+        // Chessboard alternating pattern: dark/accent vs light/framed
+        const isChessDark = (c + r) % 2 === 0;
+        const baseAlpha = isChessDark ? (s > 45 ? 0.40 : 0.34) : (s > 45 ? 0.12 : 0.09);
+        const hasBorder = !isChessDark;
 
         this.cubes.push({
           x0: col.x,
@@ -141,7 +143,7 @@ export class HeroPixelMatrixComponent {
           vy: 0,
           size0: s,
           size: s,
-          radius: Math.min(6, Math.max(1, s * 0.12)),
+          radius: Math.min(4, Math.max(1, s * 0.08)), // Subtle modern corner rounding
           color: color,
           progress: progress,
           rotation: 0,
@@ -150,7 +152,7 @@ export class HeroPixelMatrixComponent {
           alpha: baseAlpha,
           col: c,
           row: r,
-          isChequered: isChequered,
+          isChessDark: isChessDark,
           hasBorder: hasBorder,
         });
       }
@@ -233,57 +235,44 @@ export class HeroPixelMatrixComponent {
     this.ctx.clearRect(0, 0, this.width, this.height);
 
     const time = timestamp || performance.now();
-    // Traveling wind wave speed & frequency for waving flag physics
-    const windSpeed = time * 0.0028;
-    const repulsionRadius = 150;
-    const springConstant = 0.055;
+    const repulsionRadius = 140;
+    const springConstant = 0.06;
     const damping = 0.82;
 
     for (let i = 0; i < this.cubes.length; i++) {
       const c = this.cubes[i];
 
-      // Waving racing flag wave physics
-      // Phase combines horizontal position (traveling wave across the flag) and row (for diagonal fabric fold)
-      const wavePhase = (c.x0 / this.width) * 6.5 - windSpeed + c.row * 0.32;
-      const waveSin = Math.sin(wavePhase);
-      const waveCos = Math.cos(wavePhase);
+      // Subtle ambient breathing float (sinusoidal wave across chessboard)
+      const wave = Math.sin(time * 0.0018 + c.progress * 4.0 + c.row * 0.25);
+      const floatY = wave * (c.size0 > 45 ? 2.5 : 1.2);
+      const floatRot = Math.cos(time * 0.0012 + c.progress * 3.0) * 0.015;
 
-      // Dynamic wave displacements (heavier on large blocks, fine on small ones)
-      const waveY = waveSin * (c.size0 * 0.16 + 2.0);
-      const waveX = waveCos * (c.size0 * 0.06);
-      // Perspective wave depth
-      const waveDepthScale = 1.0 + waveSin * 0.08;
-      // Wave rotation along tangent
-      const waveRot = waveCos * 0.08;
-      // Wave light crest brightness boost
-      const waveAlphaBoost = Math.max(0, waveSin * 0.12);
-
-      const targetX = c.x0 + waveX;
-      const targetY = c.y0 + waveY;
+      const targetX = c.x0;
+      const targetY = c.y0 + floatY;
 
       // Mouse repulsion calculation
       const dx = c.x - this.mouse.x;
       const dy = c.y - this.mouse.y;
       const dist = Math.hypot(dx, dy);
 
-      let targetScale = waveDepthScale;
-      let targetAlpha = c.baseAlpha + waveAlphaBoost;
+      let targetScale = 1.0;
+      let targetAlpha = c.baseAlpha;
 
       if (dist < repulsionRadius && this.mouse.isHovered) {
         const factor = 1 - dist / repulsionRadius;
-        // Large heavy blocks on the right move firmly with inertia
-        const pushForce = Math.pow(factor, 1.25) * (c.size0 > 50 ? 5.0 : (c.size0 > 25 ? 8.0 : 13.0));
+        // Large chess tiles move with solid mass; small squares move briskly
+        const pushForce = Math.pow(factor, 1.25) * (c.size0 > 50 ? 5.5 : (c.size0 > 25 ? 8.5 : 13.0));
         const angle = Math.atan2(dy, dx);
 
         c.vx += Math.cos(angle) * pushForce;
         c.vy += Math.sin(angle) * pushForce;
 
-        targetScale = waveDepthScale + factor * (c.size0 > 50 ? 0.18 : 0.40);
-        targetAlpha = Math.min(0.96, c.baseAlpha + waveAlphaBoost + factor * 0.58);
-        c.rotation += (factor * (c.size0 > 50 ? 0.03 : 0.09));
+        targetScale = 1.0 + factor * (c.size0 > 50 ? 0.16 : 0.38);
+        targetAlpha = Math.min(0.95, c.baseAlpha + factor * 0.60);
+        c.rotation += (factor * (c.size0 > 50 ? 0.025 : 0.08));
       }
 
-      // Spring physics back to waving flag target position
+      // Spring physics back to base position
       c.vx += (targetX - c.x) * springConstant;
       c.vy += (targetY - c.y) * springConstant;
       c.vx *= damping;
@@ -295,7 +284,7 @@ export class HeroPixelMatrixComponent {
       // Smooth interpolation for size, alpha, and rotation
       c.size += ((c.size0 * targetScale) - c.size) * 0.15;
       c.alpha += (targetAlpha - c.alpha) * 0.15;
-      c.rotation += ((c.rotation0 + waveRot) - c.rotation) * 0.1;
+      c.rotation += ((c.rotation0 + floatRot) - c.rotation) * 0.1;
 
       // Draw the cube
       this.drawCube(c);
@@ -310,10 +299,10 @@ export class HeroPixelMatrixComponent {
     const half = c.size / 2;
     const rad = Math.min(c.radius, half);
 
-    // Dynamic bloom glow when hovered or on wave crest
-    if (c.alpha > 0.46) {
+    // Dynamic bloom glow when hovered or excited
+    if (c.alpha > 0.48) {
       this.ctx.shadowColor = `rgba(${c.color.r}, ${c.color.g}, ${c.color.b}, 0.85)`;
-      this.ctx.shadowBlur = Math.min(18, c.size * 0.6);
+      this.ctx.shadowBlur = Math.min(18, c.size * 0.55);
     }
 
     this.ctx.fillStyle = `rgba(${c.color.r}, ${c.color.g}, ${c.color.b}, ${c.alpha.toFixed(2)})`;
@@ -326,15 +315,15 @@ export class HeroPixelMatrixComponent {
     }
     this.ctx.fill();
 
-    // Chequered racing flag alternate square border (gives the unmistakable racing flag look)
+    // Subtle 1.2px border for alternating chessboard squares
     if (c.hasBorder) {
-      this.ctx.strokeStyle = `rgba(${c.color.r}, ${c.color.g}, ${c.color.b}, ${Math.min(0.75, c.alpha * 2.2).toFixed(2)})`;
-      this.ctx.lineWidth = Math.max(1, Math.min(1.6, c.size * 0.05));
+      this.ctx.strokeStyle = `rgba(${c.color.r}, ${c.color.g}, ${c.color.b}, ${Math.min(0.70, c.alpha * 2.2).toFixed(2)})`;
+      this.ctx.lineWidth = Math.max(1, Math.min(1.4, c.size * 0.04));
       this.ctx.stroke();
     }
 
-    // Specular inner reflection on larger cubes for 3D depth and sheen
-    if (c.size > 20) {
+    // Specular inner reflection on larger cubes for 3D depth
+    if (c.size > 22) {
       this.ctx.fillStyle = `rgba(255, 255, 255, ${(c.alpha * 0.28).toFixed(2)})`;
       this.ctx.beginPath();
       if (this.ctx.roundRect) {
