@@ -67,10 +67,11 @@ export class HeroPixelMatrixComponent {
   /**
    * Generates a seamless chessboard grid across the full Hero width and height:
    * - Minimal padding between squares (2.5px).
-   * - 1º columna: intact (base size 175.8px desktop / 85.8px mobile).
-   * - 2º columna: 5% smaller (Col 0 * 0.95).
-   * - 3º columna: 5% smaller (Col 1 * 0.95).
-   * - 4º columna onwards: 7% smaller each step until end of width (Col_{i-1} * 0.93).
+   * - Merges:
+   *   1) Junta las 2 primeras columnas en 1 (Col 0 + Col 1).
+   *   2) Junta la columna 3 con la 4 (Col 2 + Col 3).
+   *   3) Junta la columna 5 con la 6 (Col 4 + Col 5).
+   *   4) Resto tal cual está (Col 6 en adelante con -7% progresivo).
    * - Seamlessly fills the width with no gaps between columns.
    */
   generateMatrix() {
@@ -82,46 +83,48 @@ export class HeroPixelMatrixComponent {
     const isMobile = w < 768;
     const gap = 2.5; // Minimal padding between squares
 
-    // 1º columna: no la toques (base size)
+    // 1. Calculate original progression:
+    // Col 0: base size (175.8px desktop / 85.8px mobile)
+    // Col 1: 5% smaller
+    // Col 2: 5% smaller
+    // Col 3+: 7% smaller each step
     const s0 = isMobile ? 85.8 : 175.8;
+    const rawSizes = [s0];
+    rawSizes.push(Math.round(s0 * 0.95 * 10) / 10); // Col 1 (2ª)
+    rawSizes.push(Math.round(rawSizes[1] * 0.95 * 10) / 10); // Col 2 (3ª)
+    for (let i = 3; i < 24; i++) {
+      rawSizes.push(Math.round(rawSizes[i - 1] * 0.93 * 10) / 10);
+    }
 
-    // Build column sizes according to user's exact specification:
-    // Col 0: s0 (no la toques)
-    // Col 1: un pelin mas pequeña, un 5% mas pequeña
-    // Col 2: un 5% mas pequeña
-    // Col 3+: un 7% mas pequeña en cada paso hasta el final
+    // 2. Merge column pairs as requested:
+    // - Junta las 2 primeras columnas en 1:
+    const c0 = Math.round((rawSizes[0] + gap + rawSizes[1]) * 10) / 10;
+    // - Junta la columna 3 con la 4:
+    const c1 = Math.round((rawSizes[2] + gap + rawSizes[3]) * 10) / 10;
+    // - Junta la columna 5 con la 6:
+    const c2 = Math.round((rawSizes[4] + gap + rawSizes[5]) * 10) / 10;
+    // - Resto déjalo tal cual está:
+    const rest = rawSizes.slice(6);
+
+    const finalColumnSizes = [c0, c1, c2, ...rest];
+
+    // 3. Position merged columns seamlessly from left to right:
     let currentX = 0;
     const columns = [];
-    let colIndex = 0;
-
-    while (currentX < w) {
-      let s;
-      if (colIndex === 0) {
-        s = s0;
-      } else if (colIndex === 1) {
-        s = columns[0].size * 0.95;
-      } else if (colIndex === 2) {
-        s = columns[1].size * 0.95;
-      } else {
-        s = columns[colIndex - 1].size * 0.93;
-      }
-
-      s = Math.max(3.2, Math.round(s * 10) / 10);
-
+    for (let i = 0; i < finalColumnSizes.length; i++) {
+      const s = finalColumnSizes[i];
       columns.push({
-        colIndex: colIndex,
+        colIndex: i,
         size: s,
         x: currentX + s / 2,
         left: currentX,
         right: currentX + s,
       });
-
       currentX += s + gap;
-      colIndex++;
-      if (colIndex > 60) break;
+      if (currentX >= w) break;
     }
 
-    // Populate each column with chessboard squares from top to bottom
+    // 4. Populate each column with chessboard squares from top to bottom
     for (let c = 0; c < columns.length; c++) {
       const col = columns[c];
       const s = col.size;
@@ -129,11 +132,10 @@ export class HeroPixelMatrixComponent {
       const color = this.getSpectrumColor(progress);
 
       const stepY = s + gap;
-      const rows = Math.floor((h - 4) / stepY);
+      const rows = Math.ceil(h / stepY);
 
-      for (let r = 0; r <= rows; r++) {
+      for (let r = 0; r < rows; r++) {
         const cellY = 4 + r * stepY + s / 2;
-        if (cellY + s / 2 > h + 15) continue;
 
         // Chessboard alternating pattern: dark/accent vs light/framed
         const isChessDark = (c + r) % 2 === 0;
@@ -149,7 +151,7 @@ export class HeroPixelMatrixComponent {
           vy: 0,
           size0: s,
           size: s,
-          radius: Math.min(4, Math.max(1, s * 0.04)), // Subtle modern corner rounding
+          radius: Math.min(6, Math.max(1, s * 0.03)), // Subtle modern corner rounding
           color: color,
           progress: progress,
           rotation: 0,
@@ -266,16 +268,16 @@ export class HeroPixelMatrixComponent {
 
       if (dist < repulsionRadius && this.mouse.isHovered) {
         const factor = 1 - dist / repulsionRadius;
-        // Large chess tiles move with solid mass; small squares move briskly
-        const pushForce = Math.pow(factor, 1.25) * (c.size0 > 50 ? 5.5 : (c.size0 > 25 ? 8.5 : 13.0));
+        // Large chess tiles move with solid mass; smaller squares move briskly
+        const pushForce = Math.pow(factor, 1.25) * (c.size0 > 200 ? 3.8 : (c.size0 > 100 ? 5.5 : 8.5));
         const angle = Math.atan2(dy, dx);
 
         c.vx += Math.cos(angle) * pushForce;
         c.vy += Math.sin(angle) * pushForce;
 
-        targetScale = 1.0 + factor * (c.size0 > 50 ? 0.16 : 0.38);
+        targetScale = 1.0 + factor * (c.size0 > 200 ? 0.08 : (c.size0 > 100 ? 0.14 : 0.28));
         targetAlpha = Math.min(0.95, c.baseAlpha + factor * 0.60);
-        c.rotation += (factor * (c.size0 > 50 ? 0.025 : 0.08));
+        c.rotation += (factor * (c.size0 > 100 ? 0.015 : 0.06));
       }
 
       // Spring physics back to base position
@@ -308,7 +310,7 @@ export class HeroPixelMatrixComponent {
     // Dynamic bloom glow when hovered or excited
     if (c.alpha > 0.48) {
       this.ctx.shadowColor = `rgba(${c.color.r}, ${c.color.g}, ${c.color.b}, 0.85)`;
-      this.ctx.shadowBlur = Math.min(18, c.size * 0.55);
+      this.ctx.shadowBlur = Math.min(22, c.size * 0.4);
     }
 
     this.ctx.fillStyle = `rgba(${c.color.r}, ${c.color.g}, ${c.color.b}, ${c.alpha.toFixed(2)})`;
@@ -330,12 +332,14 @@ export class HeroPixelMatrixComponent {
 
     // Specular inner reflection on larger cubes for 3D depth
     if (c.size > 22) {
+      const specOffset = Math.min(8, Math.max(3, c.size * 0.025));
+      const specSize = Math.min(48, c.size * 0.22);
       this.ctx.fillStyle = `rgba(255, 255, 255, ${(c.alpha * 0.28).toFixed(2)})`;
       this.ctx.beginPath();
       if (this.ctx.roundRect) {
-        this.ctx.roundRect(-half + 3, -half + 3, c.size * 0.28, c.size * 0.28, rad * 0.6);
+        this.ctx.roundRect(-half + specOffset, -half + specOffset, specSize, specSize, rad * 0.6);
       } else {
-        this.ctx.rect(-half + 3, -half + 3, c.size * 0.28, c.size * 0.28);
+        this.ctx.rect(-half + specOffset, -half + specOffset, specSize, specSize);
       }
       this.ctx.fill();
     }
