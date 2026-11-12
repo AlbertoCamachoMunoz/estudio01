@@ -6,8 +6,8 @@
   },
   "services": {
     "web_landing": {
-      "name": "Webs de Alta Conversión (0 € Servidor)",
-      "shortDesc": "Landing pages ultrarrápidas (Lighthouse 95+) diseñadas para convertir visitas en clientes por WhatsApp y formulario, sin cuotas mensuales de hosting abusivas."
+      "name": "Webs de Alta Conversión (Mantenimiento 50 €/año)",
+      "shortDesc": "Landing pages ultrarrápidas (Lighthouse 95+) diseñadas para convertir visitas en clientes por WhatsApp y formulario. Mantenimiento de solo 50 €/año con servidor ultrarrápido y dominio incluidos (sin cuotas mensuales)."
     },
     "pwa_software": {
       "name": "PWAs y Apps para Empleados en Calle",
@@ -50,7 +50,7 @@
   },
   "gallery": {
     "case-sexigarden-web": {
-      "title": "Caso de Éxito #1: Sexi-Garden · Web 4 Idiomas + Calculadora + 0 € Servidor",
+      "title": "Caso de Éxito #1: Sexi-Garden · Web 4 Idiomas + Calculadora + Mantenimiento 50 €/año",
       "location": "Costa Tropical · Granada y Málaga"
     },
     "case-sexigarden-media": {
@@ -102,8 +102,8 @@
   "faqs": [
     {
       "id": "faq-1",
-      "question": "¿Por qué decís que vuestras webs tienen coste de servidor 0 €/mes?",
-      "answer": "Porque diseñamos con arquitectura estática moderna (como esta misma web y la de nuestro caso de éxito Sexi-Garden) desplegada en redes globales como Vercel o Cloudflare Pages. No dependes de un WordPress lento y vulnerable que requiere pagar 50 €/mes de mantenimiento solo para que no se caiga. Solo pagas tu dominio anual (~12 €/año)."
+      "question": "¿Cuánto cuesta el mantenimiento y alojamiento de las webs?",
+      "answer": "El mantenimiento completo de nuestras webs es de solo 50 € al año, e incluye tanto el servidor global de ultra-alta velocidad como el dominio. Gracias a nuestra arquitectura moderna y optimizada, no dependes de un WordPress lento y vulnerable que requiera pagar 50 € o 100 € cada mes. Cero cuotas mensuales sorpresa: una única cuota anual de 50 €/año con servidor y dominio incluidos."
     },
     {
       "id": "faq-2",

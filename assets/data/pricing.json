@@ -61,11 +61,11 @@
   "extras": [
     {
       "id": "calculadora_interactiva",
-      "flatPrice": 240
+      "flatPrice": 180
     },
     {
       "id": "multidioma_seo",
-      "flatPrice": 220
+      "flatPrice": 160
     },
     {
       "id": "rodaje_insitu",
@@ -73,7 +73,18 @@
     },
     {
       "id": "agente_wa_ia",
-      "flatPrice": 350
+      "flatPrice": 290
     }
-  ]
+  ],
+  "maintenance": {
+    "annualFee": 50,
+    "currency": "EUR",
+    "currencySymbol": "€",
+    "period": "año",
+    "includes": [
+      "servidor",
+      "dominio"
+    ],
+    "description": "Mantenimiento anual de 50 €/año con servidor y dominio incluidos"
+  }
 }
