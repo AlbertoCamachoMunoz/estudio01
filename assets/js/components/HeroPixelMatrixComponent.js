@@ -67,8 +67,11 @@ export class HeroPixelMatrixComponent {
   /**
    * Generates a seamless chessboard grid across the full Hero width and height:
    * - Minimal padding between squares (2.5px).
-   * - Columns on the left are VERY LARGE, progressively shrinking to the right (Izquierda > Derecha).
-   * - Strictly decreasing column sizes (never two columns of the same size).
+   * - 1º columna: intact (base size 175.8px desktop / 85.8px mobile).
+   * - 2º columna: 5% smaller (Col 0 * 0.95).
+   * - 3º columna: 5% smaller (Col 1 * 0.95).
+   * - 4º columna onwards: 7% smaller each step until end of width (Col_{i-1} * 0.93).
+   * - Seamlessly fills the width with no gaps between columns.
    */
   generateMatrix() {
     this.cubes = [];
@@ -79,43 +82,46 @@ export class HeroPixelMatrixComponent {
     const isMobile = w < 768;
     const gap = 2.5; // Minimal padding between squares
 
-    // Number of columns: 20 on desktop, 10 on mobile
-    const columnCount = isMobile ? 10 : 20;
-    const sizeStart = isMobile ? 64 : 116;
-    const sizeEnd = isMobile ? 4.5 : 3.5;
-    const power = 1.7; // Power curve for smooth non-linear decay
+    // 1º columna: no la toques (base size)
+    const s0 = isMobile ? 85.8 : 175.8;
 
-    // 1. Calculate relative decreasing sizes from left (t = 0) to right (t = 1)
-    const rawSizes = [];
-    for (let i = 0; i < columnCount; i++) {
-      const t = i / (columnCount - 1);
-      const s = sizeEnd + (sizeStart - sizeEnd) * Math.pow(1 - t, power);
-      rawSizes.push(s);
-    }
-
-    // 2. Normalize and scale sizes so the columns seamlessly fill width `w` with `gap` padding
-    const rawTotalSize = rawSizes.reduce((acc, val) => acc + val, 0);
-    const availableWidth = w - (columnCount - 1) * gap;
-    const scaleFactor = Math.max(0.5, availableWidth / rawTotalSize);
-
-    const columnSizes = rawSizes.map((s) => Math.round(s * scaleFactor * 10) / 10);
-
-    // 3. Position each column seamlessly side by side with minimal padding
+    // Build column sizes according to user's exact specification:
+    // Col 0: s0 (no la toques)
+    // Col 1: un pelin mas pequeña, un 5% mas pequeña
+    // Col 2: un 5% mas pequeña
+    // Col 3+: un 7% mas pequeña en cada paso hasta el final
     let currentX = 0;
     const columns = [];
-    for (let c = 0; c < columnCount; c++) {
-      const s = columnSizes[c];
+    let colIndex = 0;
+
+    while (currentX < w) {
+      let s;
+      if (colIndex === 0) {
+        s = s0;
+      } else if (colIndex === 1) {
+        s = columns[0].size * 0.95;
+      } else if (colIndex === 2) {
+        s = columns[1].size * 0.95;
+      } else {
+        s = columns[colIndex - 1].size * 0.93;
+      }
+
+      s = Math.max(3.2, Math.round(s * 10) / 10);
+
       columns.push({
-        colIndex: c,
+        colIndex: colIndex,
         size: s,
         x: currentX + s / 2,
         left: currentX,
         right: currentX + s,
       });
+
       currentX += s + gap;
+      colIndex++;
+      if (colIndex > 60) break;
     }
 
-    // 4. Populate each column with chessboard squares from top to bottom
+    // Populate each column with chessboard squares from top to bottom
     for (let c = 0; c < columns.length; c++) {
       const col = columns[c];
       const s = col.size;
@@ -123,11 +129,11 @@ export class HeroPixelMatrixComponent {
       const color = this.getSpectrumColor(progress);
 
       const stepY = s + gap;
-      const rows = Math.floor((h - 8) / stepY);
+      const rows = Math.floor((h - 4) / stepY);
 
       for (let r = 0; r <= rows; r++) {
         const cellY = 4 + r * stepY + s / 2;
-        if (cellY + s / 2 > h + 10) continue;
+        if (cellY + s / 2 > h + 15) continue;
 
         // Chessboard alternating pattern: dark/accent vs light/framed
         const isChessDark = (c + r) % 2 === 0;
@@ -143,7 +149,7 @@ export class HeroPixelMatrixComponent {
           vy: 0,
           size0: s,
           size: s,
-          radius: Math.min(4, Math.max(1, s * 0.08)), // Subtle modern corner rounding
+          radius: Math.min(4, Math.max(1, s * 0.04)), // Subtle modern corner rounding
           color: color,
           progress: progress,
           rotation: 0,
