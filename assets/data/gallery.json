@@ -2,11 +2,11 @@
   {
     "id": "case-sexigarden-web",
     "title": "Sexi-Garden · Plataforma Web 4 Idiomas + Calculadora Online de Presupuestos",
-    "category": "web ia",
+    "category": "web",
     "imageUrl": "assets/images/gallery/trabajo-1.jpg",
     "location": "Costa Tropical · Granada y Málaga",
     "client": "Sexi-Garden & Sexipool",
-    "metrics": "Lighthouse 99/100 · 0 €/mes servidor · +310% contactos WhatsApp"
+    "metrics": "Lighthouse 99/100 · 50 €/año mantenimiento · +310% contactos WhatsApp"
   },
   {
     "id": "case-sexigarden-media",
@@ -18,28 +18,64 @@
     "metrics": "Sesión in situ · Reels verticales · Optimización Google Business (5.0★)"
   },
   {
-    "id": "case-pwa-partes",
-    "title": "PWA Operativa en Calle · Partes de Trabajo, Fotos de Obra y Firma Digital",
-    "category": "web ia",
+    "id": "case-pwa-cuadrillas",
+    "title": "App Móvil de Partes de Trabajo y Control de Cuadrillas en Calle",
+    "category": "pwa",
     "imageUrl": "assets/images/gallery/trabajo-3.jpg",
     "location": "Motril, Granada y Málaga",
-    "client": "Empresas de Servicios Técnicos y Reformas",
-    "metrics": "-8h/semana de papeleo · Uso desde el móvil sin cobertura"
+    "client": "Empresas de Jardinería y Mantenimiento",
+    "metrics": "Fichaje GPS · Control de horas exactas · Cero papeles arrugados"
   },
   {
-    "id": "case-pwa-horarios",
-    "title": "Control Horario y Partes de Trabajo · App PWA Instalable para Cuadrillas",
-    "category": "web",
+    "id": "case-pwa-informes",
+    "title": "Generador Automático de Informes Mensuales en PDF para Comunidades",
+    "category": "pwa",
+    "imageUrl": "assets/images/gallery/trabajo-4.jpg",
+    "location": "Costa Tropical y Costa del Sol",
+    "client": "Mantenimiento de Comunidades de Propietarios",
+    "metrics": "PDF formal con fotos y logo · Justificación 100% ante juntas de vecinos"
+  },
+  {
+    "id": "case-pwa-maquinaria",
+    "title": "Control y Mantenimiento de Maquinaria con Pegatinas QR Resistentes",
+    "category": "pwa",
+    "imageUrl": "assets/images/gallery/trabajo-5.jpg",
+    "location": "Granada, Málaga y Almería",
+    "client": "Servicios Agrícolas y Jardinería",
+    "metrics": "Escaneo QR en 5s · Alertas de cambio de aceite y filtros · Evita averías"
+  },
+  {
+    "id": "case-pwa-fitosanitarios",
+    "title": "Registro Digital de Tratamientos Fitosanitarios (Cuaderno de Campo Oficial)",
+    "category": "pwa",
+    "imageUrl": "assets/images/gallery/trabajo-3.jpg",
+    "location": "Andalucía Oriental",
+    "client": "Especialistas en Picudo Rojo y Tratamientos Químicos",
+    "metrics": "Anotación en 1 min · Documento oficial listo para Sanidad Vegetal"
+  },
+  {
+    "id": "case-pwa-portal",
+    "title": "App / Portal Privado de Seguimiento para Clientes y Propietarios de Chalets",
+    "category": "pwa",
+    "imageUrl": "assets/images/gallery/trabajo-1.jpg",
+    "location": "Costa Tropical · Granada y Málaga",
+    "client": "Propietarios Residentes y Extranjeros",
+    "metrics": "Fotos tras cada visita · Reporte de fugas con foto · Aceptación de extras"
+  },
+  {
+    "id": "case-pwa-administradores",
+    "title": "Avisos Automáticos de Temporada y Panel para Administradores de Fincas",
+    "category": "pwa",
     "imageUrl": "assets/images/gallery/trabajo-4.jpg",
     "location": "Granada, Málaga y Almería",
-    "client": "Pymes de Mantenimiento y Servicios",
-    "metrics": "Fichaje GPS · Tareas del día · Envío de partes por WhatsApp"
+    "client": "Cartera de Administradores de Fincas",
+    "metrics": "+25% facturación en extras · Panel de descarga directa para juntas"
   },
   {
     "id": "case-seo-gbp",
     "title": "Posicionamiento Local en Google Maps y Producción Visual de Proyectos",
-    "category": "audiovisual web",
-    "imageUrl": "assets/images/gallery/trabajo-5.jpg",
+    "category": "audiovisual",
+    "imageUrl": "assets/images/gallery/trabajo-2.jpg",
     "location": "Costa Tropical y Andalucía Oriental",
     "client": "Sexi-Garden · División Piscinas",
     "metrics": "Top 3 Google Maps en comarca · 37 reseñas verificadas 5★"

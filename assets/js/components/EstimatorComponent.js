@@ -82,6 +82,11 @@ export class EstimatorComponent {
       this.serviceSelect.innerHTML = services
         .map((s) => `<option value="${s.id}">${s.name}</option>`)
         .join('');
+      if (this.leadServiceSelect) {
+        this.leadServiceSelect.innerHTML = services
+          .map((s) => `<option value="${s.name}">${s.name}</option>`)
+          .join('');
+      }
     }
   }
 

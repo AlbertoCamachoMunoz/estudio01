@@ -9,9 +9,29 @@
       "name": "Webs de Alta Conversión (Mantenimiento 50 €/año)",
       "shortDesc": "Landing pages ultrarrápidas (Lighthouse 95+) diseñadas para convertir visitas en clientes por WhatsApp y formulario. Mantenimiento de solo 50 €/año con servidor ultrarrápido y dominio incluidos (sin cuotas mensuales)."
     },
-    "pwa_software": {
-      "name": "PWAs y Apps para Empleados en Calle",
-      "shortDesc": "Aplicaciones móviles a medida para firmar partes de trabajo, subir fotos de obra, fichar horario o calcular presupuestos al instante desde el teléfono."
+    "pwa_partes_cuadrillas": {
+      "name": "PWA de Partes de Trabajo y Control de Cuadrillas",
+      "shortDesc": "App móvil sin instalación de tienda: entrada/salida con GPS, checklists de tareas del día, fotos antes/después y firma táctil en pantalla."
+    },
+    "pwa_informes_comunidades": {
+      "name": "Generador Automático de Informes Mensuales en PDF para Comunidades",
+      "shortDesc": "Recopila todos los partes diarios del mes y genera automáticamente un PDF formal con tu logotipo, fotos y resumen de actuaciones para juntas de vecinos."
+    },
+    "pwa_maquinaria_qr": {
+      "name": "Sistema de Control y Mantenimiento de Maquinaria con Pegatinas QR",
+      "shortDesc": "Pegatinas QR en desbrozadoras, cortacéspedes y vehículos. El operario escanea en 5s con el móvil para reportar averías y controlar cambios de filtros y aceite."
+    },
+    "pwa_fitosanitarios_oficial": {
+      "name": "Registro Digital de Fitosanitarios (Cuaderno de Campo Oficial)",
+      "shortDesc": "Anotación rápida de tratamientos químicos, picudo rojo o herbicidas, generando el documento legal oficial ante inspecciones de sanidad vegetal."
+    },
+    "pwa_portal_clientes": {
+      "name": "Portal Privado para Clientes y Propietarios de Chalets",
+      "shortDesc": "Acceso web privado donde los propietarios ven fotos del estado de su jardín tras cada visita y pueden aprobar presupuestos extras en 1 clic."
+    },
+    "pwa_avisos_administradores": {
+      "name": "Avisos de Temporada y Panel para Administradores de Fincas",
+      "shortDesc": "Recordatorios preventivos automáticos por WhatsApp según la época del año y panel centralizado donde los administradores descargan informes de sus comunidades."
     },
     "audiovisual_reels": {
       "name": "Fotografía In Situ y Vídeo Vertical (Reels / TikTok)",
@@ -49,12 +69,28 @@
       "title": "Sexi-Garden · Fotografía Profesional In Situ y Reels de Poda en Altura",
       "location": "Almuñécar y La Herradura"
     },
-    "case-pwa-partes": {
-      "title": "App Interna (PWA) · Partes de Trabajo en Calle y Presupuestos Móviles",
+    "case-pwa-cuadrillas": {
+      "title": "App Móvil de Partes de Trabajo y Control de Cuadrillas en Calle",
       "location": "Motril, Granada y Málaga"
     },
-    "case-pwa-horarios": {
-      "title": "Control Horario & Partes Diarios · App PWA Móvil para Cuadrillas",
+    "case-pwa-informes": {
+      "title": "Generador Automático de Informes Mensuales en PDF para Comunidades",
+      "location": "Costa Tropical y Costa del Sol"
+    },
+    "case-pwa-maquinaria": {
+      "title": "Control y Mantenimiento de Maquinaria con Pegatinas QR Resistentes",
+      "location": "Granada, Málaga y Almería"
+    },
+    "case-pwa-fitosanitarios": {
+      "title": "Registro Digital de Tratamientos Fitosanitarios (Cuaderno de Campo Oficial)",
+      "location": "Andalucía Oriental"
+    },
+    "case-pwa-portal": {
+      "title": "App / Portal Privado de Seguimiento para Clientes y Propietarios de Chalets",
+      "location": "Costa Tropical · Granada y Málaga"
+    },
+    "case-pwa-administradores": {
+      "title": "Avisos Automáticos de Temporada y Panel para Administradores de Fincas",
       "location": "Granada, Málaga y Almería"
     },
     "case-seo-gbp": {
@@ -86,9 +122,9 @@
       "author": "Clínica & Negocio Local en Costa del Sol",
       "stars": 5,
       "date": "Málaga y Provincia",
-      "text": "Lo que más valoramos de Pixel & Web es que unen los dos mundos: vienen en persona a grabar vídeos profesionales para Instagram y a la vez son ingenieros que te montan la web y la IA sin cobrarte cuotas mensuales absurdas.",
+      "text": "Lo que más valoramos de Pixel & Web es que unen los dos mundos: vienen en persona a grabar vídeos profesionales para Instagram y a la vez son ingenieros que te montan la web sin cobrarte cuotas mensuales absurdas.",
       "url": "#contact",
-      "source": "Cliente Verificado · Producción Audiovisual + IA"
+      "source": "Cliente Verificado · Producción Audiovisual + Web"
     }
   ],
   "faqs": [
