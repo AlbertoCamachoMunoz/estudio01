@@ -1,0 +1,21 @@
+{
+  "name": "Control Horario & Partes de Trabajo | Pixel & Web",
+  "short_name": "Control Horario",
+  "description": "App PWA para ticar horarios, control de cuadrillas y checklist de tareas diarias en campo.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "es-ES",
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

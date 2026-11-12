@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Control Horario y Partes de Trabajo | Pixel & Web</title>
+  
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Control Horario">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="app-header__brand">
+      <img src="icons/icon.svg" alt="App Icon" class="app-header__icon" width="34" height="34">
+      <div>
+        <h1 class="app-header__title">Control Horario &amp; Trabajo</h1>
+        <span class="app-header__subtitle">Pixel &amp; Web · Modo Operativo</span>
+      </div>
+    </div>
+    <div class="app-header__actions">
+      <button type="button" class="icon-btn" id="btnOpenHistory" title="Historial de Partes">
+        📋 <span class="icon-btn__label">Historial</span>
+      </button>
+      <button type="button" class="icon-btn" id="btnOpenSettings" title="Configuración">
+        ⚙️
+      </button>
+    </div>
+  </header>
+
+  <!-- Live Date & Clock Bar -->
+  <div class="date-clock-bar">
+    <div class="date-clock-bar__date" id="liveDate">Cargando fecha...</div>
+    <div class="date-clock-bar__clock" id="liveClock">00:00:00</div>
+  </div>
+
+  <main class="app-main">
+
+    <!-- Card 1: Datos del Operario y Lugar de Trabajo -->
+    <section class="card">
+      <h2 class="card-title">👤 Datos del Operario &amp; Centro</h2>
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="operatorName" class="form-label">Nombre del Operario / Cuadrilla:</label>
+          <input type="text" id="operatorName" class="form-input" placeholder="Ej: Alberto C. / Cuadrilla #01">
+        </div>
+        <div class="form-field">
+          <label for="workplace" class="form-label">Cliente / Comunidad / Finca:</label>
+          <input type="text" id="workplace" class="form-input" placeholder="Ej: Residencial Costa Tropical · Bloque 3">
+        </div>
+      </div>
+
+      <!-- Quick Workplace Pills -->
+      <div class="quick-pills">
+        <span class="quick-pills__label">Atajos rápidos:</span>
+        <button type="button" class="quick-pill" data-quick-workplace="Residencial Costa Tropical">Costa Tropical</button>
+        <button type="button" class="quick-pill" data-quick-workplace="Comunidad Las Palmeras">Las Palmeras</button>
+        <button type="button" class="quick-pill" data-quick-workplace="Chalet Privado (Paseo Reina Sofía)">Chalet Paseo</button>
+        <button type="button" class="quick-pill" data-quick-workplace="Base Operativa / Taller Central">Taller Central</button>
+      </div>
+    </section>
+
+    <!-- Card 2: Control Horario y Fichaje (Ticar Entrada / Salida) -->
+    <section class="card card--highlight">
+      <div class="card-header-flex">
+        <h2 class="card-title">⏱️ Registro Horario de Jornada</h2>
+        <span class="status-pill status-pill--idle" id="shiftStatusBadge">○ Sin Iniciar</span>
+      </div>
+
+      <!-- Timer Counter -->
+      <div class="timer-box">
+        <span class="timer-box__label">Tiempo Efectivo Trabajado Hoy:</span>
+        <div class="timer-box__display" id="shiftTimerDisplay">00h 00m 00s</div>
+      </div>
+
+      <!-- Action Buttons for Clocking -->
+      <div class="clock-actions">
+        <!-- Start Clock In -->
+        <button type="button" class="btn-clock btn-clock--in" id="btnClockIn">
+          <span class="btn-clock__icon">▶</span>
+          <span class="btn-clock__text">FICHAR ENTRADA</span>
+        </button>
+
+        <!-- Pause / Break -->
+        <button type="button" class="btn-clock btn-clock--pause" id="btnPause" style="display: none;">
+          <span class="btn-clock__icon">⏸</span>
+          <span class="btn-clock__text">Pausa / Almuerzo</span>
+        </button>
+
+        <!-- Resume -->
+        <button type="button" class="btn-clock btn-clock--resume" id="btnResume" style="display: none;">
+          <span class="btn-clock__icon">▶</span>
+          <span class="btn-clock__text">Reanudar Jornada</span>
+        </button>
+
+        <!-- Clock Out -->
+        <button type="button" class="btn-clock btn-clock--out" id="btnClockOut" style="display: none;">
+          <span class="btn-clock__icon">⏹</span>
+          <span class="btn-clock__text">FICHAR SALIDA</span>
+        </button>
+      </div>
+
+      <!-- Audit Log of Stamps -->
+      <div class="time-audit">
+        <h3 class="time-audit__title">Historial de Marcas de Hoy:</h3>
+        <ul class="time-audit__list" id="timeAuditLog">
+          <li class="empty-state">No hay registros de fichaje para hoy.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Card 3: Checklist de Tareas del Día -->
+    <section class="card">
+      <div class="card-header-flex">
+        <div>
+          <h2 class="card-title">✅ Tareas Realizadas Hoy</h2>
+          <p class="card-desc">Marca las tareas conforme las vayas finalizando en el centro:</p>
+        </div>
+        <span class="progress-pill" id="tasksProgressSummary">0 de 0 completadas</span>
+      </div>
+
+      <div class="tasks-container" id="tasksCategoryList">
+        <!-- Dynamically rendered categorized tasks -->
+      </div>
+
+      <!-- Add Custom Task -->
+      <div class="add-custom-task">
+        <input type="text" id="customTaskText" class="form-input" placeholder="Añadir otra tarea específica...">
+        <button type="button" class="btn btn-secondary" id="btnAddCustomTask">+ Añadir Tarea</button>
+      </div>
+    </section>
+
+    <!-- Card 4: Registro de Materiales y Consumibles -->
+    <section class="card">
+      <h2 class="card-title">📦 Materiales y Piezas Consumidas</h2>
+      <p class="card-desc">Registra abonos, piezas de fontanería, cloro o repuestos empleados:</p>
+
+      <div class="materials-input-row">
+        <input type="text" id="materialName" class="form-input" placeholder="Ej: Abono NPK / Boquilla Difusor 15-VAN">
+        <input type="text" id="materialQty" class="form-input form-input--sm" placeholder="Cantidad (ej: 5 kg, 2 uds)">
+        <button type="button" class="btn btn-secondary" id="btnAddMaterial">+ Añadir</button>
+      </div>
+
+      <div class="materials-list" id="materialsList">
+        <!-- Rendered material chips -->
+      </div>
+    </section>
+
+    <!-- Card 5: Evidencia Fotográfica (Antes y Después) -->
+    <section class="card">
+      <h2 class="card-title">📸 Evidencia Fotográfica</h2>
+      <p class="card-desc">Toma fotos directamente con el móvil para justificar el trabajo ante la comunidad o cliente:</p>
+
+      <div class="photo-controls-row">
+        <select id="photoType" class="form-select">
+          <option value="after">✨ Foto Estado Terminado (Después)</option>
+          <option value="before">📸 Foto Estado Inicial (Antes)</option>
+        </select>
+
+        <label class="btn btn-photo-upload">
+          📷 Tomar / Subir Foto
+          <input type="file" id="photoInput" accept="image/*" capture="environment" style="display: none;">
+        </label>
+      </div>
+      <div id="photoUploadStatus" class="upload-status-text"></div>
+
+      <div class="photos-gallery" id="photosGallery">
+        <!-- Rendered photo cards -->
+      </div>
+    </section>
+
+    <!-- Card 6: Observaciones e Incidencias -->
+    <section class="card">
+      <h2 class="card-title">📝 Observaciones &amp; Incidencias</h2>
+      <textarea id="workNotes" class="form-textarea" rows="3" placeholder="Anota averías encontradas, peticiones del presidente o recomendaciones para la próxima visita..."></textarea>
+    </section>
+
+    <!-- Card 7: Firma Digital en Pantalla -->
+    <section class="card">
+      <div class="card-header-flex">
+        <h2 class="card-title">✍️ Firma Digital (Operario o Cliente)</h2>
+        <button type="button" class="btn-clear-sig" id="btnClearSignature">Borrar Firma</button>
+      </div>
+      <p class="card-desc">Firma con el dedo o puntero en el recuadro para validar el parte:</p>
+      
+      <div class="signature-canvas-container">
+        <canvas id="signatureCanvas" width="400" height="160"></canvas>
+      </div>
+    </section>
+
+    <!-- Actions Footer -->
+    <section class="main-actions-section">
+      <button type="button" class="btn-action btn-action--whatsapp" id="btnShareWhatsApp">
+        <span class="btn-action__icon">📲</span>
+        <div class="btn-action__body">
+          <strong>Enviar Parte Diario por WhatsApp</strong>
+          <span>Envía el resumen completo con horas y tareas a la oficina</span>
+        </div>
+      </button>
+
+      <div class="action-buttons-row">
+        <button type="button" class="btn btn-outline btn-block" id="btnPrintReport">
+          📄 Imprimir / Guardar PDF
+        </button>
+        <button type="button" class="btn btn-primary btn-block" id="btnArchiveDay">
+          💾 Guardar y Cerrar Jornada
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- History Modal -->
+  <div class="modal" id="historyModal" aria-hidden="true" role="dialog">
+    <div class="modal__backdrop" id="btnCloseHistory"></div>
+    <div class="modal__dialog">
+      <div class="modal__header">
+        <h3 class="modal__title">📋 Historial de Partes Guardados</h3>
+        <button type="button" class="modal__close" onclick="document.getElementById('historyModal').classList.remove('is-open')">&times;</button>
+      </div>
+      <div class="modal__body" id="historyLogsList">
+        <!-- History items rendered here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Modal -->
+  <div class="modal" id="settingsModal" aria-hidden="true" role="dialog">
+    <div class="modal__backdrop" id="btnCloseSettings"></div>
+    <div class="modal__dialog">
+      <div class="modal__header">
+        <h3 class="modal__title">⚙️ Configuración del Sistema</h3>
+        <button type="button" class="modal__close" onclick="document.getElementById('settingsModal').classList.remove('is-open')">&times;</button>
+      </div>
+      <div class="modal__body">
+        <div class="form-field">
+          <label for="settingsCompanyName" class="form-label">Nombre de tu Empresa:</label>
+          <input type="text" id="settingsCompanyName" class="form-input" placeholder="Pixel & Web / Tu Empresa">
+        </div>
+        <div class="form-field">
+          <label for="settingsSupervisorPhone" class="form-label">WhatsApp de la Oficina / Encargado (con prefijo):</label>
+          <input type="text" id="settingsSupervisorPhone" class="form-input" placeholder="34635108640">
+          <small class="form-help">A este número se enviarán los partes de trabajo por WhatsApp.</small>
+        </div>
+        <button type="button" class="btn btn-primary btn-block" id="btnSaveSettings" style="margin-top: 1.25rem;">
+          Guardar Cambios
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
