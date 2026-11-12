@@ -26,7 +26,7 @@ export class EmailService {
         ? `${rawPhone.slice(0, 3)} ${rawPhone.slice(3, 5)} ${rawPhone.slice(5, 7)} ${rawPhone.slice(7, 9)}`
         : payload.phone;
 
-    const agencyName = company.name || 'Pixel & Web';
+    const agencyName = company.name || 'Estudio 01';
 
     const bodyData = {
       Cliente: payload.name,
@@ -88,7 +88,7 @@ export class EmailService {
    */
   static getMailtoUrl(payload) {
     const company = DataLoaderService.getCompany();
-    const subject = encodeURIComponent(`Propuesta Digital ${company.name || 'Pixel & Web'} - ${payload.name}`);
+    const subject = encodeURIComponent(`Propuesta Digital ${company.name || 'Estudio 01'} - ${payload.name}`);
     const body = encodeURIComponent(
       `Nombre: ${payload.name}\nEmpresa/Sector: ${payload.companySector}\nTeléfono/WhatsApp: ${payload.phone}\nEmail: ${payload.email}\nServicio: ${payload.service}\n\nMensaje:\n${payload.message}`
     );

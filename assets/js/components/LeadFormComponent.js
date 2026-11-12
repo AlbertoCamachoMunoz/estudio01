@@ -119,7 +119,7 @@ export class LeadFormComponent {
 
     if (type === 'error' && leadData) {
       const waUrl = WhatsAppService.getLink(
-        `Hola Pixel & Web, soy ${leadData.name} (${leadData.companySector || 'Pyme'} - ${leadData.phone}). Solicito propuesta para: ${leadData.service}.`
+        `Hola Estudio 01, soy ${leadData.name} (${leadData.companySector || 'Pyme'} - ${leadData.phone}). Solicito propuesta para: ${leadData.service}.`
       );
       this.statusEl.innerHTML = `
         <div class="form-status-header">

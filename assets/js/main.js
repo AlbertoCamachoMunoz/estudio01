@@ -14,7 +14,6 @@ import { EstimatorComponent } from './components/EstimatorComponent.js';
 import { GalleryFilterComponent } from './components/GalleryFilterComponent.js';
 import { AccordionComponent } from './components/AccordionComponent.js';
 import { WhatsAppWidgetComponent } from './components/WhatsAppWidgetComponent.js';
-import { CursorTrailComponent } from './components/CursorTrailComponent.js';
 import { HeroPixelMatrixComponent } from './components/HeroPixelMatrixComponent.js';
 
 /**
@@ -22,14 +21,14 @@ import { HeroPixelMatrixComponent } from './components/HeroPixelMatrixComponent.
  * Synchronized with assets/data/company.json
  */
 export const CONFIG = Object.freeze({
-  name: 'Pixel Digital',
-  agencyName: 'Pixel Digital',
+  name: 'Estudio 01',
+  agencyName: 'Estudio 01',
   phone: '635108640',
   phoneFormatted: '+34 635 10 86 40',
   phoneRaw: '34635108640',
   whatsappNumber: '34635108640',
   defaultMessage:
-    'Hola Pixel Digital, contacto desde vuestra web para solicitar información y presupuesto de digitalización para mi negocio.',
+    'Hola Estudio 01, contacto desde vuestra web para solicitar información sobre un proyecto de digitalización.',
   email: 'c4max0@gmail.com',
   contactEmail: 'c4max0@gmail.com',
   formEndpoint: 'https://formsubmit.co/ajax/c4max0@gmail.com',
@@ -81,14 +80,11 @@ class AppController {
     // 11. Initialize Interactive WhatsApp Widget
     this.whatsAppWidget = new WhatsAppWidgetComponent();
 
-    // 12. Initialize Interactive Hero Pixel Matrix across the ENTIRE Hero Section (Scale 35px to 3px across columns)
+    // 12. Initialize High-Precision Metallic Micro-Grid Canvas
     this.heroPixelMatrix = new HeroPixelMatrixComponent({
       canvasSelector: '#heroBreezeCanvas',
       containerSelector: '#hero',
     });
-
-    // 13. Initialize Interactive Cursor Trail (Electric Blue to Crimson Red Ribbon)
-    this.cursorTrail = new CursorTrailComponent();
   }
 
   renderDynamicDatabaseContent() {

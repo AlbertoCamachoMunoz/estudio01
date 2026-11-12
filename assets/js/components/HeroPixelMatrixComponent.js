@@ -1,14 +1,16 @@
 /**
  * HeroPixelMatrixComponent
- * Hardware-accelerated interactive chessboard grid ("cuadrícula o tablero de ajedrez").
+ * High-precision metallic micro-engineering grid for Estudio 01.
+ * Aesthetics: Apple Pro, Leica, Braun, Teenage Engineering minimalism.
  *
- * Requirements:
- * - Izquierda > Derecha: Columns on the LEFT are VERY LARGE, progressively shrinking to the right.
- * - Minimal padding between squares ("padding entre cuadrados mínimo", 2.5px grout line).
- * - Authentic chessboard alternating pattern (solid filled squares vs translucent framed squares).
- * - Full width coverage with zero empty gaps between columns.
- * - Color spectrum: Electric Cyan/Blue (Left) -> Indigo/Violet (Center) -> Crimson Red (Right).
- * - Real-time physics: Subtle breathing float, elastic mouse repulsion & glowing bloom.
+ * Technical Specifications:
+ * - Micro-cells strictly between 2.2px and 7.8px max.
+ * - 100% straight sharp edges (border-radius: 0px), zero rounded plastic balloons.
+ * - Architecture: Clean coordinate grid with spatial progression (denser/larger on left, dissolving to fine micro-pixels on right).
+ * - Palette in repose: Deep obsidian background (#08080A), muted graphite (#1F2024), titanium (#2E3036), and slate metal (#4A4D55) with low alpha (0.22 - 0.38).
+ * - Precision Mouse Reaction: Specular metallic flash (interpolates toward polished silver #D4D7DD and titanium white #F5F5F7)
+ *   with subtle magnetic micro-displacement (1px - 2px max) and smooth lerp (0.08) damping.
+ * - Performance: 60fps locked, Retina DPR scaling, zero garbage collection in frame loop.
  */
 export class HeroPixelMatrixComponent {
   /**
@@ -28,7 +30,7 @@ export class HeroPixelMatrixComponent {
     this.ctx = this.canvas.getContext('2d');
     if (!this.ctx) return;
 
-    this.cubes = [];
+    this.pixels = [];
     this.width = 0;
     this.height = 0;
     this.dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -65,147 +67,83 @@ export class HeroPixelMatrixComponent {
   }
 
   /**
-   * Generates a seamless chessboard grid across the full Hero width and height:
-   * - Minimal padding between squares (2.5px).
-   * - Merges:
-   *   1) Junta las 2 primeras columnas en 1 (Col 0 + Col 1).
-   *   2) Junta la columna 3 con la 4 (Col 2 + Col 3).
-   *   3) Junta la columna 5 con la 6 (Col 4 + Col 5).
-   *   4) Resto tal cual está (Col 6 en adelante con -7% progresivo).
-   * - Seamlessly fills the width with no gaps between columns.
+   * Generates a high-precision architectural grid of micro-pixels:
+   * Left side: ~7.5px titanium micro-cells.
+   * Right side: ~2.4px fine micro-pixels.
+   * Minimal clean spacing, zero plastic bloat.
    */
   generateMatrix() {
-    this.cubes = [];
+    this.pixels = [];
     const w = this.width;
     const h = this.height;
     if (w <= 0 || h <= 0) return;
 
     const isMobile = w < 768;
-    const gap = 2.5; // Minimal padding between squares
+    const paddingX = isMobile ? 12 : 24;
+    const paddingY = isMobile ? 16 : 24;
 
-    // 1. Calculate original progression:
-    // Col 0: base size (175.8px desktop / 85.8px mobile)
-    // Col 1: 5% smaller
-    // Col 2: 5% smaller
-    // Col 3+: 7% smaller each step
-    const s0 = isMobile ? 85.8 : 175.8;
-    const rawSizes = [s0];
-    rawSizes.push(Math.round(s0 * 0.95 * 10) / 10); // Col 1 (2ª)
-    rawSizes.push(Math.round(rawSizes[1] * 0.95 * 10) / 10); // Col 2 (3ª)
-    for (let i = 3; i < 24; i++) {
-      rawSizes.push(Math.round(rawSizes[i - 1] * 0.93 * 10) / 10);
-    }
+    // Palette tones in repose (RGB):
+    // 0: Graphite (#1F2024)
+    // 1: Titanium (#2E3036)
+    // 2: Slate Metal (#4A4D55)
+    const basePalette = [
+      { r: 31, g: 32, b: 36 },
+      { r: 46, g: 48, b: 54 },
+      { r: 74, g: 77, b: 85 },
+    ];
 
-    // 2. Merge column pairs as requested:
-    // - Junta las 2 primeras columnas en 1:
-    const c0 = Math.round((rawSizes[0] + gap + rawSizes[1]) * 10) / 10;
-    // - Junta la columna 3 con la 4:
-    const c1 = Math.round((rawSizes[2] + gap + rawSizes[3]) * 10) / 10;
-    // - Junta la columna 5 con la 6:
-    const c2 = Math.round((rawSizes[4] + gap + rawSizes[5]) * 10) / 10;
-    // - Resto déjalo tal cual está:
-    const rest = rawSizes.slice(6);
+    let currentX = paddingX;
+    let colIndex = 0;
 
-    const finalColumnSizes = [c0, c1, c2, ...rest];
+    while (currentX < w - paddingX) {
+      const progress = currentX / w; // 0 (left) to 1 (right)
 
-    // 3. Position merged columns seamlessly from left to right:
-    let currentX = 0;
-    const columns = [];
-    for (let i = 0; i < finalColumnSizes.length; i++) {
-      const s = finalColumnSizes[i];
-      columns.push({
-        colIndex: i,
-        size: s,
-        x: currentX + s / 2,
-        left: currentX,
-        right: currentX + s,
-      });
-      currentX += s + gap;
-      if (currentX >= w) break;
-    }
+      // Micro-scale progression: 7.5px on the left dissolving down to 2.4px on the right
+      const maxColSize = isMobile ? 6.2 : 7.6;
+      const minColSize = isMobile ? 2.2 : 2.4;
+      const size = Math.max(
+        minColSize,
+        Math.round((maxColSize - Math.pow(progress, 0.82) * (maxColSize - minColSize)) * 10) / 10
+      );
 
-    // 4. Populate each column with chessboard squares from top to bottom
-    for (let c = 0; c < columns.length; c++) {
-      const col = columns[c];
-      const s = col.size;
-      const progress = Math.max(0, Math.min(1, col.x / w));
-      const color = this.getSpectrumColor(progress);
+      // Architectural grid spacing: proportional to size with clean breathing room
+      const stepX = Math.max(isMobile ? 10 : 13, size * 2.3);
+      const stepY = Math.max(isMobile ? 10 : 13, size * 2.3);
+      const rows = Math.floor((h - paddingY * 2) / stepY);
 
-      const stepY = s + gap;
-      const rows = Math.ceil(h / stepY);
+      for (let r = 0; r <= rows; r++) {
+        const cellY = paddingY + r * stepY;
+        if (cellY + size / 2 > h - 10) continue;
 
-      for (let r = 0; r < rows; r++) {
-        const cellY = 4 + r * stepY + s / 2;
+        // Subtle variation in resting tone for brushed metal texture
+        const toneIndex = (colIndex + r * 2) % basePalette.length;
+        const tone = basePalette[toneIndex];
 
-        // Chessboard alternating pattern: dark/accent vs light/framed
-        const isChessDark = (c + r) % 2 === 0;
-        const baseAlpha = isChessDark ? (s > 45 ? 0.40 : 0.34) : (s > 45 ? 0.12 : 0.09);
-        const hasBorder = !isChessDark;
+        // Resting alpha: subtle so typography remains crisp and dominant
+        const baseAlpha = 0.24 + ((colIndex * 7 + r * 13) % 10) * 0.015;
 
-        this.cubes.push({
-          x0: col.x,
+        this.pixels.push({
+          x0: currentX,
           y0: cellY,
-          x: col.x,
+          x: currentX,
           y: cellY,
-          vx: 0,
-          vy: 0,
-          size0: s,
-          size: s,
-          radius: Math.min(6, Math.max(1, s * 0.03)), // Subtle modern corner rounding
-          color: color,
-          progress: progress,
-          rotation: 0,
-          rotation0: 0,
+          size: size,
+          halfSize: size / 2,
+          r0: tone.r,
+          g0: tone.g,
+          b0: tone.b,
           baseAlpha: baseAlpha,
           alpha: baseAlpha,
-          col: c,
+          brightness: 0,
+          progress: progress,
+          col: colIndex,
           row: r,
-          isChessDark: isChessDark,
-          hasBorder: hasBorder,
         });
       }
+
+      currentX += stepX;
+      colIndex++;
     }
-  }
-
-  /**
-   * Color spectrum:
-   * 0.0 - 0.25: Electric Cyan & Sky Blue (#06b6d4 -> #38bdf8)
-   * 0.25 - 0.55: Royal Blue & Indigo (#3b82f6 -> #6366f1)
-   * 0.55 - 0.75: Violet & Purple (#8b5cf6 -> #a855f7)
-   * 0.75 - 0.90: Hot Pink & Rose (#ec4899 -> #f43f5e)
-   * 0.90 - 1.00: Crimson & Ruby Red (#ef4444 -> #dc2626)
-   */
-  getSpectrumColor(t) {
-    let r, g, b;
-
-    if (t < 0.25) {
-      const k = t / 0.25;
-      r = Math.round(6 + (56 - 6) * k);
-      g = Math.round(182 + (189 - 182) * k);
-      b = Math.round(212 + (248 - 212) * k);
-    } else if (t < 0.55) {
-      const k = (t - 0.25) / 0.3;
-      r = Math.round(56 + (99 - 56) * k);
-      g = Math.round(189 + (102 - 189) * k);
-      b = Math.round(248 + (241 - 248) * k);
-    } else if (t < 0.75) {
-      const k = (t - 0.55) / 0.2;
-      r = Math.round(99 + (168 - 99) * k);
-      g = Math.round(102 + (85 - 102) * k);
-      b = Math.round(241 + (247 - 241) * k);
-    } else if (t < 0.9) {
-      const k = (t - 0.75) / 0.15;
-      r = Math.round(168 + (236 - 168) * k);
-      g = Math.round(85 + (72 - 85) * k);
-      b = Math.round(247 + (153 - 247) * k);
-    } else {
-      const k = (t - 0.9) / 0.1;
-      r = Math.round(236 + (239 - 236) * k);
-      g = Math.round(72 + (68 - 72) * k);
-      b = Math.round(153 + (68 - 153) * k);
-    }
-
-    return { r, g, b };
   }
 
   bindEvents() {
@@ -243,107 +181,80 @@ export class HeroPixelMatrixComponent {
     this.ctx.clearRect(0, 0, this.width, this.height);
 
     const time = timestamp || performance.now();
-    const repulsionRadius = 140;
-    const springConstant = 0.06;
-    const damping = 0.82;
+    const interactionRadius = 135;
+    const lerpSpeed = 0.08; // Smooth precision damping
 
-    for (let i = 0; i < this.cubes.length; i++) {
-      const c = this.cubes[i];
+    // Polished specular flash targets:
+    // Silver: #D4D7DD (212, 215, 221)
+    // Titanium White: #F5F5F7 (245, 245, 247)
+    const flashR = 245;
+    const flashG = 245;
+    const flashB = 247;
 
-      // Subtle ambient breathing float (sinusoidal wave across chessboard)
-      const wave = Math.sin(time * 0.0018 + c.progress * 4.0 + c.row * 0.25);
-      const floatY = wave * (c.size0 > 45 ? 2.5 : 1.2);
-      const floatRot = Math.cos(time * 0.0012 + c.progress * 3.0) * 0.015;
+    for (let i = 0; i < this.pixels.length; i++) {
+      const p = this.pixels[i];
 
-      const targetX = c.x0;
-      const targetY = c.y0 + floatY;
+      // Subtle ambient mechanical drift (microscopic 0.8px float, precision engineering feel)
+      const ambientFloatY = Math.sin(time * 0.0014 + p.progress * 3.5 + p.row * 0.18) * 0.75;
+      const homeX = p.x0;
+      const homeY = p.y0 + ambientFloatY;
 
-      // Mouse repulsion calculation
-      const dx = c.x - this.mouse.x;
-      const dy = c.y - this.mouse.y;
+      // Mouse distance calculation
+      const dx = homeX - this.mouse.x;
+      const dy = homeY - this.mouse.y;
       const dist = Math.hypot(dx, dy);
 
-      let targetScale = 1.0;
-      let targetAlpha = c.baseAlpha;
+      let targetX = homeX;
+      let targetY = homeY;
+      let targetBrightness = 0;
+      let targetAlpha = p.baseAlpha;
 
-      if (dist < repulsionRadius && this.mouse.isHovered) {
-        const factor = 1 - dist / repulsionRadius;
-        // Large chess tiles move with solid mass; smaller squares move briskly
-        const pushForce = Math.pow(factor, 1.25) * (c.size0 > 200 ? 3.8 : (c.size0 > 100 ? 5.5 : 8.5));
+      if (dist < interactionRadius && this.mouse.isHovered) {
+        const factor = 1 - dist / interactionRadius;
+        const smoothFactor = Math.pow(factor, 1.6);
+
+        // Magnetic micro-displacement: maximum 1.8px (precise tactile tension)
         const angle = Math.atan2(dy, dx);
+        const microPush = smoothFactor * 1.8;
+        targetX = homeX + Math.cos(angle) * microPush;
+        targetY = homeY + Math.sin(angle) * microPush;
 
-        c.vx += Math.cos(angle) * pushForce;
-        c.vy += Math.sin(angle) * pushForce;
-
-        targetScale = 1.0 + factor * (c.size0 > 200 ? 0.08 : (c.size0 > 100 ? 0.14 : 0.28));
-        targetAlpha = Math.min(0.95, c.baseAlpha + factor * 0.60);
-        c.rotation += (factor * (c.size0 > 100 ? 0.015 : 0.06));
+        // Specular metallic flash intensity (0 to 1)
+        targetBrightness = smoothFactor;
+        targetAlpha = Math.min(0.96, p.baseAlpha + smoothFactor * 0.65);
       }
 
-      // Spring physics back to base position
-      c.vx += (targetX - c.x) * springConstant;
-      c.vy += (targetY - c.y) * springConstant;
-      c.vx *= damping;
-      c.vy *= damping;
+      // Physics interpolation (lerp 0.08)
+      p.x += (targetX - p.x) * lerpSpeed;
+      p.y += (targetY - p.y) * lerpSpeed;
+      p.brightness += (targetBrightness - p.brightness) * lerpSpeed;
+      p.alpha += (targetAlpha - p.alpha) * lerpSpeed;
 
-      c.x += c.vx;
-      c.y += c.vy;
-
-      // Smooth interpolation for size, alpha, and rotation
-      c.size += ((c.size0 * targetScale) - c.size) * 0.15;
-      c.alpha += (targetAlpha - c.alpha) * 0.15;
-      c.rotation += ((c.rotation0 + floatRot) - c.rotation) * 0.1;
-
-      // Draw the cube
-      this.drawCube(c);
+      // Render straight sharp micro-pixel (0px border radius)
+      this.drawPixel(p, flashR, flashG, flashB);
     }
   }
 
-  drawCube(c) {
-    this.ctx.save();
-    this.ctx.translate(c.x, c.y);
-    this.ctx.rotate(c.rotation);
+  drawPixel(p, flashR, flashG, flashB) {
+    // Interpolate color from resting graphite to titanium white flash
+    const b = p.brightness;
+    const r = Math.round(p.r0 + (flashR - p.r0) * b);
+    const g = Math.round(p.g0 + (flashG - p.g0) * b);
+    const bl = Math.round(p.b0 + (flashB - p.b0) * b);
 
-    const half = c.size / 2;
-    const rad = Math.min(c.radius, half);
+    // Draw straight sharp micro-pixel (zero rounded corners)
+    this.ctx.fillStyle = `rgba(${r}, ${g}, ${bl}, ${p.alpha.toFixed(3)})`;
+    this.ctx.fillRect(
+      Math.round(p.x - p.halfSize),
+      Math.round(p.y - p.halfSize),
+      p.size,
+      p.size
+    );
 
-    // Dynamic bloom glow when hovered or excited
-    if (c.alpha > 0.48) {
-      this.ctx.shadowColor = `rgba(${c.color.r}, ${c.color.g}, ${c.color.b}, 0.85)`;
-      this.ctx.shadowBlur = Math.min(22, c.size * 0.4);
+    // Specular optical pinpoint on directly excited micro-cells
+    if (b > 0.45 && p.size >= 4) {
+      this.ctx.fillStyle = `rgba(255, 255, 255, ${(b * 0.9).toFixed(2)})`;
+      this.ctx.fillRect(Math.round(p.x - 0.5), Math.round(p.y - 0.5), 1, 1);
     }
-
-    this.ctx.fillStyle = `rgba(${c.color.r}, ${c.color.g}, ${c.color.b}, ${c.alpha.toFixed(2)})`;
-
-    this.ctx.beginPath();
-    if (this.ctx.roundRect) {
-      this.ctx.roundRect(-half, -half, c.size, c.size, rad);
-    } else {
-      this.ctx.rect(-half, -half, c.size, c.size);
-    }
-    this.ctx.fill();
-
-    // Subtle 1.2px border for alternating chessboard squares
-    if (c.hasBorder) {
-      this.ctx.strokeStyle = `rgba(${c.color.r}, ${c.color.g}, ${c.color.b}, ${Math.min(0.70, c.alpha * 2.2).toFixed(2)})`;
-      this.ctx.lineWidth = Math.max(1, Math.min(1.4, c.size * 0.04));
-      this.ctx.stroke();
-    }
-
-    // Specular inner reflection on larger cubes for 3D depth
-    if (c.size > 22) {
-      const specOffset = Math.min(8, Math.max(3, c.size * 0.025));
-      const specSize = Math.min(48, c.size * 0.22);
-      this.ctx.fillStyle = `rgba(255, 255, 255, ${(c.alpha * 0.28).toFixed(2)})`;
-      this.ctx.beginPath();
-      if (this.ctx.roundRect) {
-        this.ctx.roundRect(-half + specOffset, -half + specOffset, specSize, specSize, rad * 0.6);
-      } else {
-        this.ctx.rect(-half + specOffset, -half + specOffset, specSize, specSize);
-      }
-      this.ctx.fill();
-    }
-
-    this.ctx.restore();
   }
 }

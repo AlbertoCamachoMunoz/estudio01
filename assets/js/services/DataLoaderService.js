@@ -159,14 +159,14 @@ export class DataLoaderService {
 
   static getCompany() {
     return this._company || {
-      name: 'Pixel & Web',
+      name: 'Estudio 01',
       phone: '635108640',
       phoneFormatted: '+34 635 10 86 40',
       phoneRaw: '34635108640',
       email: 'c4max0@gmail.com',
       city: 'Motril',
       region: 'Motril, Provincia de Granada, Málaga y Almería',
-      defaultMessage: 'Hola Pixel & Web, contacto desde vuestra web para solicitar información y presupuesto de digitalización para mi empresa.',
+      defaultMessage: 'Hola Estudio 01, contacto desde vuestra web para solicitar información y presupuesto de digitalización para mi empresa.',
       formEndpoint: 'https://formsubmit.co/ajax/c4max0@gmail.com',
     };
   }

@@ -13,7 +13,7 @@ export class WhatsAppService {
   static getLink(customText = '') {
     const company = DataLoaderService.getCompany();
     const phoneRaw = company.phoneRaw || company.whatsappNumber || '34635108640';
-    const agencyName = company.name || 'Pixel & Web';
+    const agencyName = company.name || 'Estudio 01';
 
     const defaultMessage =
       company.defaultMessage ||
@@ -31,7 +31,7 @@ export class WhatsAppService {
    */
   static getServiceInquiryLink(serviceName) {
     const company = DataLoaderService.getCompany();
-    const agencyName = company.name || 'Pixel & Web';
+    const agencyName = company.name || 'Estudio 01';
 
     const message = `Hola ${agencyName}, he visto vuestra web y me gustaría recibir información y presupuesto sobre: ${serviceName}.`;
     return this.getLink(message);
@@ -50,7 +50,7 @@ export class WhatsAppService {
    */
   static getEstimateLink({ serviceName, areaM2, minBudget, maxBudget, clientName = '', companySector = '' }) {
     const company = DataLoaderService.getCompany();
-    const agencyName = company.name || 'Pixel & Web';
+    const agencyName = company.name || 'Estudio 01';
     const introName = clientName ? ` Soy ${clientName}` : '';
     const introSector = companySector ? ` (${companySector})` : '';
 

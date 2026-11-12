@@ -40,13 +40,13 @@ export class WhatsAppWidgetComponent {
       existingWidget.remove();
     }
 
-    const agencyName = (this.company && this.company.name) || 'Pixel & Web';
+    const agencyName = (this.company && this.company.name) || 'Estudio 01';
 
     const t = {
       tooltip: `⚡ ¿Hablamos sobre tu Web, Vídeo o IA?`,
       bubble: `Hola 👋 Somos <strong>${agencyName}</strong>.<br>¿Quieres digitalizar tu negocio, grabar Reels profesionales o probar un Agente de IA en tu WhatsApp?`,
       btnText: 'Hablar por WhatsApp',
-      btnAria: 'Abrir chat de WhatsApp con Pixel & Web',
+      btnAria: 'Abrir chat de WhatsApp con Estudio 01',
       closeAria: 'Cerrar ventana de chat',
     };
 
@@ -246,7 +246,7 @@ export class WhatsAppWidgetComponent {
   launchWhatsApp() {
     const defaultText =
       (this.company && this.company.defaultMessage) ||
-      `Hola Pixel & Web, contacto desde vuestra web para solicitar información y presupuesto de digitalización para mi negocio.`;
+      `Hola Estudio 01, contacto desde vuestra web para solicitar información y presupuesto de digitalización para mi negocio.`;
     const targetUrl = WhatsAppService.getLink(defaultText);
     window.open(targetUrl, '_blank', 'noopener,noreferrer');
     this.closeChat();

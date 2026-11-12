@@ -49,7 +49,7 @@ export class CompanyDataBinder {
 
     const defaultWaText =
       company.defaultMessage ||
-      `Hola ${company.name || 'Pixel & Web'}, me gustaría solicitar presupuesto para digitalizar mi negocio.`;
+      `Hola ${company.name || 'Estudio 01'}, me gustaría solicitar presupuesto para digitalizar mi negocio.`;
 
     // 2. Link Hrefs: [data-company-href]
     document.querySelectorAll('[data-company-href]').forEach((el) => {
@@ -57,7 +57,7 @@ export class CompanyDataBinder {
       if (type === 'email' && company.email) {
         el.href = `mailto:${company.email}`;
       } else if (type === 'emailSubject' && company.email) {
-        const subject = el.dataset.companySubject || `Consulta de Proyecto Digital - ${company.name || 'Pixel & Web'}`;
+        const subject = el.dataset.companySubject || `Consulta de Proyecto Digital - ${company.name || 'Estudio 01'}`;
         el.href = `mailto:${company.email}?subject=${encodeURIComponent(subject)}`;
       } else if (type === 'whatsapp' && company.phoneRaw) {
         const text = el.dataset.waText || defaultWaText;
