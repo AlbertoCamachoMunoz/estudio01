@@ -1,4 +1,4 @@
-# Project Manifest & Architecture Guardrails: Pixel & Web (Digital & AI Agency)
+# Project Manifest & Architecture Guardrails: Pixel Digital (Digital & AI Agency)
 
 > **Single Source of Truth (SSOT) for AI Agents.** Every architectural decision, code modification, and content update in this repository must strictly adhere to the specifications defined below.
 
@@ -6,7 +6,7 @@
 
 ## 1. Business Context & Value Proposition
 
-- **Identidad Corporativa:** Agencia Digital Integral para Pymes y Negocios Locales (nombre provisional configurable: `Pixel & Web`), nacida de la convergencia entre **Ingeniería de Software e Inteligencia Artificial** y **Producción Audiovisual y Redes Sociales**.
+- **Identidad Corporativa:** Agencia Digital Integral para Pymes y Negocios Locales (nombre provisional configurable: `Pixel Digital`), nacida de la convergencia entre **Ingeniería de Software e Inteligencia Artificial** y **Producción Audiovisual y Redes Sociales**.
 - **Los 3 Pilares de Servicio (Core Offerings):**
   1. **Web & Software a Medida:**
      - Landing pages comerciales de ultra-alta conversión y velocidad extrema (100% estáticas/jamstack, cero cuotas de servidor abusivas).
@@ -98,7 +98,7 @@ El repositorio parte de la base tecnológica desarrollada para el cliente *Sexig
 │   │   ├── social.json             # Perfiles sociales de la agencia
 │   │   └── translations/           # Textos estructurados (es.json como base)
 │   └── images/
-│       ├── logo/                   # Identidad visual de Pixel & Web
+│       ├── logo/                   # Identidad visual de Pixel Digital
 │       ├── portfolio/              # Capturas y vídeos de Casos de Éxito (Sexi-Garden, PWAs, Reels)
 │       └── icons/                  # Iconografía SVG/PNG optimizada
 ├── AGENTS.md                       # Fuente Única de Verdad (SSOT) para agentes IA
@@ -124,7 +124,7 @@ Queda **terminantemente prohibido** dispersar datos mutables de la agencia (nomb
 
 1. **Constante Maestra `CONFIG` en `assets/js/main.js` y `assets/data/company.json`:**
    - Todo dato mutable debe residir en un objeto central `CONFIG` exportado/inicializado al comienzo de `assets/js/main.js` (sincronizado con `assets/data/company.json`), incluyendo:
-     - `agencyName` (ej. `"Pixel & Web"`)
+     - `agencyName` (ej. `"Pixel Digital"`)
      - `whatsappNumber` (formato internacional sin `+`, ej. `"34600000000"`)
      - `phoneFormatted` (ej. `"+34 600 00 00 00"`)
      - `defaultMessage` (mensaje predefinido para `wa.me`)

@@ -3394,3 +3394,23 @@ ul {
 .mobile-lang-selector .lang-flag-coin.is-active {
   box-shadow: 0 0 0 3px var(--color-primary), 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* ==========================================================================
+   Interactive Cursor Trail & Gradient Ribbon (Pixel Digital)
+   ========================================================================== */
+.cursor-trail-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+}
+
+@media (pointer: coarse) {
+  .cursor-trail-canvas {
+    display: none;
+  }
+}

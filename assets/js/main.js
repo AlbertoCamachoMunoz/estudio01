@@ -15,20 +15,21 @@ import { GalleryFilterComponent } from './components/GalleryFilterComponent.js';
 import { AccordionComponent } from './components/AccordionComponent.js';
 import { WhatsAppWidgetComponent } from './components/WhatsAppWidgetComponent.js';
 import { LeafBreezeComponent } from './components/LeafBreezeComponent.js';
+import { CursorTrailComponent } from './components/CursorTrailComponent.js';
 
 /**
  * Master Central Configuration (SSOT Fallback & Global Constants)
  * Synchronized with assets/data/company.json
  */
 export const CONFIG = Object.freeze({
-  name: 'Pixel & Web',
-  agencyName: 'Pixel & Web',
+  name: 'Pixel Digital',
+  agencyName: 'Pixel Digital',
   phone: '635108640',
   phoneFormatted: '+34 635 10 86 40',
   phoneRaw: '34635108640',
   whatsappNumber: '34635108640',
   defaultMessage:
-    'Hola Pixel & Web, contacto desde vuestra web para solicitar información y presupuesto de digitalización para mi negocio.',
+    'Hola Pixel Digital, contacto desde vuestra web para solicitar información y presupuesto de digitalización para mi negocio.',
   email: 'c4max0@gmail.com',
   contactEmail: 'c4max0@gmail.com',
   formEndpoint: 'https://formsubmit.co/ajax/c4max0@gmail.com',
@@ -85,6 +86,9 @@ class AppController {
       canvasSelector: '#heroBreezeCanvas',
       containerSelector: '#hero',
     });
+
+    // 13. Initialize Interactive Cursor Trail (Electric Blue to Crimson Red Ribbon)
+    this.cursorTrail = new CursorTrailComponent();
   }
 
   renderDynamicDatabaseContent() {

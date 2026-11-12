@@ -1,6 +1,6 @@
-# ⚡ Pixel & Web — Agencia Digital y Producción Audiovisual para Pymes
+# ⚡ Pixel Digital — Agencia Digital y Producción Audiovisual para Pymes
 
-Repositorio oficial de la plataforma web corporativa, escaparate tecnológico (**Tech Lab**) y aplicaciones operativas (**PWA de Control Horario & Trabajo**) de **Pixel & Web** (nombre configurable vía constantes centrales).
+Repositorio oficial de la plataforma web corporativa, escaparate tecnológico (**Tech Lab**) y aplicaciones operativas (**PWA de Control Horario & Trabajo**) de **Pixel Digital** (nombre configurable vía constantes centrales).
 
 Diseñada como una **arquitectura 100% estática de ultra-alto rendimiento (Zero-Bloat)** que combina nuestros 2 pilares de negocio:
 1. **Web & Software a Medida** (Landing pages de alta conversión, PWAs operativas de trabajo en calle y control de cuadrillas sin cuotas abusivas de servidor).
@@ -65,7 +65,7 @@ Siguiendo el **Central Configuration Pattern**, ningún teléfono, correo ni end
 
 1. **Archivo Maestro de Datos (`assets/data/company.json`):**
    Contiene las propiedades globales que `CompanyDataBinder.js` inyecta automáticamente en todos los elementos del DOM marcados con `data-company`, `data-company-href` y `data-company-form`:
-   - `name`: Nombre comercial de la agencia (ej. `"Pixel & Web"`).
+   - `name`: Nombre comercial de la agencia (ej. `"Pixel Digital"`).
    - `phone` / `phoneRaw` / `phoneFormatted`: Teléfono móvil y número internacional para enlaces `https://wa.me/`.
    - `email` / `emailDev`: Correo de recepción de leads en producción y correo de pruebas en entorno local (`localhost`).
    - `formEndpoint` / `formEndpointDev`: URL del servicio Form-to-Email (FormSubmit AJAX / Web3Forms / Formspree).
@@ -93,4 +93,4 @@ npx serve .
 
 ---
 
-© 2026 Pixel & Web — Ingeniería de Software, IA y Producción Audiovisual. Todos los derechos reservados.
+© 2026 Pixel Digital — Ingeniería de Software, IA y Producción Audiovisual. Todos los derechos reservados.
