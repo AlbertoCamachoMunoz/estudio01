@@ -1,0 +1,56 @@
+[
+  {
+    "id": "poda_palmeras",
+    "name": "Poda de Palmeras y Tratamiento Picudo",
+    "icon": "🌴",
+    "shortDesc": "Limpieza de valonas, cepillado de tronco, retirada de ramas secas, frutos y tratamientos preventivos y curativos homologados contra el Picudo Rojo.",
+    "unitPricePerM2": 45,
+    "minPrice": 90,
+    "isFeatured": true
+  },
+  {
+    "id": "poda_altura",
+    "name": "Poda en Altura y Tala Controlada",
+    "icon": "🪓",
+    "shortDesc": "Saneamiento y apeo controlado de árboles de gran porte (pinos, eucaliptos) mediante trepa o plataforma elevadora, con retirada y triturado de restos.",
+    "unitPricePerM2": 60,
+    "minPrice": 150,
+    "isFeatured": true
+  },
+  {
+    "id": "mantenimiento_jardines",
+    "name": "Mantenimiento de Jardines y Fincas",
+    "icon": "🌿",
+    "shortDesc": "Cuidado periódico integral: siega, desbroce de parcelas, abonado orgánico, recorte ornamental de setos y control fitosanitario preventivo.",
+    "unitPricePerM2": 25,
+    "minPrice": 200,
+    "isFeatured": true
+  },
+  {
+    "id": "comunidades",
+    "name": "Mantenimiento de Comunidades",
+    "icon": "🏡",
+    "shortDesc": "Planes integrales de conservación para comunidades de vecinos, complejos hoteleros y urbanizaciones en Granada, Málaga y Almería.",
+    "unitPricePerM2": 30,
+    "minPrice": 350,
+    "isFeatured": true
+  },
+  {
+    "id": "diseno_jardines",
+    "name": "Diseño de Jardines y Césped Artificial",
+    "icon": "⛳",
+    "shortDesc": "Paisajismo mediterráneo sostenible, xerojardinería de bajo consumo hídrico, rocallas y montaje de césped sintético de máxima densidad y suavidad.",
+    "unitPricePerM2": 35,
+    "minPrice": 500,
+    "isFeatured": true
+  },
+  {
+    "id": "piscinas",
+    "name": "Mantenimiento de Piscinas (Sexipool)",
+    "icon": "🏊",
+    "shortDesc": "Servicio complementario de control químico del agua, cloración salina, revisión de motores y filtración para un baño seguro todo el año.",
+    "unitPricePerM2": 20,
+    "minPrice": 150,
+    "isFeatured": false
+  }
+]

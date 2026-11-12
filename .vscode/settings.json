@@ -1,0 +1,6 @@
+{
+  "editor.formatOnSave": true,
+  "gemini.userRules": [
+    "${workspaceFolder}/AGENTS.md"
+  ]
+}

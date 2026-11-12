@@ -1,0 +1,20 @@
+[
+  {
+    "id": "riego",
+    "name": "Riego automático inteligente",
+    "flatPrice": 450,
+    "description": "Programador WiFi con sensor de lluvia y electroválvulas para ahorro del 50% de agua"
+  },
+  {
+    "id": "iluminacion",
+    "name": "Iluminación decorativa LED",
+    "flatPrice": 350,
+    "description": "Focos empotrables y tiras LED estancas IP68 para ambientación nocturna"
+  },
+  {
+    "id": "desescombro",
+    "name": "Retirada y gestión de residuos ecológicos",
+    "flatPrice": 250,
+    "description": "Vaciado, carga en camión y transporte autorizado a planta de reciclaje"
+  }
+]

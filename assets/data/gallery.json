@@ -1,0 +1,47 @@
+[
+  {
+    "id": "case-sexigarden-web",
+    "title": "Sexi-Garden · Plataforma Web 4 Idiomas + Calculadora Online de Presupuestos",
+    "category": "web ia",
+    "imageUrl": "assets/images/gallery/trabajo-1.jpg",
+    "location": "Costa Tropical · Granada y Málaga",
+    "client": "Sexi-Garden & Sexipool",
+    "metrics": "Lighthouse 99/100 · 0 €/mes servidor · +310% contactos WhatsApp"
+  },
+  {
+    "id": "case-sexigarden-media",
+    "title": "Sexi-Garden · Fotografía Corporativa In Situ y Reels de Trabajos en Altura",
+    "category": "audiovisual",
+    "imageUrl": "assets/images/gallery/trabajo-2.jpg",
+    "location": "Almuñécar y La Herradura (Granada)",
+    "client": "Sexi-Garden",
+    "metrics": "Sesión in situ · Reels verticales · Optimización Google Business (5.0★)"
+  },
+  {
+    "id": "case-pwa-partes",
+    "title": "PWA Operativa en Calle · Partes de Trabajo, Fotos de Obra y Firma Digital",
+    "category": "web ia",
+    "imageUrl": "assets/images/gallery/trabajo-3.jpg",
+    "location": "Motril, Granada y Málaga",
+    "client": "Empresas de Servicios Técnicos y Reformas",
+    "metrics": "-8h/semana de papeleo · Uso desde el móvil sin cobertura"
+  },
+  {
+    "id": "case-ia-cualificador",
+    "title": "Agente IA WhatsApp 24/7 · Cualificación de Presupuestos y Agendamiento",
+    "category": "ia",
+    "imageUrl": "assets/images/gallery/trabajo-4.jpg",
+    "location": "Granada, Málaga y Almería",
+    "client": "Pymes Locales y Clínicas",
+    "metrics": "Respuesta en < 3 seg · Filtra curiosos y agenda visitas reales"
+  },
+  {
+    "id": "case-seo-gbp",
+    "title": "Posicionamiento Local en Google Maps y Producción Visual de Proyectos",
+    "category": "audiovisual web",
+    "imageUrl": "assets/images/gallery/trabajo-5.jpg",
+    "location": "Costa Tropical y Andalucía Oriental",
+    "client": "Sexi-Garden · División Piscinas",
+    "metrics": "Top 3 Google Maps en comarca · 37 reseñas verificadas 5★"
+  }
+]

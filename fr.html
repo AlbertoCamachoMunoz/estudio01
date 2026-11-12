@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sexigarden: Entreprise spécialisée dans l'élagage de palmiers, l'abattage d'arbres en hauteur et l'entretien de parcs et résidences à Grenade, Malaga, Almería et Costa Tropical. Tél : +34 673 71 48 66.">
+  <title>Sexigarden | Élagage de Palmiers, Abattage Délicat & Parcs à Grenade, Malaga, Almería</title>
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+
+  <!-- Alternate Language Hreflang Tags (SEO) -->
+  <link rel="alternate" hreflang="es" href="index.html">
+  <link rel="alternate" hreflang="en" href="en.html">
+  <link rel="alternate" hreflang="de" href="de.html">
+  <link rel="alternate" hreflang="fr" href="fr.html">
+  <link rel="alternate" hreflang="x-default" href="index.html">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/logo/apple-touch-icon.png">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="fr.html" class="brand-logo" aria-label="Accueil Sexigarden"><img src="assets/images/logo/logo.png" alt="Sexigarden Logo" class="brand-logo__img" width="30" height="38"><span class="brand-logo__name">Sexi<span>garden</span></span></a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu" aria-label="">
+        <a href="#services">Services</a>
+        <a href="#estimator">Simulateur</a>
+        <a href="#gallery">Projets</a>
+        <a href="#reviews">Avis</a>
+        <a href="#contact">Contact</a>
+        
+        <!-- Circular Language Selector & Speech Bubble ("Bocadillo") -->
+        <div class="lang-selector">
+          <button class="lang-selector__trigger" type="button" aria-expanded="false" aria-label="Changer de langue">
+            <img src="assets/images/flags/fr.svg" alt="Français">
+            <span class="coin-overlay"></span>
+            <span class="coin-code">FR</span>
+          </button>
+          <div class="lang-bocadillo" role="menu">
+            <a href="index.html" class="lang-flag-coin" data-lang="es" title="Español">
+              <img src="assets/images/flags/es.svg" alt="Español">
+              <span class="coin-overlay"></span>
+              <span class="coin-code">ES</span>
+            </a>
+            <a href="en.html" class="lang-flag-coin" data-lang="en" title="English">
+              <img src="assets/images/flags/en.svg" alt="English">
+              <span class="coin-overlay"></span>
+              <span class="coin-code">EN</span>
+            </a>
+            <a href="de.html" class="lang-flag-coin" data-lang="de" title="Deutsch">
+              <img src="assets/images/flags/de.svg" alt="Deutsch">
+              <span class="coin-overlay"></span>
+              <span class="coin-code">DE</span>
+            </a>
+            <a href="fr.html" class="lang-flag-coin is-active" data-lang="fr" title="Français">
+              <img src="assets/images/flags/fr.svg" alt="Français">
+              <span class="coin-overlay"></span>
+              <span class="coin-code">FR</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="#" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener noreferrer" data-company-href="whatsapp" data-wa-text="Bonjour, je souhaite demander un devis pour un projet à Almuñécar ou dans les environs">
+          <svg class="btn-whatsapp__icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.87 9.87 0 0 0 12.04 2zm0 1.67c2.2 0 4.26.86 5.82 2.42 1.55 1.56 2.41 3.63 2.41 5.83 0 4.54-3.69 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.14l-.3-.18-3.12.82.83-3.04-.2-.32a8.14 8.14 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24zm-3.52 3.66c-.16 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.57.13.16 1.72 2.62 4.17 3.68.58.25 1.04.41 1.39.52.59.19 1.13.16 1.55.1.48-.07 1.46-.59 1.67-1.17.2-.58.2-1.07.14-1.17-.06-.11-.23-.17-.48-.29s-1.23-.6-1.46-.68c-.22-.09-.39-.13-.55.12-.17.25-.64.81-.79.98-.14.17-.29.19-.54.07-.24-.13-1.04-.39-1.98-1.23-.74-.65-1.23-1.46-1.38-1.71-.14-.24-.02-.38.11-.5.11-.11.25-.29.38-.44.13-.15.17-.26.25-.42.08-.16.04-.3-.02-.42-.06-.13-.53-1.28-.73-1.76-.19-.47-.39-.4-.54-.41h-.47z"/></svg>
+          <span>WhatsApp <span data-company="phoneFormatted"></span></span>
+        </a>
+      </nav>
+
+      <!-- Mobile Nav Toggle -->
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+      <a href="#services">Services</a>
+      <a href="#estimator">Simulateur</a>
+      <a href="#gallery">Projets</a>
+      <a href="#reviews">Avis</a>
+      <a href="#contact">Contact</a>
+      
+      <div class="mobile-lang-selector">
+        <a href="index.html" class="lang-flag-coin" data-lang="es" title="Español">
+          <img src="assets/images/flags/es.svg" alt="Español">
+          <span class="coin-overlay"></span>
+          <span class="coin-code">ES</span>
+        </a>
+        <a href="en.html" class="lang-flag-coin" data-lang="en" title="English">
+          <img src="assets/images/flags/en.svg" alt="English">
+          <span class="coin-overlay"></span>
+          <span class="coin-code">EN</span>
+        </a>
+        <a href="de.html" class="lang-flag-coin" data-lang="de" title="Deutsch">
+          <img src="assets/images/flags/de.svg" alt="Deutsch">
+          <span class="coin-overlay"></span>
+          <span class="coin-code">DE</span>
+        </a>
+        <a href="fr.html" class="lang-flag-coin is-active" data-lang="fr" title="Français">
+          <img src="assets/images/flags/fr.svg" alt="Français">
+          <span class="coin-overlay"></span>
+          <span class="coin-code">FR</span>
+        </a>
+      </div>
+
+      <div class="mobile-socials" data-social-links aria-label="Suivez-nous sur les Réseaux Sociaux"></div>
+
+      <a href="#" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" data-company-href="whatsapp" data-wa-text="Bonjour, je souhaite demander un devis pour un projet à Almuñécar ou dans les environs">
+        <svg class="btn-whatsapp__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.87 9.87 0 0 0 12.04 2zm0 1.67c2.2 0 4.26.86 5.82 2.42 1.55 1.56 2.41 3.63 2.41 5.83 0 4.54-3.69 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.14l-.3-.18-3.12.82.83-3.04-.2-.32a8.14 8.14 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24zm-3.52 3.66c-.16 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.57.13.16 1.72 2.62 4.17 3.68.58.25 1.04.41 1.39.52.59.19 1.13.16 1.55.1.48-.07 1.46-.59 1.67-1.17.2-.58.2-1.07.14-1.17-.06-.11-.23-.17-.48-.29s-1.23-.6-1.46-.68c-.22-.09-.39-.13-.55.12-.17.25-.64.81-.79.98-.14.17-.29.19-.54.07-.24-.13-1.04-.39-1.98-1.23-.74-.65-1.23-1.46-1.38-1.71-.14-.24-.02-.38.11-.5.11-.11.25-.29.38-.44.13-.15.17-.26.25-.42.08-.16.04-.3-.02-.42-.06-.13-.53-1.28-.73-1.76-.19-.47-.39-.4-.54-.41h-.47z"/></svg>
+        <span>WhatsApp <span data-company="phoneFormatted"></span></span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <canvas class="hero-breeze-canvas" id="heroBreezeCanvas" aria-hidden="true"></canvas>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        🌴 Spécialistes de l'Élagage de Palmiers & Travaux Arboricoles en Hauteur
+      </div>
+      <h1 class="hero-title">
+        Entretien Expert d'Espaces Verts, <span>Élagage en Hauteur</span> & Palmiers
+      </h1>
+      <p class="hero-description">
+        Soins et élagage de palmiers, abattage délicat d'arbres de grande taille et entretien complet de propriétés et résidences à Grenade, Malaga, Almería et Costa Tropical.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" data-company-href="whatsapp" data-wa-text="Bonjour, je souhaite demander un devis pour des travaux d'élagage ou l'entretien de jardin">
+          <svg class="btn-whatsapp__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.87 9.87 0 0 0 12.04 2zm0 1.67c2.2 0 4.26.86 5.82 2.42 1.55 1.56 2.41 3.63 2.41 5.83 0 4.54-3.69 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.14l-.3-.18-3.12.82.83-3.04-.2-.32a8.14 8.14 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24zm-3.52 3.66c-.16 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.57.13.16 1.72 2.62 4.17 3.68.58.25 1.04.41 1.39.52.59.19 1.13.16 1.55.1.48-.07 1.46-.59 1.67-1.17.2-.58.2-1.07.14-1.17-.06-.11-.23-.17-.48-.29s-1.23-.6-1.46-.68c-.22-.09-.39-.13-.55.12-.17.25-.64.81-.79.98-.14.17-.29.19-.54.07-.24-.13-1.04-.39-1.98-1.23-.74-.65-1.23-1.46-1.38-1.71-.14-.24-.02-.38.11-.5.11-.11.25-.29.38-.44.13-.15.17-.26.25-.42.08-.16.04-.3-.02-.42-.06-.13-.53-1.28-.73-1.76-.19-.47-.39-.4-.54-.41h-.47z"/></svg>
+          <span>Devis via WhatsApp</span>
+        </a>
+        <a href="#estimator" class="btn btn-primary">
+          Calculer un Devis en Ligne
+        </a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <span>✔ Intervention à Grenade, Malaga et Almería</span>
+        </div>
+        <div class="hero-trust-item">
+          <span>✔ Grimpeurs professionnels & nacelles élévatrices</span>
+        </div>
+        <div class="hero-trust-item">
+          <span>✔ Visite technique et devis gratuits sans engagement</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Nos Services</span>
+        <h2 class="section-title">Spécialistes en Élagage et Parcs</h2>
+        <p class="section-subtitle">Services professionnels d'élagage en hauteur, traitement du charançon rouge et entretien complet de parcs à Grenade, Malaga et Almería.</p>
+      </div>
+
+      <!-- Populated dynamically from assets/data/pricing.json & translations/fr.json -->
+      <div class="services-grid"></div>
+    </div>
+  </section>
+
+  <!-- Interactive Budget Estimator Section -->
+  <section class="estimator-section" id="estimator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Simulateur en Ligne</span>
+        <h2 class="section-title">Calculez Votre Devis Estimatif</h2>
+        <p class="section-subtitle">Tarifs configurés directement depuis notre base de données pour Almuñécar et ses environs.</p>
+      </div>
+
+      <div class="estimator-card" id="budgetEstimator">
+        <div class="estimator-grid">
+          <!-- Controls Form -->
+          <div class="estimator-controls">
+            <div class="estimator-control-group">
+              <label for="estimatorService" class="form-label">1. Quel est votre besoin principal ?</label>
+              <select id="estimatorService" class="form-select">
+                <!-- Dynamically populated from assets/data/pricing.json & translations/fr.json -->
+              </select>
+              <div class="estimator-service-rates" id="estimatorServiceRates" aria-label="Tarifas del servicio seleccionado">
+                <div class="estimator-rate-pill">
+                  <span class="estimator-rate-icon" aria-hidden="true">📏</span>
+                  <span class="estimator-rate-label">Tarif de base:</span>
+                  <strong class="estimator-rate-value" id="estimatorUnitPrice">--</strong>
+                </div>
+                <div class="estimator-rate-pill">
+                  <span class="estimator-rate-icon" aria-hidden="true">🏷️</span>
+                  <span class="estimator-rate-label">Intervention minimum:</span>
+                  <strong class="estimator-rate-value" id="estimatorMinServicePrice">--</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="estimator-control-group">
+              <div class="estimator-label">
+                <span>2. Surface approximative :</span>
+                <span id="estimatorAreaVal" class="estimator-label-val">40 m²</span>
+              </div>
+              <input type="range" id="estimatorArea" class="estimator-range" min="10" max="200" step="5" value="40">
+            </div>
+
+            <div class="estimator-control-group">
+              <label class="form-label">3. Ajouter des options complémentaires :</label>
+              <div class="estimator-extras-list">
+                <!-- Dynamically populated from assets/data/pricing.json & translations/fr.json -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Price Output Box -->
+          <div class="estimator-result-box">
+            <span class="estimator-result-tag">Fourchette de Prix Estimée</span>
+            <div class="estimator-result-price">
+              <span id="estimatorMinPrice">--</span> - <span id="estimatorMaxPrice">--</span>
+            </div>
+            <div class="estimator-result-rates" id="estimatorResultRates">
+              <span class="estimator-result-rate-item">
+                <span class="estimator-result-rate-label">Tarif de base:</span>
+                <strong id="estimatorResultUnitPrice">--</strong>
+              </span>
+              <span class="estimator-result-rate-dot" aria-hidden="true">•</span>
+              <span class="estimator-result-rate-item">
+                <span class="estimator-result-rate-label">Intervention minimum:</span>
+                <strong id="estimatorResultMinPrice">--</strong>
+              </span>
+            </div>
+            <p class="estimator-result-note">
+              * Estimation indicative comprenant matériaux de première qualité et pose professionnelle. Devis ferme et définitif après visite technique gratuite sur place.
+            </p>
+
+            <!-- WhatsApp Direct CTA (Fast 1-click channel) -->
+            <a href="#" id="estimatorWhatsAppBtn" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-block">
+              <svg class="btn-whatsapp__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.87 9.87 0 0 0 12.04 2zm0 1.67c2.2 0 4.26.86 5.82 2.42 1.55 1.56 2.41 3.63 2.41 5.83 0 4.54-3.69 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.14l-.3-.18-3.12.82.83-3.04-.2-.32a8.14 8.14 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24zm-3.52 3.66c-.16 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.57.13.16 1.72 2.62 4.17 3.68.58.25 1.04.41 1.39.52.59.19 1.13.16 1.55.1.48-.07 1.46-.59 1.67-1.17.2-.58.2-1.07.14-1.17-.06-.11-.23-.17-.48-.29s-1.23-.6-1.46-.68c-.22-.09-.39-.13-.55.12-.17.25-.64.81-.79.98-.14.17-.29.19-.54.07-.24-.13-1.04-.39-1.98-1.23-.74-.65-1.23-1.46-1.38-1.71-.14-.24-.02-.38.11-.5.11-.11.25-.29.38-.44.13-.15.17-.26.25-.42.08-.16.04-.3-.02-.42-.06-.13-.53-1.28-.73-1.76-.19-.47-.39-.4-.54-.41h-.47z"/></svg>
+              <span>Demander une visite technique sur WhatsApp</span>
+            </a>
+
+            <!-- Divider -->
+            <div class="estimator-divider">
+              <span>ou demandez un devis formel par Email</span>
+            </div>
+
+            <!-- Unified Lead Form (Email channel) -->
+            <form id="contactForm" method="POST" data-company-form="endpoint" class="estimator-email-form" novalidate>
+              <select id="service" class="form-select" style="display: none;" aria-hidden="true"></select>
+              <input type="hidden" name="service" id="leadService" value="">
+              <input type="hidden" name="area" id="leadArea" value="40 m²">
+              <input type="hidden" name="extras" id="leadExtras" value="Ninguno">
+              <input type="hidden" name="estimatedRange" id="leadEstimatedRange" value="">
+              <input type="hidden" name="_subject" value="🌱 [Sexigarden] Nouvelle Demande de Devis">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+
+              <div class="estimator-form-row">
+                <div class="form-group">
+                  <label for="name" class="form-label">Nom complet *</label>
+                  <input type="text" id="name" name="name" class="form-input" placeholder="Votre nom" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone" class="form-label">Numéro de téléphone *</label>
+                  <input type="tel" id="phone" name="phone" class="form-input" placeholder="ex. +34 600 00 00 00" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Adresse e-mail *</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="votre@email.fr" required>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Détails complémentaires (facultatif)</label>
+                <textarea id="message" name="message" class="form-textarea" rows="2" placeholder="Commune exacte, hauteur des arbres, accès nacelle ou photos du jardin..."></textarea>
+              </div>
+
+              <div class="form-group form-privacy-group">
+                <label class="checkbox-label" for="privacyPolicy">
+                  <input type="checkbox" id="privacyPolicy" name="privacy" required>
+                  <span>J'ai lu et j'accepte la <a href="politica-privacidad.html" target="_blank" rel="noopener noreferrer">Politique de Confidentialité</a></span>
+                </label>
+              </div>
+
+              <div class="legal-first-layer">
+                <p class="legal-first-layer-title">🔒 Informations sur la protection des données (RGPD) :</p>
+                <ul class="legal-first-layer-list">
+                  <li><strong>Nom commercial :</strong> Sexigarden · Sexipool.</li>
+                  <li><strong>Finalité :</strong> Répondre à votre demande de devis et d'intervention pour vos travaux extérieurs.</li>
+                  <li><strong>Légitimation :</strong> Votre consentement exprès lors de l'envoi du formulaire.</li>
+                  <li><strong>Destinataires :</strong> Aucune cession de données à des tiers sauf obligation légale.</li>
+                  <li><strong>Droits :</strong> Accès, rectification, suppression et autres droits dans notre <a href="politica-privacidad.html" target="_blank" rel="noopener noreferrer">Politique de Confidentialité</a>.</li>
+                </ul>
+              </div>
+
+              <button type="submit" class="btn btn-accent btn-block">
+                <span>Envoyer la demande par Email</span>
+              </button>
+
+              <div id="formStatus" style="display: none;"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Gallery Section -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Travaux & Chantiers</span>
+        <h2 class="section-title">Nos Réalisations à Almuñécar & Costa Tropical</h2>
+        <p class="section-subtitle">Photos de nos chantiers d'élagage, palmiers, jardins et piscines sur la Costa Tropical.</p>
+      </div>
+
+      <div class="gallery-filters">
+        <button class="gallery-filter-btn is-active" data-filter="all">Tous les Projets</button>
+        <button class="gallery-filter-btn" data-filter="poda">Élagage de Palmiers</button>
+        <button class="gallery-filter-btn" data-filter="cesped">Gazon Synthétique</button>
+        <button class="gallery-filter-btn" data-filter="jardineria">Jardins</button>
+        <button class="gallery-filter-btn" data-filter="piscinas">Piscines</button>
+      </div>
+
+      <div class="gallery-grid"></div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Avis sur Google</span>
+        <h2 class="section-title">Ce que Disent nos Clients</h2>
+        <p class="section-subtitle">Avis de propriétaires à Almuñécar et sur la Costa Tropical. Cliquez sur l'icône Google pour consulter chaque avis directement sur Google Maps.</p>
+      </div>
+
+      <!-- Populated dynamically from assets/data/translations/fr.json -->
+      <div class="reviews-grid"></div>
+
+      <!-- Actions to Google Maps -->
+      <div class="reviews-actions">
+        <a href="https://www.google.com/maps/search/?api=1&query=SEXIGARDEN+-+JARDINERIA,+PODA+EN+ALTURA+Y+PISCINAS&query_place_id=ChIJp_rBKtQzBYER3GVP-2dUFrY" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn btn-google-reviews-all"
+           data-company-href="googleReviews">
+          <img width="22" height="22" src="assets/images/icons/google_small_icon.png" alt="Google">
+          Consulter les 37 avis sur Google Maps ↗
+        </a>
+        <a href="https://search.google.com/local/writereview?placeid=ChIJp_rBKtQzBYER3GVP-2dUFrY" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn btn-secondary btn-google-write-review"
+           data-company-href="googleWriteReview">
+          Laisser un avis sur Google ✍️
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Contact & Localisation</span>
+        <h2 class="section-title">Assistance Directe & Visites Techniques</h2>
+        <p class="section-subtitle">Contactez directement notre équipe technique pour toute urgence ou demande de visite sur Almuñécar et sa région.</p>
+      </div>
+
+      <div class="contact-hub-layout">
+        <!-- 4 Action Cards Grid -->
+        <div class="contact-hub-cards">
+          
+          <!-- Card 1: Direct Phone Lines -->
+          <div class="contact-hub-card">
+            <div class="contact-hub-card-icon" aria-hidden="true">📞</div>
+            <div class="contact-hub-card-body">
+              <h3 class="contact-hub-card-title">Téléphones Directs</h3>
+              <p class="contact-hub-card-desc">Appelez-nous pour échanger directement avec Kevin ou notre secrétariat opérationnel.</p>
+              <div class="contact-hub-phone-list">
+                <div class="contact-hub-phone-item">
+                  <span class="contact-hub-phone-role">Mobile / WhatsApp Kevin</span>
+                  <span class="contact-hub-phone-number" data-company="phoneFormatted">+34 673 71 48 66</span>
+                </div>
+                <div class="contact-hub-phone-item">
+                  <span class="contact-hub-phone-role">Téléphone Fixe / Bureau</span>
+                  <span class="contact-hub-phone-number" data-company="phoneLandlineFormatted">+34 958 88 03 52</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Instant WhatsApp -->
+          <div class="contact-hub-card contact-hub-card--highlight">
+            <div class="contact-hub-card-icon contact-hub-card-icon--wa" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+            </div>
+            <div class="contact-hub-card-body">
+              <h3 class="contact-hub-card-title">WhatsApp Immédiat</h3>
+              <p class="contact-hub-card-desc">Envoyez-nous photos ou vidéos de vos palmiers et jardins pour une première évaluation rapide.</p>
+              <a href="#" 
+                 class="btn btn-whatsapp contact-hub-wa-btn" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 data-company-href="whatsapp" 
+                 data-wa-text="Bonjour, je vous contacte depuis le site Sexigarden pour des travaux d'élagage ou de jardinage">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                <span>Ouvrir WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Direct Email -->
+          <div class="contact-hub-card">
+            <div class="contact-hub-card-icon" aria-hidden="true">✉️</div>
+            <div class="contact-hub-card-body">
+              <h3 class="contact-hub-card-title">Courrier Électronique</h3>
+              <p class="contact-hub-card-desc">Pour propositions commerciales, envoi de plans et facturation copropriétés.</p>
+              <a href="#" class="contact-hub-email-link" data-company-href="emailSubject" data-company-subject="Demande de Devis Sexigarden">
+                <span data-company="email"></span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4: Hours & Coverage -->
+          <div class="contact-hub-card">
+            <div class="contact-hub-card-icon" aria-hidden="true">🕒</div>
+            <div class="contact-hub-card-body">
+              <h3 class="contact-hub-card-title">Horaires & Zone d'Intervention</h3>
+              <div class="contact-hub-schedule">
+                <div class="contact-hub-schedule-line">
+                  <span class="schedule-days">Lundi au Vendredi:</span>
+                  <span class="schedule-hours">08:00 – 20:00</span>
+                </div>
+                <div class="contact-hub-schedule-line">
+                  <span class="schedule-days">Samedi:</span>
+                  <span class="schedule-hours">09:00 – 14:00</span>
+                </div>
+              </div>
+              <div class="contact-hub-coverage-badge">
+                <span class="coverage-icon">📍</span>
+                <span>Almuñécar, La Herradura, Salobreña, Motril, Grenade, Malaga et Almería</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Location Box & Direct Calculator Shortcut -->
+        <div class="contact-hub-map-card">
+          <div class="contact-hub-map-header">
+            <div>
+              <h3 class="contact-hub-map-title">Base Opérationnelle à Almuñécar</h3>
+              <p class="contact-hub-map-desc">Emplacement stratégique sur la Costa Tropical pour des interventions rapides avec matériel et camion-nacelle.</p>
+              <div class="contact-hub-address">
+                <span>📍 Almuñécar (Grenade), Costa Tropical · Andalousie</span>
+              </div>
+            </div>
+            <div class="contact-hub-map-actions">
+              <a href="https://www.google.com/maps/search/?api=1&query=SEXIGARDEN+-+JARDINERIA,+PODA+EN+ALTURA+Y+PISCINAS&query_place_id=ChIJp_rBKtQzBYER3GVP-2dUFrY"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="btn btn-outline contact-hub-map-btn">
+                Ouvrir sur Google Maps ↗
+              </a>
+              <a href="#estimator" class="btn btn-primary contact-hub-calc-btn">
+                Calculer un Devis en Ligne
+              </a>
+            </div>
+          </div>
+
+          <!-- Embedded Map -->
+          <div class="map-container contact-hub-map-container">
+            <iframe 
+              title="Base Opérationnelle à Almuñécar"
+              src="https://maps.google.com/maps?q=Almu%C3%B1%C3%A9car%2C+Granada%2C+Espa%C3%B1a&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
+              data-company-map="embed"
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <!-- Socials row -->
+          <div class="contact-hub-socials-row">
+            <span class="contact-hub-socials-label">Suivez-nous sur les Réseaux Sociaux:</span>
+            <div class="contact-socials" data-social-links aria-label="Suivez-nous sur les Réseaux Sociaux"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-brand"><img src="assets/images/logo/logo.png" alt="Sexigarden Logo" class="brand-logo__img" width="30" height="38"><span class="footer-brand__name">Sexi<span>garden</span></span></div>
+          <p class="footer-desc">
+            Élagage d'arbres, entretien de palmiers et espaces verts pour particuliers et résidences à Grenade, Malaga, Almería et Costa Tropical. Section piscines : Sexipool.
+          </p>
+          <div class="footer-socials" data-social-links aria-label="Suivez-nous sur les Réseaux Sociaux"></div>
+        </div>
+        <div class="footer-links">
+          <strong>Accès Rapide</strong>
+          <a href="#services">Services</a>
+          <a href="#estimator">Simulateur</a>
+          <a href="#gallery">Projets</a>
+          <a href="#reviews">Avis</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-links">
+          <strong>Contact Direct</strong>
+          <a href="#" target="_blank" rel="noopener noreferrer" data-company-href="whatsapp" data-wa-text="Bonjour, je souhaite demander un devis pour un projet à Almuñécar ou dans les environs">WhatsApp: <span data-company="phoneFormatted"></span></a>
+          <a href="tel:+34958880352">Fijo: +34 958 88 03 52</a>
+          <a href="#" data-company-href="email"><span data-company="email"></span></a>
+          <span>Granada · Málaga · Almería</span>
+        </div>
+        <div class="footer-links">
+          <strong>Informations Légales</strong>
+          <a href="aviso-legal.html">Mentions Légales</a>
+          <a href="politica-privacidad.html">Politique de Confidentialité</a>
+          <a href="politica-cookies.html">Politique de Cookies</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Sexigarden - Almuñécar · Grenade · Malaga · Almería. Tous droits réservés.</p>
+        <div class="footer-legal-inline">
+          <a href="aviso-legal.html">Mentions Légales</a> &bull;
+          <a href="politica-privacidad.html">Politique de Confidentialité</a> &bull;
+          <a href="politica-cookies.html">Politique de Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive WhatsApp Widget is mounted automatically by WhatsAppWidgetComponent -->
+
+  <!-- Application Bootstrap (ES Modules MVC) -->
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

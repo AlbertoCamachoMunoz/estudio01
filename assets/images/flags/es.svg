@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#e1131c"/>
+  <rect y="16" width="64" height="32" fill="#ffd100"/>
+  <g transform="translate(19, 21) scale(0.44)">
+    <rect x="0" y="4" width="22" height="26" rx="4" fill="#e1131c" stroke="#8a0815" stroke-width="1"/>
+    <rect x="3" y="7" width="16" height="20" rx="3" fill="#ffd100"/>
+    <path d="M4 17 H18 M11 7 V26" stroke="#e1131c" stroke-width="1.5"/>
+    <path d="M-1 4 L3 -1 L11 2 L19 -1 L23 4 Z" fill="#ffd100" stroke="#b8860b" stroke-width="1"/>
+    <circle cx="3" cy="-1" r="1.5" fill="#e1131c"/>
+    <circle cx="11" cy="2" r="1.5" fill="#1b5e20"/>
+    <circle cx="19" cy="-1" r="1.5" fill="#e1131c"/>
+    <rect x="-8" y="2" width="4" height="28" rx="1.5" fill="#ffffff" stroke="#b0b0b0" stroke-width="1"/>
+    <rect x="26" y="2" width="4" height="28" rx="1.5" fill="#ffffff" stroke="#b0b0b0" stroke-width="1"/>
+    <path d="M-10 12 C-7 14 -5 10 -4 14" stroke="#e1131c" stroke-width="2" fill="none"/>
+    <path d="M24 12 C27 14 29 10 30 14" stroke="#e1131c" stroke-width="2" fill="none"/>
+  </g>
+</svg>

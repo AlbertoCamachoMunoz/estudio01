@@ -1,0 +1,251 @@
+{
+  "company": {
+    "slogan": "Spécialistes de l'Élagage de Palmiers, Abattage Délicat & Entretien de Jardins",
+    "coverageArea": "Grenade, Malaga, Almería et Costa Tropical (intervention spécialisée pour grands arbres et domaines)",
+    "schedule": "Du lundi au vendredi de 8h00 à 20h00 (Service d'urgence arboricole disponible)"
+  },
+  "services": {
+    "poda_palmeras": {
+      "name": "Élagage de Palmiers & Traitement Charançon Rouge",
+      "shortDesc": "Nettoyage du stipe, suppression des palmes sèches et fruits, et traitements préventifs et curatifs certifiés contre le charançon rouge."
+    },
+    "poda_altura": {
+      "name": "Élagage en Hauteur & Démontage Contrôlé",
+      "shortDesc": "Soin et abattage contrôlé d'arbres de grande taille (pins, eucalyptus) par grimpeur-élagueur ou nacelle avec broyage et évacuation des déchets."
+    },
+    "mantenimiento_jardines": {
+      "name": "Entretien de Jardins & Domaines",
+      "shortDesc": "Entretien complet régulier : tonte, débroussaillage de parcelles, fertilisation organique, taille des haies et traitements phytosanitaires."
+    },
+    "comunidades": {
+      "name": "Entretien de Résidences & Copropriétés",
+      "shortDesc": "Contrats d'entretien annuel sur mesure pour copropriétés, complexes hôteliers et espaces verts à Grenade, Malaga et Almería."
+    },
+    "diseno_jardines": {
+      "name": "Création de Jardins & Gazon Synthétique",
+      "shortDesc": "Paysagisme méditerranéen durable, jardins secs économes en eau et installation de pelouses artificielles haute densité."
+    },
+    "piscinas": {
+      "name": "Entretien & Remise en Service de Piscines (Sexipool)",
+      "shortDesc": "Contrôle chimique et sanitaire de l'eau, électrolyse au sel, révision des pompes et filtres pour une eau cristalline."
+    }
+  },
+  "extras": {
+    "riego": {
+      "name": "Arrosage automatique connecté",
+      "description": "Programmation WiFi avec capteur de pluie et électrovannes pour économiser 50% d'eau"
+    },
+    "iluminacion": {
+      "name": "Pack d'éclairage LED décoratif",
+      "description": "Spots encastrés et rubans LED étanches IP68 pour ambiance nocturne chaleureuse"
+    },
+    "desescombro": {
+      "name": "Évacuation écologique des déchets et gravats",
+      "description": "Nettoyage du chantier, chargement en camion et acheminement vers centre de tri agréé"
+    }
+  },
+  "gallery": {
+    "gal-1": {
+      "title": "Installation de gazon synthétique et aménagement en villa",
+      "location": "Almuñécar"
+    },
+    "gal-2": {
+      "title": "Élagage et soins de palmiers en bord de piscina",
+      "location": "La Herradura"
+    },
+    "gal-3": {
+      "title": "Entretien et taille de palmiers sur terrain en pente",
+      "location": "Cotobro"
+    },
+    "gal-4": {
+      "title": "Aménagement paysager avec xérophytes, haies et palmiers",
+      "location": "Marina del Este"
+    },
+    "gal-5": {
+      "title": "Rénovation de plage de piscine et taille de haies",
+      "location": "Punta de la Mona"
+    }
+  },
+  "reviews": [
+    {
+      "id": "rev-1",
+      "author": "Manuel Lopez Barrientos",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocL46imPVmhmh5sJlCPIOglrHJgR9maU8q0J-GrHvFo9wTeJmQ=w36-h36-p-rp-mo-br100",
+      "stars": 5,
+      "date": "Il y a 2 semaines",
+      "text": "Service exceptionnel de Kevin et de son équipe ! Ils ont réalisé un élagage en hauteur magnifique à un très bon prix, et ont laissé le chantier parfaitement propre et impeccable.",
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xCemFEVjFTV2xFY1ZKSlVFdE9hRk5uY2s5R1lXYxAB!2m1!1s0x0:0xb6165467fb4f65dc!3m1!1s2@1:Ci9DQUlRQUNvZENodHljRjlvT2xCemFEVjFTV2xFY1ZKSlVFdE9hRk5uY2s5R1lXYxAB?hl=fr",
+      "source": "Google Maps"
+    },
+    {
+      "id": "rev-2",
+      "author": "Annette Svensson",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJCoYXq72_f9sJUCCayFJppNLL0bGi33kE_IGWNYXWDb6mSkQ=w36-h36-p-rp-mo-br100",
+      "stars": 5,
+      "date": "Il y a 5 mois",
+      "text": "Nous avons fait appel à Sexigarden pour nettoyer et tailler 5 grands palmiers. Travail remarquable, rapide, chantier débarrassé de tous les résidus. Très aimables et hautement recommandés. /Annette",
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pobmFHVkhNM1ZVWXpWcWNVVkxkME01TVRoelkwRRAB!2m1!1s0x0:0xb6165467fb4f65dc!3m1!1s2@1:Ci9DQUlRQUNvZENodHljRjlvT2pobmFHVkhNM1ZVWXpWcWNVVkxkME01TVRoelkwRRAB?hl=fr",
+      "source": "Google Maps"
+    },
+    {
+      "id": "rev-3",
+      "author": "Jose Antonio Garcia",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJzPtOTuv5JNGyrqGZdcCNHWPouiAsHSe8viMD-pxf8JncjLAmJ=w36-h36-p-rp-mo-ba12-br100",
+      "stars": 5,
+      "date": "Il y a 6 mois",
+      "text": "Kevin et Michael ont effectué l'élagage en hauteur de notre palmier. Très sympathiques, sérieux, rapides et efficaces. À recommander vivement !",
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tFdE9XZEdRV3RzUTBKeFluWnJUR1Z6YlhrMVZuYxAB!2m1!1s0x0:0xb6165467fb4f65dc!3m1!1s2@1:Ci9DQUlRQUNvZENodHljRjlvT2tFdE9XZEdRV3RzUTBKeFluWnJUR1Z6YlhrMVZuYxAB?hl=fr",
+      "source": "Google Maps"
+    }
+  ],
+  "faqs": [
+    {
+      "id": "faq-1",
+      "question": "Le devis et la première visite technique sont-ils gratuits ?",
+      "answer": "Oui, absolument gratuits et sans engagement. Nous nous déplaçons chez vous à Almuñécar, La Herradura, Salobreña ou Motril pour prendre des mesures précises et concevoir une proposition sur mesure."
+    },
+    {
+      "id": "faq-2",
+      "question": "Quel est le délai pour poser du gazon synthétique ou refaire un jardin ?",
+      "answer": "Pour une surface moyenne (40 à 80 m²), la pose du gazon prend généralement 2 à 3 jours ouvrés. Les rénovations intégrales avec maçonnerie et margelles nécessitent entre 1 et 3 semaines selon l'ampleur."
+    },
+    {
+      "id": "faq-3",
+      "question": "Quelles garanties offrez-vous sur les matériaux et la pose ?",
+      "answer": "Notre gazon synthétique bénéficie de jusqu'à 8 ans de garantie fabricant contre les UV et la décoloration. Tous nos travaux de maçonnerie, d'étanchéité et de pavage sont couverts par les garanties légales."
+    },
+    {
+      "id": "faq-4",
+      "question": "Quelles sont les modalités de règlement ?",
+      "answer": "Nous établissons un calendrier de paiements échelonnés par jalons : un acompte à la commande pour la fourniture des matériaux, des règlements intermédiaires selon l'avancement et le solde après réception complète des travaux."
+    }
+  ],
+  "ui": {
+    "meta": {
+      "title": "Sexigarden | Élagage de Palmiers, Abattage Délicat & Parcs à Grenade, Malaga, Almería",
+      "description": "Sexigarden: Entreprise spécialisée dans l'élagage de palmiers, l'abattage d'arbres en hauteur et l'entretien de parcs et résidences à Grenade, Malaga, Almería et Costa Tropical. Tél : +34 673 71 48 66."
+    },
+    "nav": {
+      "brandAria": "Accueil Sexigarden",
+      "services": "Services",
+      "estimator": "Simulateur",
+      "gallery": "Projets",
+      "reviews": "Avis",
+      "contact": "Contact",
+      "langAria": "Changer de langue",
+      "mobileAria": "Navigation mobile",
+      "waHeaderMsg": "Bonjour, je souhaite demander un devis pour un projet à Almuñécar ou dans les environs"
+    },
+    "hero": {
+      "badge": "🌴 Spécialistes de l'Élagage de Palmiers & Travaux Arboricoles en Hauteur",
+      "title": "Entretien Expert d'Espaces Verts, <span>Élagage en Hauteur</span> & Palmiers",
+      "description": "Soins et élagage de palmiers, abattage délicat d'arbres de grande taille et entretien complet de propriétés et résidences à Grenade, Malaga, Almería et Costa Tropical.",
+      "waCta": "Devis via WhatsApp",
+      "waMsg": "Bonjour, je souhaite demander un devis pour des travaux d'élagage ou l'entretien de jardin",
+      "estimatorCta": "Calculer un Devis en Ligne",
+      "trust1": "✔ Intervention à Grenade, Malaga et Almería",
+      "trust2": "✔ Grimpeurs professionnels & nacelles élévatrices",
+      "trust3": "✔ Visite technique et devis gratuits sans engagement"
+    },
+    "services": {
+      "tag": "Nos Services",
+      "title": "Spécialistes en Élagage et Parcs",
+      "subtitle": "Services professionnels d'élagage en hauteur, traitement du charançon rouge et entretien complet de parcs à Grenade, Malaga et Almería."
+    },
+    "estimator": {
+      "tag": "Simulateur en Ligne",
+      "title": "Calculez Votre Devis Estimatif",
+      "subtitle": "Tarifs configurés directement depuis notre base de données pour Almuñécar et ses environs.",
+      "serviceLabel": "1. Quel est votre besoin principal ?",
+      "unitPriceLabel": "Tarif de base",
+      "minPriceLabel": "Intervention minimum",
+      "areaLabel": "2. Surface approximative :",
+      "extrasLabel": "3. Ajouter des options complémentaires :",
+      "resultTag": "Fourchette de Prix Estimée",
+      "resultNote": "* Estimation indicative comprenant matériaux de première qualité et pose professionnelle. Devis ferme et définitif après visite technique gratuite sur place.",
+      "waCta": "Demander une visite technique sur WhatsApp",
+      "orDivider": "ou demandez un devis formel par Email",
+      "emailCta": "Envoyer la demande par Email",
+      "notesLabel": "Détails complémentaires (facultatif)",
+      "notesPlaceholder": "Commune exacte, hauteur des arbres, accès nacelle ou photos du jardin..."
+    },
+    "gallery": {
+      "tag": "Travaux & Chantiers",
+      "title": "Nos Réalisations à Almuñécar & Costa Tropical",
+      "subtitle": "Photos de nos chantiers d'élagage, palmiers, jardins et piscines sur la Costa Tropical.",
+      "filterAll": "Tous les Projets",
+      "filterPoda": "Élagage de Palmiers",
+      "filterCesped": "Gazon Synthétique",
+      "filterJardineria": "Jardins",
+      "filterPiscinas": "Piscines"
+    },
+    "reviews": {
+      "tag": "Avis sur Google",
+      "title": "Ce que Disent nos Clients",
+      "subtitle": "Avis de propriétaires à Almuñécar et sur la Costa Tropical. Cliquez sur l'icône Google pour consulter chaque avis directement sur Google Maps.",
+      "viewAll": "Consulter les 37 avis sur Google Maps ↗",
+      "writeReview": "Laisser un avis sur Google ✍️"
+    },
+    "contact": {
+      "tag": "Contact & Localisation",
+      "title": "Assistance Directe & Visites Techniques",
+      "subtitle": "Contactez directement notre équipe technique pour toute urgence ou demande de visite sur Almuñécar et sa région.",
+      "cardPhoneTitle": "Téléphones Directs",
+      "cardPhoneDesc": "Appelez-nous pour échanger directement avec Kevin ou notre secrétariat opérationnel.",
+      "infoWaLabel": "Mobile / WhatsApp Kevin",
+      "infoLandlineLabel": "Téléphone Fixe / Bureau",
+      "cardWaTitle": "WhatsApp Immédiat",
+      "cardWaDesc": "Envoyez-nous photos ou vidéos de vos palmiers et jardins pour une première évaluation rapide.",
+      "cardWaBtn": "Ouvrir WhatsApp",
+      "waDefaultMsg": "Bonjour, je vous contacte depuis le site Sexigarden pour des travaux d'élagage ou de jardinage",
+      "cardEmailTitle": "Courrier Électronique",
+      "cardEmailDesc": "Pour propositions commerciales, envoi de plans et facturation copropriétés.",
+      "infoEmailSubject": "Demande de Devis Sexigarden",
+      "cardHoursTitle": "Horaires & Zone d'Intervention",
+      "cardHoursWeek": "Lundi au Vendredi",
+      "cardHoursSat": "Samedi",
+      "cardCoverageText": "Almuñécar, La Herradura, Salobreña, Motril, Grenade, Malaga et Almería",
+      "mapTitle": "Base Opérationnelle à Almuñécar",
+      "mapDesc": "Emplacement stratégique sur la Costa Tropical pour des interventions rapides avec matériel et camion-nacelle.",
+      "infoLocationText": "Almuñécar (Grenade), Costa Tropical · Andalousie",
+      "infoSocialsTitle": "Nos Réseaux Sociaux",
+      "mapOpenBtn": "Ouvrir sur Google Maps ↗",
+      "goToEstimatorBtn": "Calculer un Devis en Ligne",
+      "formSubject": "🌱 [Sexigarden] Nouvelle Demande de Devis",
+      "nameLabel": "Nom complet *",
+      "namePlaceholder": "Votre nom",
+      "phoneLabel": "Numéro de téléphone *",
+      "phonePlaceholder": "ex. +34 600 00 00 00",
+      "emailLabel": "Adresse e-mail *",
+      "emailPlaceholder": "votre@email.fr",
+      "serviceLabel": "Service souhaité",
+      "messageLabel": "Détails du projet",
+      "messagePlaceholder": "Indiquez les dimensions approximatives, la commune (Almuñécar, La Herradura, etc.) et votre besoin.",
+      "privacyConsent": "J'ai lu et j'accepte la",
+      "privacyLink": "Politique de Confidentialité",
+      "gdprTitle": "🔒 Informations sur la protection des données (RGPD) :",
+      "gdpr1Label": "Nom commercial :",
+      "gdpr1Text": "Sexigarden · Sexipool.",
+      "gdpr2Label": "Finalité :",
+      "gdpr2Text": "Répondre à votre demande de devis et d'intervention pour vos travaux extérieurs.",
+      "gdpr3Label": "Légitimation :",
+      "gdpr3Text": "Votre consentement exprès lors de l'envoi du formulaire.",
+      "gdpr4Label": "Destinataires :",
+      "gdpr4Text": "Aucune cession de données à des tiers sauf obligation légale.",
+      "gdpr5Label": "Droits :",
+      "gdpr5Text": "Accès, rectification, suppression et autres droits dans notre",
+      "submitBtn": "Envoyer la Demande de Devis",
+      "infoSocialsTitle": "Suivez-nous sur les Réseaux Sociaux"
+    },
+    "footer": {
+      "desc": "Élagage d'arbres, entretien de palmiers et espaces verts pour particuliers et résidences à Grenade, Malaga, Almería et Costa Tropical. Section piscines : Sexipool.",
+      "quickLinksTitle": "Accès Rapide",
+      "directContactTitle": "Contact Direct",
+      "legalTitle": "Informations Légales",
+      "legalNotice": "Mentions Légales",
+      "privacyPolicy": "Politique de Confidentialité",
+      "cookiesPolicy": "Politique de Cookies",
+      "copyright": "Sexigarden - Almuñécar · Grenade · Malaga · Almería. Tous droits réservés."
+    }
+  }
+}

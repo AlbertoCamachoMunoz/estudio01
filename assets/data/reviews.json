@@ -1,0 +1,32 @@
+[
+  {
+    "id": "rev-1",
+    "author": "Manuel Lopez Barrientos",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocL46imPVmhmh5sJlCPIOglrHJgR9maU8q0J-GrHvFo9wTeJmQ=w36-h36-p-rp-mo-br100",
+    "stars": 5,
+    "date": "Hace 2 semanas",
+    "text": "Servicio excepcional de Kevin y su equipo!!! Nos han realizado una poda en altura magnifica y con un precio muy bueno. Y lo han dejado todo perfecto y muy recogido. Confiaremos todos nuestro proximos trabajos en esta gran empresa!!!",
+    "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xCemFEVjFTV2xFY1ZKSlVFdE9hRk5uY2s5R1lXYxAB!2m1!1s0x0:0xb6165467fb4f65dc!3m1!1s2@1:Ci9DQUlRQUNvZENodHljRjlvT2xCemFEVjFTV2xFY1ZKSlVFdE9hRk5uY2s5R1lXYxAB?hl=es",
+      "source": "Google Maps"
+  },
+  {
+    "id": "rev-2",
+    "author": "Annette Svensson",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJCoYXq72_f9sJUCCayFJppNLL0bGi33kE_IGWNYXWDb6mSkQ=w36-h36-p-rp-mo-br100",
+    "stars": 5,
+    "date": "Hace 5 meses",
+    "text": "Contratamos a Sexigarden para limpiar y podar 5 palmeras altas. Hicieron un trabajo excelente, rápido, limpiaron y se llevaron todos los restos de las palmeras. Estamos muy satisfechos con su trabajo y su trato amable. Los recomendamos ampliamente. /Annette",
+    "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pobmFHVkhNM1ZVWXpWcWNVVkxkME01TVRoelkwRRAB!2m1!1s0x0:0xb6165467fb4f65dc!3m1!1s2@1:Ci9DQUlRQUNvZENodHljRjlvT2pobmFHVkhNM1ZVWXpWcWNVVkxkME01TVRoelkwRRAB?hl=es",
+      "source": "Google Maps"
+  },
+  {
+    "id": "rev-3",
+    "author": "Jose Antonio Garcia",
+    "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJzPtOTuv5JNGyrqGZdcCNHWPouiAsHSe8viMD-pxf8JncjLAmJ=w36-h36-p-rp-mo-ba12-br100",
+    "stars": 5,
+    "date": "Hace 6 meses",
+    "text": "Kevin y Michael nos han realizado la poda en altura de nuestro palmito. Súper amables, serios, rápidos y eficientes, como deben ser las cosas. ¡Muy recomendables!",
+    "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tFdE9XZEdRV3RzUTBKeFluWnJUR1Z6YlhrMVZuYxAB!2m1!1s0x0:0xb6165467fb4f65dc!3m1!1s2@1:Ci9DQUlRQUNvZENodHljRjlvT2tFdE9XZEdRV3RzUTBKeFluWnJUR1Z6YlhrMVZuYxAB?hl=es",
+      "source": "Google Maps"
+  }
+]

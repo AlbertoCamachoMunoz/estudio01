@@ -1,0 +1,12 @@
+{
+  "name": "sexi_garden",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "node dev-server.js",
+    "test": "node tests/test-all-json-databases.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.0"
+  }
+}

@@ -1,0 +1,8 @@
+[[hooks.SessionStart]]
+matcher = "^(startup|resume|clear|compact)$"
+
+[[hooks.SessionStart.hooks]]
+type = "command"
+command = "cmd.exe /d /c type OPENAI.md"
+timeout = 10
+additionalContextLimit = 0

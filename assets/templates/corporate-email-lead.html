@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nuevo Presupuesto - Sexigarden</title>
+</head>
+<body style="margin: 0; padding: 20px; background-color: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #1e293b;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width: 620px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+    
+    <!-- Header -->
+    <tr>
+      <td style="background: linear-gradient(135deg, #173829 0%, #0f241a 100%); padding: 32px 24px; text-align: center; color: #ffffff;">
+        <div style="font-size: 28px; font-weight: 800; letter-spacing: -0.5px;">
+          🌱 Sexy<span style="color: #e5a93c;">Garden</span>
+        </div>
+        <div style="font-size: 13px; color: #cbd5e1; margin-top: 6px; text-transform: uppercase; letter-spacing: 1px;">
+          Reformas de Exteriores y Paisajismo · Almuñécar
+        </div>
+      </td>
+    </tr>
+
+    <!-- Notification Badge -->
+    <tr>
+      <td style="padding: 24px 28px 12px 28px;">
+        <div style="background-color: #ecfdf5; border-left: 4px solid #10b981; padding: 12px 16px; border-radius: 6px; font-size: 14px; color: #065f46; font-weight: 600;">
+          🔔 Nueva Solicitud de Presupuesto Recibida desde la Web
+        </div>
+      </td>
+    </tr>
+
+    <!-- Lead Info Table -->
+    <tr>
+      <td style="padding: 12px 28px 20px 28px;">
+        <h2 style="font-size: 18px; color: #173829; margin: 0 0 16px 0; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px;">
+          Datos del Cliente Potencial
+        </h2>
+        
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="8" style="font-size: 14px; border-collapse: collapse;">
+          <tr style="background-color: #f8fafc;">
+            <td width="35%" style="font-weight: 700; color: #475569; border-bottom: 1px solid #e2e8f0;">👤 Nombre Completo:</td>
+            <td style="color: #0f172a; font-weight: 600; border-bottom: 1px solid #e2e8f0;">{{NOMBRE_CLIENTE}}</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; color: #475569; border-bottom: 1px solid #e2e8f0;">📱 Teléfono Móvil:</td>
+            <td style="border-bottom: 1px solid #e2e8f0;">
+              <a href="tel:{{TELEFONO_CLIENTE}}" style="color: #173829; font-weight: 700; text-decoration: none;">
+                {{TELEFONO_CLIENTE}}
+              </a>
+            </td>
+          </tr>
+          <tr style="background-color: #f8fafc;">
+            <td style="font-weight: 700; color: #475569; border-bottom: 1px solid #e2e8f0;">✉️ Correo Electrónico:</td>
+            <td style="border-bottom: 1px solid #e2e8f0;">
+              <a href="mailto:{{EMAIL_CLIENTE}}" style="color: #0284c7; text-decoration: none;">
+                {{EMAIL_CLIENTE}}
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; color: #475569; border-bottom: 1px solid #e2e8f0;">🌿 Servicio Solicitado:</td>
+            <td style="color: #173829; font-weight: 700; border-bottom: 1px solid #e2e8f0;">{{SERVICIO_SOLICITADO}}</td>
+          </tr>
+          <tr style="background-color: #f8fafc;">
+            <td style="font-weight: 700; color: #475569; border-bottom: 1px solid #e2e8f0;">📍 Zona de Cobertura:</td>
+            <td style="color: #475569; border-bottom: 1px solid #e2e8f0;">Almuñécar y Costa Tropical (Granada)</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 700; color: #475569;">📅 Fecha y Hora:</td>
+            <td style="color: #64748b;">{{FECHA_SOLICITUD}}</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- Message Details Box -->
+    <tr>
+      <td style="padding: 0 28px 24px 28px;">
+        <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px;">
+          <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; color: #64748b; margin-bottom: 8px; letter-spacing: 0.5px;">
+            📝 Mensaje y Detalles del Proyecto:
+          </div>
+          <div style="font-size: 15px; line-height: 1.6; color: #1e293b; font-style: italic;">
+            "{{MENSAJE_CLIENTE}}"
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Action Buttons -->
+    <tr>
+      <td style="padding: 0 28px 32px 28px; text-align: center;">
+        <table role="presentation" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
+          <tr>
+            <td style="padding: 0 6px;">
+              <a href="https://wa.me/34{{TELEFONO_RAW}}?text=Hola%20{{NOMBRE_ENCODED}}%2C%20nos%20ponemos%20en%20contacto%20desde%20Sexy%20Garden%20respecto%20a%20tu%20solicitud%20de%20presupuesto" 
+                 style="display: inline-block; background-color: #25d366; color: #ffffff; font-weight: 700; font-size: 14px; padding: 12px 20px; border-radius: 6px; text-decoration: none;">
+                💬 Responder por WhatsApp
+              </a>
+            </td>
+            <td style="padding: 0 6px;">
+              <a href="tel:{{TELEFONO_RAW}}" 
+                 style="display: inline-block; background-color: #173829; color: #ffffff; font-weight: 700; font-size: 14px; padding: 12px 20px; border-radius: 6px; text-decoration: none;">
+                📞 Llamar Ahora
+              </a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- Footer -->
+    <tr>
+      <td style="background-color: #f8fafc; border-top: 1px solid #e2e8f0; padding: 20px 24px; text-align: center; font-size: 12px; color: #94a3b8;">
+        <div>🌱 <strong>Sexigarden</strong> · Granada · Málaga · Almería</div>
+        <div style="margin-top: 4px;">Atención al cliente: {{COMPANY_PHONE}} · {{COMPANY_EMAIL}}</div>
+        <div style="margin-top: 8px; color: #cbd5e1;">Este correo es una notificación interna generada por el formulario de la landing page.</div>
+      </td>
+    </tr>
+
+  </table>
+</body>
+</html>

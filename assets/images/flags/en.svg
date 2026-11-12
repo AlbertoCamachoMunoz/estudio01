@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <clipPath id="uk-circle-clip">
+    <rect width="60" height="60"/>
+  </clipPath>
+  <g clip-path="url(#uk-circle-clip)">
+    <rect width="60" height="60" fill="#00247d"/>
+    <!-- Diagonal white broad lines -->
+    <path d="M0,0 L60,60 M60,0 L0,60" stroke="#ffffff" stroke-width="10"/>
+    <!-- Diagonal red stripes (counterchanged) -->
+    <path d="M0,0 L25,25" stroke="#cf142b" stroke-width="3.5"/>
+    <path d="M60,60 L35,35" stroke="#cf142b" stroke-width="3.5"/>
+    <path d="M60,0 L35,25" stroke="#cf142b" stroke-width="3.5"/>
+    <path d="M0,60 L25,35" stroke="#cf142b" stroke-width="3.5"/>
+    <!-- St George white cross -->
+    <path d="M30,0 V60 M0,30 H60" stroke="#ffffff" stroke-width="18"/>
+    <!-- St George red cross -->
+    <path d="M30,0 V60 M0,30 H60" stroke="#cf142b" stroke-width="10"/>
+  </g>
+</svg>

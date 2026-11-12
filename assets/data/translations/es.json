@@ -1,0 +1,124 @@
+{
+  "company": {
+    "slogan": "Ingeniería de Software, IA Agéntica y Producción Audiovisual para Pymes y Negocios Locales",
+    "coverageArea": "Motril, Provincia de Granada, Málaga y Provincia, y Almería (desplazamiento in situ para rodajes y consultoría)",
+    "schedule": "Lunes a Viernes de 9:00 a 19:00 (Agentes IA operativos 24/7)"
+  },
+  "services": {
+    "web_landing": {
+      "name": "Webs de Alta Conversión (0 € Servidor)",
+      "shortDesc": "Landing pages ultrarrápidas (Lighthouse 95+) diseñadas para convertir visitas en clientes por WhatsApp y formulario, sin cuotas mensuales de hosting abusivas."
+    },
+    "pwa_software": {
+      "name": "PWAs y Apps para Empleados en Calle",
+      "shortDesc": "Aplicaciones móviles a medida para firmar partes de trabajo, subir fotos de obra, fichar horario o calcular presupuestos al instante desde el teléfono."
+    },
+    "audiovisual_reels": {
+      "name": "Fotografía In Situ y Vídeo Vertical (Reels / TikTok)",
+      "shortDesc": "Nos desplazamos a tu empresa o tus obras en Granada, Málaga y Almería para grabar contenido real y profesional que genera confianza inmediata."
+    },
+    "social_gbp": {
+      "name": "Redes Sociales y Google Business Profile",
+      "shortDesc": "Posicionamos tu negocio en el Top de Google Maps en tu comarca, gestionamos tus reseñas verificadas y publicamos contenido constante que atrae clientes."
+    },
+    "ia_agentes": {
+      "name": "Agentes de IA 24/7 (WhatsApp y Web)",
+      "shortDesc": "Asistentes inteligentes entrenados con las tarifas y preguntas de tu negocio: atienden en 3 segundos, filtran curiosos y agendan citas en tu móvil."
+    },
+    "pack_integral": {
+      "name": "Pack Digitalización 360º (Web + Vídeo + IA)",
+      "shortDesc": "El ecosistema completo para liderar tu sector local: nueva web con calculadora, sesión de rodaje profesional in situ y automatización de captación."
+    }
+  },
+  "extras": {
+    "calculadora_interactiva": {
+      "name": "Calculadora interactiva de presupuestos a medida",
+      "description": "Cotizador automático en tiempo real integrado en tu web para filtrar clientes cualificados"
+    },
+    "multidioma_seo": {
+      "name": "Pack Multidioma Internacional (ES / EN / DE / FR)",
+      "description": "Ideal para captar residentes extranjeros y clientes de alto poder adquisitivo en la costa"
+    },
+    "rodaje_insitu": {
+      "name": "Jornada de rodaje in situ (Foto + 4 Reels editados)",
+      "description": "Desplazamiento a tus instalaciones o proyectos en Granada, Málaga o Almería"
+    },
+    "agente_wa_ia": {
+      "name": "Agente IA cualificador en WhatsApp 24/7",
+      "description": "Atención automática fuera de horario y resumen del cliente directo a tu móvil"
+    }
+  },
+  "gallery": {
+    "case-sexigarden-web": {
+      "title": "Caso de Éxito #1: Sexi-Garden · Web 4 Idiomas + Calculadora + 0 € Servidor",
+      "location": "Costa Tropical · Granada y Málaga"
+    },
+    "case-sexigarden-media": {
+      "title": "Sexi-Garden · Fotografía Profesional In Situ y Reels de Poda en Altura",
+      "location": "Almuñécar y La Herradura"
+    },
+    "case-pwa-partes": {
+      "title": "App Interna (PWA) · Partes de Trabajo en Calle y Presupuestos Móviles",
+      "location": "Motril, Granada y Málaga"
+    },
+    "case-ia-cualificador": {
+      "title": "Agente IA Conversacional 24/7 · Cualificación Automática en WhatsApp",
+      "location": "Granada, Málaga y Almería"
+    },
+    "case-seo-gbp": {
+      "title": "Estrategia Google Business Profile · 37 Reseñas 5★ y Liderazgo Comarcal",
+      "location": "Costa Tropical y Andalucía Oriental"
+    }
+  },
+  "reviews": [
+    {
+      "id": "rev-1",
+      "author": "Kevin · Gerente de Sexigarden & Sexipool",
+      "stars": 5,
+      "date": "Caso de Éxito Real · Costa Tropical",
+      "text": "Pasamos de no tener presencia digital a contar con una web ultrarrápida en 4 idiomas (español, inglés, alemán y francés) con calculadora de presupuestos propia. Ahora los propietarios extranjeros y comunidades nos escriben por WhatsApp con el presupuesto ya calculado.",
+      "url": "#portfolio",
+      "source": "Cliente Verificado · Web + Calculadora + Redes"
+    },
+    {
+      "id": "rev-2",
+      "author": "Dirección Técnica · Reformas y Servicios",
+      "stars": 5,
+      "date": "Motril y Provincia de Granada",
+      "text": "Perdíamos horas cada viernes pasando partes de papel y buscando fotos por WhatsApp. Con la app móvil de partes de trabajo y el cotizador online hemos ahorrado más de 8 horas semanales de oficina y damos una imagen impecable.",
+      "url": "#lab",
+      "source": "Cliente Verificado · PWA a Medida & Automatización"
+    },
+    {
+      "id": "rev-3",
+      "author": "Clínica & Negocio Local en Costa del Sol",
+      "stars": 5,
+      "date": "Málaga y Provincia",
+      "text": "Lo que más valoramos de Pixel & Web es que unen los dos mundos: vienen en persona a grabar vídeos profesionales para Instagram y a la vez son ingenieros que te montan la web y la IA sin cobrarte cuotas mensuales absurdas.",
+      "url": "#contact",
+      "source": "Cliente Verificado · Producción Audiovisual + IA"
+    }
+  ],
+  "faqs": [
+    {
+      "id": "faq-1",
+      "question": "¿Por qué decís que vuestras webs tienen coste de servidor 0 €/mes?",
+      "answer": "Porque diseñamos con arquitectura estática moderna (como esta misma web y la de nuestro caso de éxito Sexi-Garden) desplegada en redes globales como Vercel o Cloudflare Pages. No dependes de un WordPress lento y vulnerable que requiere pagar 50 €/mes de mantenimiento solo para que no se caiga. Solo pagas tu dominio anual (~12 €/año)."
+    },
+    {
+      "id": "faq-2",
+      "question": "¿Os desplazáis personalmente a grabar las fotos y vídeos de mi negocio?",
+      "answer": "Sí. Nuestra base operativa está en Motril y nos desplazamos in situ por toda la provincia de Granada, Málaga y provincia, y Almería. Grabamos a tu equipo trabajando en proyectos reales para que tu web y tus redes transmitan máxima autenticidad."
+    },
+    {
+      "id": "faq-3",
+      "question": "¿Qué es exactamente una PWA (App para empleados en calle) y cómo me ahorra dinero?",
+      "answer": "Es una aplicación web instalable en el móvil de tus trabajadores (sin pasar por las trabas de App Store). Desde ella pueden rellenar partes de trabajo en 30 segundos, adjuntar fotos del antes/después, recoger la firma del cliente en pantalla y generar el albarán o presupuesto al instante."
+    },
+    {
+      "id": "faq-4",
+      "question": "¿Cómo funciona un Agente de IA en mi WhatsApp o en mi Web?",
+      "answer": "Configuramos un asistente inteligente con las tarifas, servicios y zonas de tu empresa. Cuando un cliente escribe un sábado a las 22:00 o mientras estás trabajando, el agente le responde al segundo, averigua qué necesita, le da una orientación y te deja el contacto filtrado y listo para cerrar."
+    }
+  ]
+}

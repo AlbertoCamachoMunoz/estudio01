@@ -1,0 +1,4 @@
+# Shell scripts must keep LF line endings on Windows too (the git hooks live in .sddd/githooks)
+*.sh text eol=lf
+# cmd may not find the goto labels of a batch file with LF line endings
+*.bat text eol=crlf

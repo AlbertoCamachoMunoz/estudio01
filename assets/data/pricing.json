@@ -1,0 +1,79 @@
+{
+  "currency": "EUR",
+  "currencySymbol": "€",
+  "unitLabel": "módulos",
+  "services": [
+    {
+      "id": "web_landing",
+      "icon": "⚡",
+      "unitPricePerM2": 120,
+      "minPrice": 390,
+      "isFeatured": true,
+      "category": "web",
+      "pillar": "Pilar 1 · Web & Software"
+    },
+    {
+      "id": "pwa_software",
+      "icon": "📱",
+      "unitPricePerM2": 180,
+      "minPrice": 590,
+      "isFeatured": true,
+      "category": "web",
+      "pillar": "Pilar 1 · Web & Software"
+    },
+    {
+      "id": "audiovisual_reels",
+      "icon": "🎬",
+      "unitPricePerM2": 95,
+      "minPrice": 290,
+      "isFeatured": true,
+      "category": "audiovisual",
+      "pillar": "Pilar 2 · Foto, Vídeo & Redes"
+    },
+    {
+      "id": "social_gbp",
+      "icon": "📍",
+      "unitPricePerM2": 85,
+      "minPrice": 250,
+      "isFeatured": true,
+      "category": "audiovisual",
+      "pillar": "Pilar 2 · Foto, Vídeo & Redes"
+    },
+    {
+      "id": "ia_agentes",
+      "icon": "🤖",
+      "unitPricePerM2": 150,
+      "minPrice": 450,
+      "isFeatured": true,
+      "category": "ia",
+      "pillar": "Pilar 3 · IA & Automatización"
+    },
+    {
+      "id": "pack_integral",
+      "icon": "🚀",
+      "unitPricePerM2": 220,
+      "minPrice": 890,
+      "isFeatured": true,
+      "category": "pack",
+      "pillar": "Solución Llave en Mano 360º"
+    }
+  ],
+  "extras": [
+    {
+      "id": "calculadora_interactiva",
+      "flatPrice": 240
+    },
+    {
+      "id": "multidioma_seo",
+      "flatPrice": 220
+    },
+    {
+      "id": "rodaje_insitu",
+      "flatPrice": 290
+    },
+    {
+      "id": "agente_wa_ia",
+      "flatPrice": 350
+    }
+  ]
+}

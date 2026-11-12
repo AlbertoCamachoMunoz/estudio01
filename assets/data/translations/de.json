@@ -1,0 +1,251 @@
+{
+  "company": {
+    "slogan": "Spezialisten für Palmenschnitt, Baumpflege & professionelle Gartenpflege",
+    "coverageArea": "Granada, Málaga, Almería und Costa Tropical (Spezialdienst für Baumarbeiten und Großanlagen)",
+    "schedule": "Montag bis Freitag von 8:00 bis 20:00 Uhr (Baumnotdienst verfügbar)"
+  },
+  "services": {
+    "poda_palmeras": {
+      "name": "Palmenschnitt & Rüsselkäfer-Behandlung",
+      "shortDesc": "Stammreinigung, Entfernung trockener Wedel und Früchte sowie zertifizierte präventive und kurative Behandlungen gegen den Roten Palmenrüssler."
+    },
+    "poda_altura": {
+      "name": "Baumpflege & kontrollierte Fällungen",
+      "shortDesc": "Sicherer Rückschnitt und kontrollierte Fällung von Großbäumen (Kiefern, Eukalyptus) per Seilklettertechnik oder Hubbühne inklusive Grüngutentsorgung."
+    },
+    "mantenimiento_jardines": {
+      "name": "Garten- & Grundstückspflege",
+      "shortDesc": "Umfassende regelmäßige Gartenpflege: Rasenmähen, Rodung, organische Düngung, Formschnitt von Hecken und Pflanzenschutz."
+    },
+    "comunidades": {
+      "name": "Pflege von Wohnanlagen & Gemeinschaftsgärten",
+      "shortDesc": "Maßgeschneiderte Jahrespflegeverträge für Eigentümergemeinschaften, Hotelanlagen und Residenzen in Granada, Málaga und Almería."
+    },
+    "diseno_jardines": {
+      "name": "Gartengestaltung & Kunstrasen",
+      "shortDesc": "Nachhaltiger mediterraner Landschaftsbau, wassersparende Bepflanzung und Verlegung von hochdichtem Premium-Kunstrasen."
+    },
+    "piscinas": {
+      "name": "Poolpflege & Wartungsservice (Sexipool)",
+      "shortDesc": "Wasseraufbereitung, Salzelektrolyse, Pumpenprüfung und professionelle Saisonvorbereitung für klares Badewasser."
+    }
+  },
+  "extras": {
+    "riego": {
+      "name": "Intelligente automatische Bewässerung",
+      "description": "WLAN-Steuerung mit Regensensor und Magnetventilen für bis zu 50 % Wasserersparnis"
+    },
+    "iluminacion": {
+      "name": "Dekoratives LED-Beleuchtungspaket",
+      "description": "Bodeneinbaustrahler und wasserdichte IP68-LED-Bänder für stimmungsvolle Abendatmosphäre"
+    },
+    "desescombro": {
+      "name": "Ökologische Bauschutt- und Abfallentsorgung",
+      "description": "Räumung, Lkw-Beladung und zertifizierter Transport zur autorisierten Recyclinganlage"
+    }
+  },
+  "gallery": {
+    "gal-1": {
+      "title": "Kunstrasenverlegung & Landschaftsbau in Villa",
+      "location": "Almuñécar"
+    },
+    "gal-2": {
+      "title": "Palmenschnitt & Pflege direkt am Pool",
+      "location": "La Herradura"
+    },
+    "gal-3": {
+      "title": "Hanggrundstückspflege & Palmenschnitt",
+      "location": "Cotobro"
+    },
+    "gal-4": {
+      "title": "Gartengestaltung mit Trockenpflanzen, Hecken & Palmen",
+      "location": "Marina del Este"
+    },
+    "gal-5": {
+      "title": "Poolumrandung & formschöner Heckenschnitt",
+      "location": "Punta de la Mona"
+    }
+  },
+  "reviews": [
+    {
+      "id": "rev-1",
+      "author": "Manuel Lopez Barrientos",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocL46imPVmhmh5sJlCPIOglrHJgR9maU8q0J-GrHvFo9wTeJmQ=w36-h36-p-rp-mo-br100",
+      "stars": 5,
+      "date": "Vor 2 Wochen",
+      "text": "Außergewöhnlicher Service von Kevin und seinem Team! Sie haben eine hervorragende Baumpflege in großer Höhe zu einem sehr fairen Preis durchgeführt und alles perfekt und sauber hinterlassen.",
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xCemFEVjFTV2xFY1ZKSlVFdE9hRk5uY2s5R1lXYxAB!2m1!1s0x0:0xb6165467fb4f65dc!3m1!1s2@1:Ci9DQUlRQUNvZENodHljRjlvT2xCemFEVjFTV2xFY1ZKSlVFdE9hRk5uY2s5R1lXYxAB?hl=de",
+      "source": "Google Maps"
+    },
+    {
+      "id": "rev-2",
+      "author": "Annette Svensson",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJCoYXq72_f9sJUCCayFJppNLL0bGi33kE_IGWNYXWDb6mSkQ=w36-h36-p-rp-mo-br100",
+      "stars": 5,
+      "date": "Vor 5 Monaten",
+      "text": "Wir haben Sexigarden für das Säubern und Beschneiden von 5 hohen Palmen engagiert. Sie haben hervorragende und schnelle Arbeit geleistet und alle Pflanzenreste mitgenommen. Sehr freundlich und absolut empfehlenswert. /Annette",
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pobmFHVkhNM1ZVWXpWcWNVVkxkME01TVRoelkwRRAB!2m1!1s0x0:0xb6165467fb4f65dc!3m1!1s2@1:Ci9DQUlRQUNvZENodHljRjlvT2pobmFHVkhNM1ZVWXpWcWNVVkxkME01TVRoelkwRRAB?hl=de",
+      "source": "Google Maps"
+    },
+    {
+      "id": "rev-3",
+      "author": "Jose Antonio Garcia",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJzPtOTuv5JNGyrqGZdcCNHWPouiAsHSe8viMD-pxf8JncjLAmJ=w36-h36-p-rp-mo-ba12-br100",
+      "stars": 5,
+      "date": "Vor 6 Monaten",
+      "text": "Kevin und Michael haben bei unserer Zwergpalme einen Rückschnitt in großer Höhe durchgeführt. Super freundlich, zuverlässig, schnell und effizient. Sehr empfehlenswert!",
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tFdE9XZEdRV3RzUTBKeFluWnJUR1Z6YlhrMVZuYxAB!2m1!1s0x0:0xb6165467fb4f65dc!3m1!1s2@1:Ci9DQUlRQUNvZENodHljRjlvT2tFdE9XZEdRV3RzUTBKeFluWnJUR1Z6YlhrMVZuYxAB?hl=de",
+      "source": "Google Maps"
+    }
+  ],
+  "faqs": [
+    {
+      "id": "faq-1",
+      "question": "Sind Kostenvoranschlag und Erstbesichtigung kostenlos?",
+      "answer": "Ja, vollkommen kostenlos und unverbindlich. Wir besuchen Ihre Immobilie in Almuñécar, La Herradura, Salobreña oder Motril für ein genaues Aufmaß vor Ort und erstellen ein detailliertes Festpreisangebot."
+    },
+    {
+      "id": "faq-2",
+      "question": "Wie lange dauert die Verlegung von Kunstrasen oder eine Gartenumgestaltung?",
+      "answer": "Bei mittleren Projekten (40 - 80 m²) dauert die Kunstrasenverlegung ca. 2 bis 3 Werktage. Umfassende Außenrenovierungen mit Mauerarbeiten und Poolumrandung benötigen je nach Umfang 1 bis 3 Wochen."
+    },
+    {
+      "id": "faq-3",
+      "question": "Welche Garantien bieten Sie auf Material und Ausführung?",
+      "answer": "Unser Premium-Kunstrasen verfügt über bis zu 8 Jahre Herstellergarantie gegen UV-Zersetzung und Ausbleichen. Auf alle handwerklichen Bauleistungen gewähren wir die volle gesetzliche Gewährleistung."
+    },
+    {
+      "id": "faq-4",
+      "question": "Wie erfolgt die Bezahlung des Projekts?",
+      "answer": "Wir arbeiten mit transparenten Meilenstein-Zahlungen: eine Anzahlung bei Vertragsabschluss für die Materialbeschaffung, Zwischenzahlungen nach Baufortschritt und die Schlusszahlung erst nach Ihrer vollständigen Abnahme."
+    }
+  ],
+  "ui": {
+    "meta": {
+      "title": "Sexigarden | Palmenschnitt, Baumpflege & Gartenbau in Granada, Málaga, Almería",
+      "description": "Sexigarden: Führende Fachleute für Palmenschnitt, Baumpflege in großer Höhe und Gartenpflege für Fincas und Wohnanlagen in Granada, Málaga, Almería und Costa Tropical. Tel: +34 673 71 48 66."
+    },
+    "nav": {
+      "brandAria": "Sexigarden Startseite",
+      "services": "Leistungen",
+      "estimator": "Kostenrechner",
+      "gallery": "Projekte",
+      "reviews": "Bewertungen",
+      "contact": "Kontakt",
+      "langAria": "Sprache ändern",
+      "mobileAria": "Mobile Navigation",
+      "waHeaderMsg": "Hallo, ich möchte ein Angebot für mein Projekt in Almuñécar oder Umgebung anfragen"
+    },
+    "hero": {
+      "badge": "🌴 Spezialisten für Palmenschnitt & Baumpflege in der Höhe",
+      "title": "Fachgerechte Gartenpflege, <span>Baumpflege</span> & Palmenschnitt",
+      "description": "Fachgerechte Sanierung von Palmen, kontrollierte Baumfällung und ganzheitliche Pflege von Fincas und Wohnanlagen in Granada, Málaga, Almería und an der Costa Tropical.",
+      "waCta": "Angebot per WhatsApp",
+      "waMsg": "Hallo, ich möchte ein Angebot für Baumpflege oder Gartenarbeiten anfragen",
+      "estimatorCta": "Online-Kosten berechnen",
+      "trust1": "✔ Einsatzgebiet: Granada, Málaga & Almería",
+      "trust2": "✔ Professionelle Seilklettertechnik & eigener Fuhrpark",
+      "trust3": "✔ Unverbindliche Besichtigung & transparentes Angebot"
+    },
+    "services": {
+      "tag": "Unsere Leistungen",
+      "title": "Spezialisten für Baumpflege und Gartenbau",
+      "subtitle": "Professionelle Baumpflege in der Höhe, Rüsselkäfer-Behandlung und ganzheitliche Pflege von Grundstücken in Granada, Málaga und Almería."
+    },
+    "estimator": {
+      "tag": "Online-Kostenrechner",
+      "title": "Berechnen Sie Ihr unverbindliches Angebot",
+      "subtitle": "Direkt konfigurierte Tarife für Almuñécar und Umgebung.",
+      "serviceLabel": "1. Welche Hauptleistung benötigen Sie?",
+      "unitPriceLabel": "Grundpreis",
+      "minPriceLabel": "Mindestauftrag",
+      "areaLabel": "2. Ungefähre Fläche:",
+      "extrasLabel": "3. Optionale Extras hinzufügen:",
+      "resultTag": "Geschätzte Preisspanne",
+      "resultNote": "* Ungefähre Schätzung inklusive hochwertiger Materialien und fachgerechter Montage. Verbindliches Festpreisangebot nach persönlicher Besichtigung vor Ort.",
+      "waCta": "Besichtigungstermin per WhatsApp anfragen",
+      "orDivider": "oder formelles Angebot per E-Mail anfordern",
+      "emailCta": "Anfrage per E-Mail absenden",
+      "notesLabel": "Zusätzliche Projektdetails (optional)",
+      "notesPlaceholder": "Genauer Standort, Baumhöhe, Kranzufahrt oder Fotos des Grundstücks..."
+    },
+    "gallery": {
+      "tag": "Arbeitsprojekte",
+      "title": "Unsere Arbeiten in Almuñécar & Costa Tropical",
+      "subtitle": "Fotos unserer Baumpflege-, Palmenschnitt-, Garten- und Poolprojekte an der Costa Tropical.",
+      "filterAll": "Alle Projekte",
+      "filterPoda": "Palmenschnitt",
+      "filterCesped": "Kunstrasen",
+      "filterJardineria": "Gartenbau",
+      "filterPiscinas": "Pools"
+    },
+    "reviews": {
+      "tag": "Google-Bewertungen",
+      "title": "Was Immobilienbesitzer an der Küste sagen",
+      "subtitle": "Kundenbewertungen aus Almuñécar und der Costa Tropical. Klicken Sie auf das Google-Symbol, um jede Bewertung direkt auf Google Maps einzusehen.",
+      "viewAll": "Alle 37 Bewertungen auf Google Maps anzeigen ↗",
+      "writeReview": "Bewertung auf Google abgeben ✍️"
+    },
+    "contact": {
+      "tag": "Kontakt & Standort",
+      "title": "Direkter Kontakt & Besichtigungstermine",
+      "subtitle": "Kontaktieren Sie unser Fachteam direkt für dringende Anfragen oder Vor-Ort-Besichtigungen in Almuñécar und Umgebung.",
+      "cardPhoneTitle": "Direkte Telefonnummern",
+      "cardPhoneDesc": "Rufen Sie uns an, um direkt mit Kevin oder unserem Einsatzbüro zu sprechen.",
+      "infoWaLabel": "Mobil / WhatsApp Kevin",
+      "infoLandlineLabel": "Festnetz / Büro",
+      "cardWaTitle": "Sofortiges WhatsApp",
+      "cardWaDesc": "Senden Sie uns Fotos oder Videos Ihrer Palmen und Ihres Gartens für eine schnelle Einschätzung.",
+      "cardWaBtn": "WhatsApp öffnen",
+      "waDefaultMsg": "Hallo, ich kontaktiere Sie über die Sexigarden-Website bezüglich Palmenschnitt- oder Gartenarbeiten",
+      "cardEmailTitle": "Offizielle E-Mail",
+      "cardEmailDesc": "Für gewerbliche Angebote, Lagepläne und Rechnungsstellung von Wohnanlagen.",
+      "infoEmailSubject": "Angebotsanfrage Sexigarden",
+      "cardHoursTitle": "Öffnungszeiten & Einsatzgebiet",
+      "cardHoursWeek": "Montag bis Freitag",
+      "cardHoursSat": "Samstag",
+      "cardCoverageText": "Almuñécar, La Herradura, Salobreña, Motril, Granada, Málaga und Almería",
+      "mapTitle": "Einsatzbasis in Almuñécar",
+      "mapDesc": "Strategische Lage an der Costa Tropical für schnelle Anfahrt mit eigener Technik und Hubarbeitsbühne.",
+      "infoLocationText": "Almuñécar (Granada), Costa Tropical · Andalusien",
+      "infoSocialsTitle": "Unsere Sozialen Netzwerke",
+      "mapOpenBtn": "In Google Maps öffnen ↗",
+      "goToEstimatorBtn": "Online-Angebot berechnen",
+      "formSubject": "🌱 [Sexigarden] Neue Web-Anfrage",
+      "nameLabel": "Vollständiger Name *",
+      "namePlaceholder": "Ihr Name",
+      "phoneLabel": "Telefonnummer *",
+      "phonePlaceholder": "z.B. +34 600 00 00 00",
+      "emailLabel": "E-Mail-Adresse *",
+      "emailPlaceholder": "ihre@email.de",
+      "serviceLabel": "Gewünschte Leistung",
+      "messageLabel": "Projektdetails",
+      "messagePlaceholder": "Beschreiben Sie kurz die Maße, den Standort (Almuñécar, La Herradura usw.) und Ihr Anliegen.",
+      "privacyConsent": "Ich habe die",
+      "privacyLink": "Datenschutzerklärung zur Kenntnis genommen und akzeptiere diese",
+      "gdprTitle": "🔒 Datenschutzhinweise (DSGVO):",
+      "gdpr1Label": "Handelsname:",
+      "gdpr1Text": "Sexigarden · Sexipool.",
+      "gdpr2Label": "Zweck:",
+      "gdpr2Text": "Bearbeitung Ihrer Anfrage und Erstellung Ihres persönlichen Kostenvoranschlags.",
+      "gdpr3Label": "Legitimation:",
+      "gdpr3Text": "Ihre ausdrückliche Einwilligung beim Absenden des Formulars.",
+      "gdpr4Label": "Empfänger:",
+      "gdpr4Text": "Keine Weitergabe an Dritte außer bei gesetzlicher Verpflichtung.",
+      "gdpr5Label": "Rechte:",
+      "gdpr5Text": "Auskunft, Berichtigung, Löschung und weitere Rechte gemäß unserer",
+      "submitBtn": "Angebotsanfrage absenden",
+      "infoSocialsTitle": "Folgen Sie uns in den sozialen Medien"
+    },
+    "footer": {
+      "desc": "Fachgerechte Baumpflege, Palmenschnitt und ganzheitliche Betreuung von Gärten und Eigentümergemeinschaften in Granada, Málaga, Almería und Costa Tropical. Poolbereich: Sexipool.",
+      "quickLinksTitle": "Schnellzugriff",
+      "directContactTitle": "Direkter Kontakt",
+      "legalTitle": "Rechtliche Hinweise",
+      "legalNotice": "Impressum",
+      "privacyPolicy": "Datenschutzerklärung",
+      "cookiesPolicy": "Cookie-Richtlinie",
+      "copyright": "Sexigarden - Almuñécar · Granada · Málaga · Almería. Alle Rechte vorbehalten."
+    }
+  }
+}

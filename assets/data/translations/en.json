@@ -1,0 +1,251 @@
+{
+  "company": {
+    "slogan": "Palm Tree Pruning, Tree Surgery & Comprehensive Garden Care Specialists",
+    "coverageArea": "Granada, Malaga, Almeria and Costa Tropical (available for high-access tree pruning and large estates)",
+    "schedule": "Monday to Friday from 8:00 to 20:00 (Emergency Tree Service Available)"
+  },
+  "services": {
+    "poda_palmeras": {
+      "name": "Palm Tree Pruning & Red Palm Weevil Treatment",
+      "shortDesc": "Trunk cleaning, dry frond and fruit removal, certified preventive and curative treatments against Red Palm Weevil."
+    },
+    "poda_altura": {
+      "name": "Tree Surgery & Controlled Dismantling",
+      "shortDesc": "Safe pruning and controlled felling of large trees (pines, eucalyptus) using rope climbing and cherry pickers with complete debris removal."
+    },
+    "mantenimiento_jardines": {
+      "name": "Garden & Estate Maintenance",
+      "shortDesc": "Full periodic garden care: mowing, plot clearing, organic fertilization, hedge trimming and seasonal phytosanitary treatments."
+    },
+    "comunidades": {
+      "name": "Residential Community Maintenance",
+      "shortDesc": "Bespoke annual maintenance packages for residential communities, hotels and private residential complexes in Granada, Malaga and Almeria."
+    },
+    "diseno_jardines": {
+      "name": "Garden Design & Artificial Grass",
+      "shortDesc": "Sustainable Mediterranean landscaping, drought-tolerant xeriscaping and premium ultra-soft artificial turf installation."
+    },
+    "piscinas": {
+      "name": "Swimming Pool Care & Servicing (Sexipool)",
+      "shortDesc": "Water chemical analysis, salt chlorination systems, pump inspection and seasonal pool commissioning."
+    }
+  },
+  "extras": {
+    "riego": {
+      "name": "Smart automated irrigation system",
+      "description": "WiFi programming with rain sensor and solenoid valves for 50% water savings"
+    },
+    "iluminacion": {
+      "name": "Ambient decorative LED lighting pack",
+      "description": "Recessed spotlights and waterproof IP68 LED strips for evening illumination"
+    },
+    "desescombro": {
+      "name": "Eco-friendly waste clearance & recycling",
+      "description": "Site clearing, truck loading, and certified disposal at an authorized recycling facility"
+    }
+  },
+  "gallery": {
+    "gal-1": {
+      "title": "Artificial grass installation & landscaping in villa",
+      "location": "Almuñécar"
+    },
+    "gal-2": {
+      "title": "Palm tree surgery & crown thinning poolside",
+      "location": "La Herradura"
+    },
+    "gal-3": {
+      "title": "Hillside palm tree care & plot clearance",
+      "location": "Cotobro"
+    },
+    "gal-4": {
+      "title": "Landscape design with xeriscaping, hedges & palms",
+      "location": "Marina del Este"
+    },
+    "gal-5": {
+      "title": "Pool surround refurbishment & hedge trimming",
+      "location": "Punta de la Mona"
+    }
+  },
+  "reviews": [
+    {
+      "id": "rev-1",
+      "author": "Manuel Lopez Barrientos",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocL46imPVmhmh5sJlCPIOglrHJgR9maU8q0J-GrHvFo9wTeJmQ=w36-h36-p-rp-mo-br100",
+      "stars": 5,
+      "date": "2 weeks ago",
+      "text": "Outstanding service from Kevin and his team! They performed a magnificent high-altitude tree pruning at a very fair price, leaving everything immaculate and thoroughly tidied. We will trust all our future work to this great company!",
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xCemFEVjFTV2xFY1ZKSlVFdE9hRk5uY2s5R1lXYxAB!2m1!1s0x0:0xb6165467fb4f65dc!3m1!1s2@1:Ci9DQUlRQUNvZENodHljRjlvT2xCemFEVjFTV2xFY1ZKSlVFdE9hRk5uY2s5R1lXYxAB?hl=en",
+      "source": "Google Maps"
+    },
+    {
+      "id": "rev-2",
+      "author": "Annette Svensson",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJCoYXq72_f9sJUCCayFJppNLL0bGi33kE_IGWNYXWDb6mSkQ=w36-h36-p-rp-mo-br100",
+      "stars": 5,
+      "date": "5 months ago",
+      "text": "We hired Sexigarden to clean and prune 5 tall palm trees. They did an excellent job, fast, cleaned up and took away all the palm fronds and debris. We are very pleased with their work and friendly approach. We highly recommend them. /Annette",
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pobmFHVkhNM1ZVWXpWcWNVVkxkME01TVRoelkwRRAB!2m1!1s0x0:0xb6165467fb4f65dc!3m1!1s2@1:Ci9DQUlRQUNvZENodHljRjlvT2pobmFHVkhNM1ZVWXpWcWNVVkxkME01TVRoelkwRRAB?hl=en",
+      "source": "Google Maps"
+    },
+    {
+      "id": "rev-3",
+      "author": "Jose Antonio Garcia",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJzPtOTuv5JNGyrqGZdcCNHWPouiAsHSe8viMD-pxf8JncjLAmJ=w36-h36-p-rp-mo-ba12-br100",
+      "stars": 5,
+      "date": "6 months ago",
+      "text": "Kevin and Michael did the high pruning on our palm. Super friendly, professional, fast, and efficient—the way things should be done. Highly recommended!",
+      "url": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tFdE9XZEdRV3RzUTBKeFluWnJUR1Z6YlhrMVZuYxAB!2m1!1s0x0:0xb6165467fb4f65dc!3m1!1s2@1:Ci9DQUlRQUNvZENodHljRjlvT2tFdE9XZEdRV3RzUTBKeFluWnJUR1Z6YlhrMVZuYxAB?hl=en",
+      "source": "Google Maps"
+    }
+  ],
+  "faqs": [
+    {
+      "id": "faq-1",
+      "question": "Is the initial quote and technical site visit free of charge?",
+      "answer": "Yes, completely free with zero obligation. We visit your villa, garden, or community across Almuñécar, La Herradura, Salobreña, or Motril to take precise measurements and prepare a tailored estimate."
+    },
+    {
+      "id": "faq-2",
+      "question": "How long does artificial grass installation or landscaping take?",
+      "answer": "For medium-sized projects (40 - 80 m²), artificial grass installation is typically completed in 2 to 3 working days. Full outdoor refurbishments including masonry and pool coping take between 1 and 3 weeks depending on project scope."
+    },
+    {
+      "id": "faq-3",
+      "question": "What warranty do you provide on materials and workmanship?",
+      "answer": "Our high-grade artificial turf comes with up to 8 years manufacturer warranty against UV degradation and color fading. All structural masonry, waterproofing, and paving works carry full legal craftsmanship guarantees."
+    },
+    {
+      "id": "faq-4",
+      "question": "What are your payment terms?",
+      "answer": "We establish a transparent milestone-based payment schedule: a deposit upon contract confirmation and material procurement, partial payments matching project progress, and final balance after your full inspection and satisfaction."
+    }
+  ],
+  "ui": {
+    "meta": {
+      "title": "Sexigarden | Palm Tree Pruning, Tree Surgery & Landscaping in Granada, Malaga, Almeria",
+      "description": "Sexigarden: Specialists in palm tree pruning, high-altitude tree surgery, and estate maintenance across Granada, Malaga, Almeria, and Costa Tropical. Tel: +34 673 71 48 66."
+    },
+    "nav": {
+      "brandAria": "Sexigarden Home",
+      "services": "Services",
+      "estimator": "Estimator",
+      "gallery": "Projects",
+      "reviews": "Reviews",
+      "contact": "Contact",
+      "langAria": "Change language",
+      "mobileAria": "Mobile navigation",
+      "waHeaderMsg": "Hello, I would like to request a quote for an outdoor project in Almuñécar or surrounding areas"
+    },
+    "hero": {
+      "badge": "🌴 Palm Tree Care & Tree Surgery Specialists",
+      "title": "Expert Garden Care, <span>Tree Surgery</span> & Palm Pruning",
+      "description": "Certified palm tree sanitation, controlled large tree dismantling, and complete estate & community maintenance in Granada, Malaga, Almeria, and the Costa Tropical.",
+      "waCta": "Quote via WhatsApp",
+      "waMsg": "Hello, I want to request a quote for tree surgery or garden maintenance",
+      "estimatorCta": "Calculate Online Estimate",
+      "trust1": "✔ Full coverage in Granada, Malaga & Almeria",
+      "trust2": "✔ Certified rope access & heavy-duty machinery",
+      "trust3": "✔ Free on-site inspection & detailed estimate"
+    },
+    "services": {
+      "tag": "What We Do",
+      "title": "Tree Surgery & Comprehensive Garden Services",
+      "subtitle": "Professional high-access tree pruning, palm weevil treatment, and full grounds care across Granada, Malaga, and Almeria."
+    },
+    "estimator": {
+      "tag": "Instant Cost Calculator",
+      "title": "Calculate Your Estimate in Under 1 Minute",
+      "subtitle": "Select your desired service and surface area for an approximate cost breakdown.",
+      "serviceLabel": "1. What primary service do you need?",
+      "unitPriceLabel": "Base rate",
+      "minPriceLabel": "Minimum service",
+      "areaLabel": "2. Approximate surface area:",
+      "extrasLabel": "3. Add optional extras:",
+      "resultTag": "Estimated Price Range",
+      "resultNote": "* Approximate estimation including premium materials and professional labor. Final fixed quotation delivered following an on-site property inspection.",
+      "waCta": "Request site visit via WhatsApp",
+      "orDivider": "or request formal proposal by Email",
+      "emailCta": "Send Request by Email",
+      "notesLabel": "Additional project details (optional)",
+      "notesPlaceholder": "Exact location, tree height, crane access or property photos..."
+    },
+    "gallery": {
+      "tag": "Project Portfolio",
+      "title": "Our Work Across Almuñécar & Costa Tropical",
+      "subtitle": "Photos of tree surgery, palm pruning, garden transformations, and swimming pool maintenance.",
+      "filterAll": "All Projects",
+      "filterPoda": "Palm Pruning",
+      "filterCesped": "Artificial Grass",
+      "filterJardineria": "Gardens",
+      "filterPiscinas": "Pools"
+    },
+    "reviews": {
+      "tag": "Google Reviews",
+      "title": "What Property Owners on the Coast Say",
+      "subtitle": "Reviews from clients across Almuñécar and Costa Tropical. Click on the Google icon to view each review directly on Google Maps.",
+      "viewAll": "View all 37 reviews on Google Maps ↗",
+      "writeReview": "Leave a review on Google ✍️"
+    },
+    "contact": {
+      "tag": "Contact & Location",
+      "title": "Direct Assistance & Site Inspections",
+      "subtitle": "Reach out directly to our technical team for urgent enquiries or on-site inspections across Almuñécar and Costa Tropical.",
+      "cardPhoneTitle": "Direct Phone Lines",
+      "cardPhoneDesc": "Call us to speak directly with Kevin or our operational office.",
+      "infoWaLabel": "Mobile / WhatsApp Kevin",
+      "infoLandlineLabel": "Landline / Office",
+      "cardWaTitle": "Instant WhatsApp",
+      "cardWaDesc": "Send us photos or videos of your palm trees and garden for a quick assessment.",
+      "cardWaBtn": "Open WhatsApp",
+      "waDefaultMsg": "Hello, I am contacting you from the Sexigarden website to enquire about tree pruning or garden work",
+      "cardEmailTitle": "Official Email",
+      "cardEmailDesc": "For commercial proposals, plans, and community administration invoicing.",
+      "infoEmailSubject": "Quote Request and Technical Enquiry Sexigarden",
+      "cardHoursTitle": "Hours & Coverage Area",
+      "cardHoursWeek": "Monday to Friday",
+      "cardHoursSat": "Saturday",
+      "cardCoverageText": "Almuñécar, La Herradura, Salobreña, Motril, Granada, Malaga and Almeria",
+      "mapTitle": "Operational Base in Almuñécar",
+      "mapDesc": "Strategic Costa Tropical base for fast equipment and crane truck mobilization.",
+      "infoLocationText": "Almuñécar (Granada), Costa Tropical · Andalusia",
+      "infoSocialsTitle": "Our Social Media",
+      "mapOpenBtn": "Open in Google Maps ↗",
+      "goToEstimatorBtn": "Calculate Online Estimate",
+      "formSubject": "🌱 [Sexigarden] New Web Inquiry",
+      "nameLabel": "Full Name *",
+      "namePlaceholder": "Your name",
+      "phoneLabel": "Phone Number *",
+      "phonePlaceholder": "e.g. +34 600 00 00 00",
+      "emailLabel": "Email Address *",
+      "emailPlaceholder": "your@email.com",
+      "serviceLabel": "Service of Interest",
+      "messageLabel": "Project Details",
+      "messagePlaceholder": "Tell us your approximate area, property location (Almuñécar, La Herradura, etc.) and what you need.",
+      "privacyConsent": "I have read and accept the",
+      "privacyLink": "Privacy Policy",
+      "gdprTitle": "🔒 Data Protection Information (GDPR):",
+      "gdpr1Label": "Trade name:",
+      "gdpr1Text": "Sexigarden · Sexipool.",
+      "gdpr2Label": "Purpose:",
+      "gdpr2Text": "Respond to your consultation request and prepare your landscaping quote.",
+      "gdpr3Label": "Legitimation:",
+      "gdpr3Text": "Your express consent by submitting this form.",
+      "gdpr4Label": "Recipients:",
+      "gdpr4Text": "No data is transferred to third parties except legal obligation.",
+      "gdpr5Label": "Rights:",
+      "gdpr5Text": "Access, rectification, erasure and other statutory rights in our",
+      "submitBtn": "Send Quote Request",
+      "infoSocialsTitle": "Follow Us on Social Media"
+    },
+    "footer": {
+      "desc": "Tree surgery, palm tree maintenance, and comprehensive garden care in Granada, Malaga, Almeria and Costa Tropical. Swimming pools division: Sexipool.",
+      "quickLinksTitle": "Quick Links",
+      "directContactTitle": "Direct Contact",
+      "legalTitle": "Legal Information",
+      "legalNotice": "Legal Notice",
+      "privacyPolicy": "Privacy Policy",
+      "cookiesPolicy": "Cookies Policy",
+      "copyright": "Sexigarden - Almuñécar · Granada · Malaga · Almeria. All rights reserved."
+    }
+  }
+}
