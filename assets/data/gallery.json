@@ -57,6 +57,8 @@
     "id": "case-pwa-portal",
     "title": "App / Portal Privado de Seguimiento para Clientes y Propietarios de Chalets",
     "category": "pwa",
+    "active": false,
+    "commented": true,
     "imageUrl": "assets/images/gallery/trabajo-1.jpg",
     "location": "Costa Tropical · Granada y Málaga",
     "client": "Propietarios Residentes y Extranjeros",
@@ -66,10 +68,21 @@
     "id": "case-pwa-administradores",
     "title": "Avisos Automáticos de Temporada y Panel para Administradores de Fincas",
     "category": "pwa",
+    "active": false,
+    "commented": true,
     "imageUrl": "assets/images/gallery/trabajo-4.jpg",
     "location": "Granada, Málaga y Almería",
     "client": "Cartera de Administradores de Fincas",
     "metrics": "+25% facturación en extras · Panel de descarga directa para juntas"
+  },
+  {
+    "id": "case-audiovisual-bodas",
+    "title": "Reportajes de Boda & Cine Nupcial · Fotografía Documental y Vídeo 4K",
+    "category": "audiovisual",
+    "imageUrl": "assets/images/gallery/trabajo-2.jpg",
+    "location": "Granada, Málaga y Costa Tropical",
+    "client": "Parejas y Celebraciones Exclusivas",
+    "metrics": "Fotografía emocional · Vídeo cinemático 4K · Entrega rápida de Reels"
   },
   {
     "id": "case-seo-gbp",

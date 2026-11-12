@@ -33,6 +33,10 @@
       "name": "Avisos de Temporada y Panel para Administradores de Fincas",
       "shortDesc": "Recordatorios preventivos automáticos por WhatsApp según la época del año y panel centralizado donde los administradores descargan informes de sus comunidades."
     },
+    "audiovisual_bodas": {
+      "name": "Reportajes de Boda (Fotografía & Cine Nupcial)",
+      "shortDesc": "Cobertura audiovisual integral para bodas y enlaces en Granada, Málaga y Almería: fotografía documental emotiva, película cinemática en 4K y Reels para redes."
+    },
     "audiovisual_reels": {
       "name": "Fotografía In Situ y Vídeo Vertical (Reels / TikTok)",
       "shortDesc": "Nos desplazamos a tu empresa o tus obras en Granada, Málaga y Almería para grabar contenido real y profesional que genera confianza inmediata."
@@ -92,6 +96,10 @@
     "case-pwa-administradores": {
       "title": "Avisos Automáticos de Temporada y Panel para Administradores de Fincas",
       "location": "Granada, Málaga y Almería"
+    },
+    "case-audiovisual-bodas": {
+      "title": "Reportajes de Boda & Cine Nupcial · Fotografía Documental y Vídeo 4K",
+      "location": "Granada, Málaga y Costa Tropical"
     },
     "case-seo-gbp": {
       "title": "Estrategia Google Business Profile · 37 Reseñas 5★ y Liderazgo Comarcal",

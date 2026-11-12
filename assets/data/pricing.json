@@ -53,7 +53,9 @@
       "icon": "🔑",
       "unitPricePerM2": 160,
       "minPrice": 550,
-      "isFeatured": true,
+      "isFeatured": false,
+      "active": false,
+      "commented": true,
       "category": "pwa",
       "pillar": "PWA & Software Operativo"
     },
@@ -62,9 +64,20 @@
       "icon": "🏢",
       "unitPricePerM2": 150,
       "minPrice": 520,
-      "isFeatured": true,
+      "isFeatured": false,
+      "active": false,
+      "commented": true,
       "category": "pwa",
       "pillar": "PWA & Software Operativo"
+    },
+    {
+      "id": "audiovisual_bodas",
+      "icon": "💍",
+      "unitPricePerM2": 160,
+      "minPrice": 790,
+      "isFeatured": true,
+      "category": "audiovisual",
+      "pillar": "Pilar 2 · Foto, Vídeo & Redes"
     },
     {
       "id": "audiovisual_reels",

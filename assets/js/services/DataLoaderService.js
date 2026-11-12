@@ -107,35 +107,41 @@ export class DataLoaderService {
       };
 
       const serviceTranslations = translations.services || {};
-      this._services = (pricingMaster.services || []).map((service) => {
-        const t = serviceTranslations[service.id] || {};
-        return {
-          ...service,
-          name: t.name || service.id,
-          shortDesc: t.shortDesc || '',
-        };
-      });
+      this._services = (pricingMaster.services || [])
+        .filter((service) => service.active !== false && !service.commented)
+        .map((service) => {
+          const t = serviceTranslations[service.id] || {};
+          return {
+            ...service,
+            name: t.name || service.id,
+            shortDesc: t.shortDesc || '',
+          };
+        });
 
       const extraTranslations = translations.extras || {};
-      this._extras = (pricingMaster.extras || []).map((extra) => {
-        const t = extraTranslations[extra.id] || {};
-        return {
-          ...extra,
-          name: t.name || extra.id,
-          description: t.description || '',
-          price: extra.flatPrice,
-        };
-      });
+      this._extras = (pricingMaster.extras || [])
+        .filter((extra) => extra.active !== false && !extra.commented)
+        .map((extra) => {
+          const t = extraTranslations[extra.id] || {};
+          return {
+            ...extra,
+            name: t.name || extra.id,
+            description: t.description || '',
+            price: extra.flatPrice,
+          };
+        });
 
       const galleryTranslations = translations.gallery || {};
-      this._gallery = (galleryMaster || []).map((item) => {
-        const t = galleryTranslations[item.id] || {};
-        return {
-          ...item,
-          title: t.title || item.title || '',
-          location: t.location || item.location || '',
-        };
-      });
+      this._gallery = (galleryMaster || [])
+        .filter((item) => item.active !== false && !item.commented)
+        .map((item) => {
+          const t = galleryTranslations[item.id] || {};
+          return {
+            ...item,
+            title: t.title || item.title || '',
+            location: t.location || item.location || '',
+          };
+        });
 
       this._reviews = translations.reviews || [];
       this._faqs = translations.faqs || [];
