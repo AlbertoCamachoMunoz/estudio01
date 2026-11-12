@@ -40,15 +40,6 @@
       "pillar": "Pilar 2 · Foto, Vídeo & Redes"
     },
     {
-      "id": "ia_agentes",
-      "icon": "🤖",
-      "unitPricePerM2": 150,
-      "minPrice": 450,
-      "isFeatured": true,
-      "category": "ia",
-      "pillar": "Pilar 3 · IA & Automatización"
-    },
-    {
       "id": "pack_integral",
       "icon": "🚀",
       "unitPricePerM2": 220,
@@ -69,10 +60,6 @@
     },
     {
       "id": "rodaje_insitu",
-      "flatPrice": 290
-    },
-    {
-      "id": "agente_wa_ia",
       "flatPrice": 290
     }
   ],

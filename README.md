@@ -1,23 +1,23 @@
-# ⚡ Pixel & Web — Agencia Digital, Producción Audiovisual e IA para Pymes
+# ⚡ Pixel & Web — Agencia Digital y Producción Audiovisual para Pymes
 
-Repositorio oficial de la plataforma web corporativa y escaparate tecnológico (**Tech Lab**) de **Pixel & Web** (nombre configurable vía constantes centrales).
+Repositorio oficial de la plataforma web corporativa, escaparate tecnológico (**Tech Lab**) y aplicaciones operativas (**PWA de Control Horario & Trabajo**) de **Pixel & Web** (nombre configurable vía constantes centrales).
 
-Diseñada como una **arquitectura 100% estática de ultra-alto rendimiento (Zero-Bloat)** que combina nuestros 3 pilares de negocio:
-1. **Web & Software a Medida** (Landing pages de alta conversión, PWAs operativas de calle y portales sin cuotas abusivas de servidor).
+Diseñada como una **arquitectura 100% estática de ultra-alto rendimiento (Zero-Bloat)** que combina nuestros 2 pilares de negocio:
+1. **Web & Software a Medida** (Landing pages de alta conversión, PWAs operativas de trabajo en calle y control de cuadrillas sin cuotas abusivas de servidor).
 2. **Producción Audiovisual & Social Media** (Fotografía *in situ*, Reels/TikTok/YouTube y posicionamiento en Google Business Profile).
-3. **IA Agéntica & Automatización** (Agentes conversacionales 24/7 en WhatsApp/Web y automatización de procesos internos).
 
 ---
 
 ## 🚀 Arquitectura y Stack Tecnológico
 
 - **Core Stack:** HTML5 semántico, CSS3 moderno con variables nativas (estética *Dark/Light Tech-Creative Studio*, 100% Mobile-First) y **Vanilla JavaScript (ES6+ Modules)** bajo patrón MVC ligero.
-- **Zero-Bloat Policy:** Cero frameworks pesados en cliente (sin React, Vue ni Angular), garantizando tiempos de carga instantáneos, **Lighthouse > 95** en las 4 categorías y **coste de servidor 0 €/mes**.
-- **Módulos de Conversión Integrados:**
+- **Zero-Bloat Policy:** Cero frameworks pesados en cliente (sin React, Vue ni Angular), garantizando tiempos de carga instantáneos, **Lighthouse > 95** en las 4 categorías y **mantenimiento transparente de 50 €/año (servidor + dominio incluidos)**.
+- **Módulos y Aplicaciones Integradas:**
+  - **PWA de Control Horario y Partes de Trabajo (`/control-horario`):** Aplicación móvil completa e instalable (offline-first con Service Worker) para fichaje de jornada con GPS, checklist de tareas del día, fotos antes/después y exportación instantánea por WhatsApp.
   - **WhatsApp Click-to-Chat (`wa.me`) + Widget Flotante Interactivo:** Componente propio (`WhatsAppWidgetComponent.js` y `WhatsAppService.js`) con notificación, burbuja de saludo y mensajes contextuales según el servicio o presupuesto consultado.
   - **Formulario Asíncrono (Form-to-Email):** Envío JSON sin recarga de página (`EmailService.js` + `LeadFormComponent.js`) compatible con **FormSubmit AJAX**, **Web3Forms** o **Formspree**, con conmutación automática entre entorno de desarrollo (`localhost`) y producción, y botón de respaldo directo a WhatsApp en caso de error de red.
-  - **Portfolio de Casos de Éxito Reales:** Incluye **Sexigarden** como Caso de Éxito #1 documentado (Web multidioma, calculadora interactiva, SEO local y producción visual).
-  - **Tech Lab / Demos Interactivas:** Cotizador interactivo de proyectos digitales, escaparate de PWAs de gestión en calle y punto de entrada de Agente de IA.
+  - **Portfolio de Casos de Éxito Reales:** Incluye **Sexigarden** como Caso de Éxito #1 documentado (Web multidioma, calculadora interactiva, SEO local y producción visual) y aplicaciones PWAs de campo.
+  - **Tech Lab:** Cotizador interactivo de proyectos digitales y acceso a las PWAs de cuadrillas.
 
 ---
 

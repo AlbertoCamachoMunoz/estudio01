@@ -1,8 +1,8 @@
 {
   "company": {
-    "slogan": "Ingeniería de Software, IA Agéntica y Producción Audiovisual para Pymes y Negocios Locales",
+    "slogan": "Ingeniería de Software y Producción Audiovisual para Pymes y Negocios Locales",
     "coverageArea": "Motril, Provincia de Granada, Málaga y Provincia, y Almería (desplazamiento in situ para rodajes y consultoría)",
-    "schedule": "Lunes a Viernes de 9:00 a 19:00 (Agentes IA operativos 24/7)"
+    "schedule": "Lunes a Viernes de 9:00 a 19:00 (Atención rápida por WhatsApp)"
   },
   "services": {
     "web_landing": {
@@ -21,13 +21,9 @@
       "name": "Redes Sociales y Google Business Profile",
       "shortDesc": "Posicionamos tu negocio en el Top de Google Maps en tu comarca, gestionamos tus reseñas verificadas y publicamos contenido constante que atrae clientes."
     },
-    "ia_agentes": {
-      "name": "Agentes de IA 24/7 (WhatsApp y Web)",
-      "shortDesc": "Asistentes inteligentes entrenados con las tarifas y preguntas de tu negocio: atienden en 3 segundos, filtran curiosos y agendan citas en tu móvil."
-    },
     "pack_integral": {
-      "name": "Pack Digitalización 360º (Web + Vídeo + IA)",
-      "shortDesc": "El ecosistema completo para liderar tu sector local: nueva web con calculadora, sesión de rodaje profesional in situ y automatización de captación."
+      "name": "Pack Digitalización Integral (Web + Audiovisual + PWA)",
+      "shortDesc": "El ecosistema completo para liderar tu sector local: nueva web con calculadora, sesión de rodaje profesional in situ y App móvil para cuadrillas."
     }
   },
   "extras": {
@@ -42,10 +38,6 @@
     "rodaje_insitu": {
       "name": "Jornada de rodaje in situ (Foto + 4 Reels editados)",
       "description": "Desplazamiento a tus instalaciones o proyectos en Granada, Málaga o Almería"
-    },
-    "agente_wa_ia": {
-      "name": "Agente IA cualificador en WhatsApp 24/7",
-      "description": "Atención automática fuera de horario y resumen del cliente directo a tu móvil"
     }
   },
   "gallery": {
@@ -61,8 +53,8 @@
       "title": "App Interna (PWA) · Partes de Trabajo en Calle y Presupuestos Móviles",
       "location": "Motril, Granada y Málaga"
     },
-    "case-ia-cualificador": {
-      "title": "Agente IA Conversacional 24/7 · Cualificación Automática en WhatsApp",
+    "case-pwa-horarios": {
+      "title": "Control Horario & Partes Diarios · App PWA Móvil para Cuadrillas",
       "location": "Granada, Málaga y Almería"
     },
     "case-seo-gbp": {
@@ -117,8 +109,8 @@
     },
     {
       "id": "faq-4",
-      "question": "¿Cómo funciona un Agente de IA en mi WhatsApp o en mi Web?",
-      "answer": "Configuramos un asistente inteligente con las tarifas, servicios y zonas de tu empresa. Cuando un cliente escribe un sábado a las 22:00 o mientras estás trabajando, el agente le responde al segundo, averigua qué necesita, le da una orientación y te deja el contacto filtrado y listo para cerrar."
+      "question": "¿Cómo se instala y utiliza una PWA en los teléfonos de mis empleados?",
+      "answer": "Se instala en 5 segundos desde el navegador del móvil pulsando 'Añadir a pantalla de inicio'. No requiere pasar por Google Play ni App Store, no tiene cuotas mensuales por usuario y funciona incluso en sótanos o fincas rurales sin cobertura móvil gracias a su tecnología de sincronización offline."
     }
   ]
 }

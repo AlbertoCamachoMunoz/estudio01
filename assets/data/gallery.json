@@ -27,13 +27,13 @@
     "metrics": "-8h/semana de papeleo · Uso desde el móvil sin cobertura"
   },
   {
-    "id": "case-ia-cualificador",
-    "title": "Agente IA WhatsApp 24/7 · Cualificación de Presupuestos y Agendamiento",
-    "category": "ia",
+    "id": "case-pwa-horarios",
+    "title": "Control Horario y Partes de Trabajo · App PWA Instalable para Cuadrillas",
+    "category": "web",
     "imageUrl": "assets/images/gallery/trabajo-4.jpg",
     "location": "Granada, Málaga y Almería",
-    "client": "Pymes Locales y Clínicas",
-    "metrics": "Respuesta en < 3 seg · Filtra curiosos y agenda visitas reales"
+    "client": "Pymes de Mantenimiento y Servicios",
+    "metrics": "Fichaje GPS · Tareas del día · Envío de partes por WhatsApp"
   },
   {
     "id": "case-seo-gbp",
