@@ -14,9 +14,8 @@ import { EstimatorComponent } from './components/EstimatorComponent.js';
 import { GalleryFilterComponent } from './components/GalleryFilterComponent.js';
 import { AccordionComponent } from './components/AccordionComponent.js';
 import { WhatsAppWidgetComponent } from './components/WhatsAppWidgetComponent.js';
-import { LeafBreezeComponent } from './components/LeafBreezeComponent.js';
 import { CursorTrailComponent } from './components/CursorTrailComponent.js';
-import { HeroBadgePixelComponent } from './components/HeroBadgePixelComponent.js';
+import { HeroPixelMatrixComponent } from './components/HeroPixelMatrixComponent.js';
 
 /**
  * Master Central Configuration (SSOT Fallback & Global Constants)
@@ -82,20 +81,14 @@ class AppController {
     // 11. Initialize Interactive WhatsApp Widget
     this.whatsAppWidget = new WhatsAppWidgetComponent();
 
-    // 12. Initialize Interactive Hero Tech-Creative Pixel & Neural Canvas
-    this.leafBreeze = new LeafBreezeComponent({
+    // 12. Initialize Interactive Hero Pixel Matrix across the ENTIRE Hero Section (Scale 35px to 3px across columns)
+    this.heroPixelMatrix = new HeroPixelMatrixComponent({
       canvasSelector: '#heroBreezeCanvas',
       containerSelector: '#hero',
     });
 
     // 13. Initialize Interactive Cursor Trail (Electric Blue to Crimson Red Ribbon)
     this.cursorTrail = new CursorTrailComponent();
-
-    // 14. Initialize Hero Badge Interactive Pixel Cube Matrix (Logo-inspired animation)
-    this.heroBadgePixel = new HeroBadgePixelComponent({
-      badgeSelector: '#heroBadge',
-      canvasSelector: '#heroBadgeCanvas',
-    });
   }
 
   renderDynamicDatabaseContent() {
