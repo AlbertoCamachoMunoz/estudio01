@@ -60,12 +60,13 @@ export class HeroPixelMatrixComponent {
     this.canvas.style.width = `${this.width}px`;
     this.canvas.style.height = `${this.height}px`;
 
-    this.ctx.scale(this.dpr, this.dpr);
+    this.ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
   }
 
   /**
    * Builds the pixel cubes distribution across the entire Hero width:
-   * Left: Large cubes (35px, 30px) -> Center: (25px, 20px, 15px) -> Right: (10px, 5px, 3px)
+   * - Left: Extra-large cubes forming an architectural chessboard grid (tight gaps, alternating tiles).
+   * - Center & Right: Progressively smaller cubes and wider separation into digital dust.
    */
   generateMatrix() {
     this.cubes = [];
@@ -75,96 +76,154 @@ export class HeroPixelMatrixComponent {
 
     const isMobile = w < 768;
 
-    // Define column steps: sizes from left (big) to right (small)
-    const scaleSteps = isMobile
-      ? [30, 20, 10, 4]
-      : [35, 30, 25, 20, 15, 10, 5, 3.5];
+    // --- 1. LEFT CHESSBOARD ZONE ---
+    // Large square blocks packed with tight gap (4-6px), strictly aligned in orthogonal grid
+    const chessSize = isMobile
+      ? Math.round(Math.min(62, Math.max(48, w * 0.135)))
+      : Math.round(Math.min(94, Math.max(74, w * 0.058)));
+    const chessGap = isMobile ? 4 : 6;
+    const chessStep = chessSize + chessGap;
 
-    const columnCount = scaleSteps.length;
-    const colWidth = w / columnCount;
+    // Number of columns forming the chessboard on the left
+    const chessCols = isMobile ? 2 : Math.min(3, Math.max(2, Math.floor((w * 0.23) / chessStep)));
+    const chessStartX = isMobile ? 10 : 20;
+    const chessStartY = 14;
+    const chessRows = Math.floor((h - chessStartY * 2) / chessStep);
 
-    for (let c = 0; c < columnCount; c++) {
-      const colBaseSize = scaleSteps[c];
-      const progress = c / (columnCount - 1); // 0 (left) to 1 (right)
+    for (let c = 0; c < chessCols; c++) {
+      const colX = chessStartX + c * chessStep + chessSize / 2;
+      const progress = Math.max(0, (colX - chessStartX) / w);
+      const color = this.getSpectrumColor(progress);
 
-      // Spacing: large cubes have generous margin, small pixels have tighter density
-      const verticalGap = Math.max(colBaseSize * 1.55, 14);
-      const rows = Math.floor(h / verticalGap);
+      for (let r = 0; r <= chessRows; r++) {
+        const cellY = chessStartY + r * chessStep + chessSize / 2;
+        if (cellY + chessSize / 2 > h + 15) continue;
 
-      // Dispersal factor increases towards the right (digital dissipation)
-      const scatterMultiplier = 0.4 + progress * 1.4;
-
-      for (let r = 0; r <= rows; r++) {
-        // Base coordinate with jitter
-        const jitterX = (Math.random() - 0.5) * (colWidth * 0.45 * scatterMultiplier);
-        const jitterY = (Math.random() - 0.5) * (verticalGap * 0.45);
-
-        const x = c * colWidth + colWidth * 0.5 + jitterX;
-        const y = (r / Math.max(1, rows)) * (h - 30) + 15 + jitterY;
-
-        // Size with slight organic variation
-        const size = Math.max(2.5, colBaseSize + (Math.random() - 0.5) * (colBaseSize * 0.22));
-
-        // Corner radius proportional to size
-        const radius = Math.max(1, size * 0.22);
-
-        // Color interpolation matching logo spectrum:
-        // Left: Cyan/Blue (#06b6d4 / #3b82f6)
-        // Center: Violet / Purple (#8b5cf6)
-        // Right: Magenta, Rose & Crimson Red (#ec4899 / #ef4444)
-        const color = this.getSpectrumColor(progress);
-
-        // Base opacity: subtle on big blocks, crisp on micro-pixels
-        const baseAlpha = progress > 0.65 ? 0.38 : (0.24 + (1 - progress) * 0.14);
+        // Chessboard alternating pattern
+        const isChessAccent = (c + r) % 2 === 0;
+        const baseAlpha = isChessAccent ? 0.38 : 0.14;
+        const hasBorder = !isChessAccent;
 
         this.cubes.push({
-          x0: x,
-          y0: y,
-          x: x,
-          y: y,
+          x0: colX,
+          y0: cellY,
+          x: colX,
+          y: cellY,
           vx: 0,
           vy: 0,
-          size0: size,
-          size: size,
-          radius: radius,
+          size0: chessSize,
+          size: chessSize,
+          radius: Math.min(6, chessSize * 0.12),
           color: color,
           progress: progress,
-          rotation: (Math.random() - 0.5) * 0.25,
-          rotation0: (Math.random() - 0.5) * 0.25,
+          rotation: 0,
+          rotation0: 0,
           baseAlpha: baseAlpha,
           alpha: baseAlpha,
-          phase: Math.random() * Math.PI * 2,
+          phase: c * 0.7 + r * 0.5,
+          isChessTile: true,
+          hasBorder: hasBorder,
         });
       }
+    }
 
-      // Add extra dispersed micro-pixels on the right edge
-      if (progress > 0.55) {
-        const extraCount = Math.floor(5 + progress * 10);
-        for (let k = 0; k < extraCount; k++) {
-          const exX = c * colWidth + Math.random() * colWidth;
-          const exY = Math.random() * h;
-          const exSize = Math.random() * 3 + 2;
-          const color = this.getSpectrumColor(progress);
+    // --- 2. TRANSITION & RIGHT DISSOLUTION ZONE ---
+    // From after the chessboard to the right edge: pixels get MUCH SMALLER and MUCH MORE SEPARATED
+    const transStartX = chessStartX + chessCols * chessStep + (isMobile ? 12 : 24);
+    const transEndX = w - (isMobile ? 12 : 28);
+    const remainingW = transEndX - transStartX;
+
+    if (remainingW > 50) {
+      const transCols = isMobile ? 4 : 7;
+
+      for (let k = 0; k < transCols; k++) {
+        const t = (k + 1) / transCols; // 0.14 to 1.0
+        // Horizontal position with expanding column intervals towards the right
+        const colProgress = Math.pow(k / Math.max(1, transCols - 1), 1.15);
+        const colX = transStartX + remainingW * colProgress;
+        const globalProgress = Math.min(1, colX / w);
+        const color = this.getSpectrumColor(globalProgress);
+
+        // Size decreases dramatically: from ~65% of chessSize down to 3.5px
+        const size = Math.max(3.5, chessSize * Math.pow(1 - t * 0.95, 1.75));
+
+        // Separation (vertical gap) increases significantly: from 16px up to 75px
+        // "y hacia la derecha mucho mas pequeños y algo mas separados"
+        const vertGap = isMobile
+          ? Math.max(14, 12 + t * 40)
+          : Math.max(18, 14 + t * 68);
+        const rowStep = size + vertGap;
+        const rows = Math.floor((h - 30) / rowStep);
+
+        // Subtle organic scatter increases towards the right edge
+        const scatterMultiplier = Math.pow(t, 1.35);
+
+        for (let r = 0; r <= rows; r++) {
+          const jitterX = (Math.random() - 0.5) * (18 * scatterMultiplier);
+          const jitterY = (Math.random() - 0.5) * (vertGap * 0.35 * scatterMultiplier);
+
+          const cellY = 18 + r * rowStep + size / 2 + jitterY;
+          if (cellY > h - 10) continue;
+
+          // Sparser presence towards the far right (some omitted to accentuate separation)
+          if (t > 0.6 && Math.random() < (t - 0.5) * 0.35) {
+            continue;
+          }
+
+          const baseAlpha = t > 0.7 ? 0.44 : (0.24 + (1 - t) * 0.12);
 
           this.cubes.push({
-            x0: exX,
-            y0: exY,
-            x: exX,
-            y: exY,
+            x0: colX + jitterX,
+            y0: cellY,
+            x: colX + jitterX,
+            y: cellY,
             vx: 0,
             vy: 0,
-            size0: exSize,
-            size: exSize,
-            radius: 1,
+            size0: size,
+            size: size,
+            radius: Math.max(1, size * 0.22),
             color: color,
-            progress: progress,
-            rotation: 0,
-            rotation0: 0,
-            baseAlpha: 0.32 + Math.random() * 0.22,
-            alpha: 0.32,
+            progress: globalProgress,
+            rotation: (Math.random() - 0.5) * 0.2 * scatterMultiplier,
+            rotation0: (Math.random() - 0.5) * 0.2 * scatterMultiplier,
+            baseAlpha: baseAlpha,
+            alpha: baseAlpha,
             phase: Math.random() * Math.PI * 2,
+            isChessTile: false,
+            hasBorder: false,
           });
         }
+      }
+
+      // --- 3. EXTRA FLOATING MICRO-PIXELS ON THE RIGHT (DIGITAL PARTICLES) ---
+      const extraCount = isMobile ? 8 : 18;
+      for (let m = 0; m < extraCount; m++) {
+        const pxX = transStartX + remainingW * (0.45 + Math.random() * 0.55);
+        const pxY = 20 + Math.random() * (h - 40);
+        const pxSize = Math.random() * 3 + 2;
+        const globalProgress = Math.min(1, pxX / w);
+        const color = this.getSpectrumColor(globalProgress);
+
+        this.cubes.push({
+          x0: pxX,
+          y0: pxY,
+          x: pxX,
+          y: pxY,
+          vx: 0,
+          vy: 0,
+          size0: pxSize,
+          size: pxSize,
+          radius: 1,
+          color: color,
+          progress: globalProgress,
+          rotation: 0,
+          rotation0: 0,
+          baseAlpha: 0.30 + Math.random() * 0.25,
+          alpha: 0.30,
+          phase: Math.random() * Math.PI * 2,
+          isChessTile: false,
+          hasBorder: false,
+        });
       }
     }
   }
@@ -269,16 +328,16 @@ export class HeroPixelMatrixComponent {
 
       if (dist < repulsionRadius && this.mouse.isHovered) {
         const factor = 1 - dist / repulsionRadius;
-        // Push force calibrated for fluid magnetic repulsion
-        const pushForce = Math.pow(factor, 1.3) * (c.size0 > 20 ? 7 : 12);
+        // Push force calibrated: large chess tiles move solidly, tiny pixels disperse dynamically
+        const pushForce = Math.pow(factor, 1.25) * (c.size0 > 45 ? 5.5 : (c.size0 > 20 ? 8.5 : 13.5));
         const angle = Math.atan2(dy, dx);
 
         c.vx += Math.cos(angle) * pushForce;
         c.vy += Math.sin(angle) * pushForce;
 
-        targetScale = 1.0 + factor * 0.42;
-        targetAlpha = Math.min(0.95, c.baseAlpha + factor * 0.58);
-        c.rotation += (factor * 0.08);
+        targetScale = 1.0 + factor * (c.size0 > 45 ? 0.16 : 0.42);
+        targetAlpha = Math.min(0.95, c.baseAlpha + factor * 0.62);
+        c.rotation += (factor * (c.size0 > 45 ? 0.025 : 0.08));
       }
 
       // Spring physics back to base position
@@ -309,9 +368,9 @@ export class HeroPixelMatrixComponent {
     const rad = Math.min(c.radius, half);
 
     // Dynamic bloom glow when hovered or excited
-    if (c.alpha > 0.6) {
+    if (c.alpha > 0.5) {
       this.ctx.shadowColor = `rgba(${c.color.r}, ${c.color.g}, ${c.color.b}, 0.85)`;
-      this.ctx.shadowBlur = Math.min(16, c.size * 0.7);
+      this.ctx.shadowBlur = Math.min(18, c.size * 0.6);
     }
 
     this.ctx.fillStyle = `rgba(${c.color.r}, ${c.color.g}, ${c.color.b}, ${c.alpha.toFixed(2)})`;
@@ -324,14 +383,21 @@ export class HeroPixelMatrixComponent {
     }
     this.ctx.fill();
 
+    // Subtle 1.2px border for alternating chessboard squares
+    if (c.hasBorder) {
+      this.ctx.strokeStyle = `rgba(${c.color.r}, ${c.color.g}, ${c.color.b}, ${Math.min(0.70, c.alpha * 2.4).toFixed(2)})`;
+      this.ctx.lineWidth = 1.2;
+      this.ctx.stroke();
+    }
+
     // Specular inner reflection on larger cubes for 3D depth
-    if (c.size > 14) {
-      this.ctx.fillStyle = `rgba(255, 255, 255, ${(c.alpha * 0.35).toFixed(2)})`;
+    if (c.size > 22) {
+      this.ctx.fillStyle = `rgba(255, 255, 255, ${(c.alpha * 0.30).toFixed(2)})`;
       this.ctx.beginPath();
       if (this.ctx.roundRect) {
-        this.ctx.roundRect(-half + 2, -half + 2, c.size * 0.35, c.size * 0.35, rad * 0.6);
+        this.ctx.roundRect(-half + 3, -half + 3, c.size * 0.28, c.size * 0.28, rad * 0.6);
       } else {
-        this.ctx.rect(-half + 2, -half + 2, c.size * 0.35, c.size * 0.35);
+        this.ctx.rect(-half + 3, -half + 3, c.size * 0.28, c.size * 0.28);
       }
       this.ctx.fill();
     }
