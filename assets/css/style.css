@@ -935,6 +935,21 @@ ul {
   border-color: rgba(255, 255, 255, 0.12);
 }
 
+.lab-service-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.lab-service-header .service-icon {
+  flex-shrink: 0;
+}
+
+.lab-service-header .lab-card-title {
+  margin-bottom: 0;
+}
+
 .lab-card-title {
   font-size: 1.35rem;
   font-weight: 700;

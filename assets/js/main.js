@@ -93,10 +93,32 @@ class AppController {
 
   renderDynamicDatabaseContent() {
     this.renderServices();
+    this.bindServiceReferences();
     this.renderGallery();
     this.renderReviews();
     this.renderFaqs();
     this.renderSocialLinks();
+  }
+
+  /**
+   * Binds standalone service references (e.g. Tech Lab cards) to the SSOT JSON service objects
+   */
+  bindServiceReferences() {
+    const containers = $$('[data-service-id]');
+    containers.forEach((container) => {
+      const serviceId = container.getAttribute('data-service-id');
+      const service = DataLoaderService.getServiceById(serviceId);
+      if (!service) return;
+
+      container.querySelectorAll('[data-service-field]').forEach((el) => {
+        const field = el.getAttribute('data-service-field');
+        if (field === 'icon' && service.icon) {
+          el.innerHTML = service.icon;
+        } else if (field && service[field]) {
+          el.textContent = service[field];
+        }
+      });
+    });
   }
 
   renderServices() {
@@ -135,8 +157,8 @@ class AppController {
           <div class="gallery-caption">
             ${item.client ? `<span class="gallery-client-tag">${item.client}</span>` : ''}
             <h3 class="gallery-item-title">${item.title}</h3>
-            ${item.metrics ? `<p class="gallery-item-metrics">✔ ${item.metrics}</p>` : ''}
-            <span class="gallery-item-location">📍 ${item.location}</span>
+            ${item.metrics ? `<p class="gallery-item-metrics">${item.metrics}</p>` : ''}
+            <span class="gallery-item-location">${item.location}</span>
           </div>
         </article>
       `
@@ -288,7 +310,7 @@ class AppController {
     const pwaStatusBadge = $('#pwaDemoStatus');
     if (pwaDemoBtn && pwaStatusBadge) {
       pwaDemoBtn.addEventListener('click', () => {
-        pwaStatusBadge.textContent = '✔ Parte #204 firmado y enviado a oficina en 0.8s';
+        pwaStatusBadge.textContent = 'Parte #204 firmado y enviado a oficina en 0.8s';
         pwaStatusBadge.classList.add('is-success');
         this.notification?.show(
           'Simulación PWA: Parte de trabajo firmado en móvil, geolocalizado y sincronizado al instante.',
