@@ -1746,10 +1746,33 @@ ul {
 
 @media (max-width: 768px) {
   .camera-showcase {
-    padding: 3rem 1rem;
+    padding: 3rem 0.75rem;
   }
   .camera-showcase__canvas-wrap {
-    min-height: 240px;
+    min-height: 220px;
+    border-radius: var(--radius-sm);
+  }
+  .camera-showcase__hud {
+    top: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+  .hud-pill {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.65rem;
+    max-width: 65%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .hud-progress-wrap {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.65rem;
+    gap: 0.4rem;
+  }
+  .hud-progress-bar {
+    width: 36px;
+    height: 3px;
   }
   .slider-step-btn {
     padding: 0.35rem 0.75rem;
@@ -1758,6 +1781,7 @@ ul {
   .camera-slider-hint {
     font-size: 0.72rem;
     text-align: center;
+    justify-content: center;
   }
 }
 
