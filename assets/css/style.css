@@ -262,6 +262,15 @@ ul {
   gap: 1.75rem;
 }
 
+@media (min-width: 1024px) and (max-width: 1360px) {
+  .nav-menu {
+    gap: 0.95rem;
+  }
+  .nav-menu a {
+    font-size: 0.82rem;
+  }
+}
+
 .nav-menu a {
   color: var(--color-text-muted);
   font-size: 0.9rem;
@@ -271,6 +280,14 @@ ul {
 
 .nav-menu a:hover {
   color: #FFFFFF;
+}
+
+.nav-menu .btn-primary {
+  color: #08080A !important;
+}
+
+.nav-menu .btn-primary:hover {
+  color: #000000 !important;
 }
 
 .brand-logo {
@@ -285,6 +302,8 @@ ul {
   user-select: none;
   white-space: nowrap;
   letter-spacing: -0.02em;
+  margin-right: 2rem;
+  flex-shrink: 0;
 }
 
 .brand-logo:hover {
@@ -1416,6 +1435,330 @@ ul {
   margin-top: 0.75rem;
   border-radius: var(--radius-md);
   padding: 0.85rem 1rem;
+}
+
+/* ==========================================================================
+   Creative Studio & Audiovisual Lab: Interactive Camera Teardown Showcase
+   ========================================================================== */
+.camera-showcase {
+  background: #080A10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  padding: 5rem 1rem;
+}
+
+.camera-showcase__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.camera-showcase__header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto;
+  z-index: 5;
+}
+
+.camera-showcase__title {
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  color: #F8FAFC;
+  margin: 0.35rem 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.camera-showcase__subtitle {
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  color: #94A3B8;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.camera-showcase__canvas-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  min-height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.camera-showcase__canvas-wrap:active {
+  cursor: grabbing;
+}
+
+#cameraTeardownCanvas {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 240, 255, 0.05);
+  background: radial-gradient(circle at 60% 45%, rgba(15, 23, 42, 0.5) 0%, rgba(8, 10, 16, 0.95) 75%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Scrubbing Telemetry HUD Overlay */
+.camera-showcase__hud {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hud-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #00F0FF;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hud-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #00F0FF;
+  box-shadow: 0 0 10px #00F0FF;
+  animation: hudPulse 2s infinite;
+}
+
+@keyframes hudPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.hud-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #00F0FF;
+}
+
+.hud-progress-bar {
+  width: 60px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.hud-progress-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #00F0FF, #38BDF8);
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+/* Horizontal Scrubber & Step Tabs Controls */
+.camera-controls {
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.camera-slider-tabs {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.slider-step-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  padding: 0.45rem 1rem;
+  color: #94A3B8;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.slider-step-btn .step-num {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748B;
+  transition: color 0.25s ease;
+}
+
+.slider-step-btn:hover {
+  background: rgba(30, 41, 59, 0.85);
+  border-color: rgba(0, 240, 255, 0.4);
+  color: #F8FAFC;
+  transform: translateY(-1px);
+}
+
+.slider-step-btn.is-active {
+  background: rgba(0, 240, 255, 0.12);
+  border-color: #00F0FF;
+  color: #00F0FF;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.slider-step-btn.is-active .step-num {
+  color: #00F0FF;
+}
+
+.slider-track-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  max-width: 650px;
+}
+
+.slider-icon {
+  font-size: 0.75rem;
+  color: #64748B;
+  user-select: none;
+}
+
+#cameraScrubberSlider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #00F0FF var(--slider-pct, 0%), rgba(255, 255, 255, 0.12) var(--slider-pct, 0%));
+  outline: none;
+  cursor: pointer;
+  transition: background 0.05s linear;
+}
+
+#cameraScrubberSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #00F0FF;
+  border: 3px solid #080A10;
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.8), 0 2px 6px rgba(0, 0, 0, 0.5);
+  cursor: grab;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#cameraScrubberSlider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 1);
+}
+
+#cameraScrubberSlider::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.25);
+}
+
+#cameraScrubberSlider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #00F0FF;
+  border: 3px solid #080A10;
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.8), 0 2px 6px rgba(0, 0, 0, 0.5);
+  cursor: grab;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.camera-slider-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: #64748B;
+  user-select: none;
+}
+
+.scroll-mouse-icon {
+  width: 14px;
+  height: 20px;
+  border: 2px solid #00F0FF;
+  border-radius: 8px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.scroll-mouse-icon::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 4px;
+  background-color: #00F0FF;
+  border-radius: 1px;
+  animation: wheelScrub 1.5s infinite;
+}
+
+@keyframes wheelScrub {
+  0% { transform: translate(-50%, 0); opacity: 1; }
+  100% { transform: translate(-50%, 8px); opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .camera-showcase {
+    padding: 3rem 1rem;
+  }
+  .camera-showcase__canvas-wrap {
+    min-height: 240px;
+  }
+  .slider-step-btn {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  .camera-slider-hint {
+    font-size: 0.72rem;
+    text-align: center;
+  }
 }
 
 /* ==========================================================================

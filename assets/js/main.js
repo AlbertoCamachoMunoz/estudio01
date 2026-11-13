@@ -15,6 +15,7 @@ import { GalleryFilterComponent } from './components/GalleryFilterComponent.js';
 import { AccordionComponent } from './components/AccordionComponent.js';
 import { WhatsAppWidgetComponent } from './components/WhatsAppWidgetComponent.js';
 import { HeroPixelMatrixComponent } from './components/HeroPixelMatrixComponent.js';
+import { CameraTeardownComponent } from './components/CameraTeardownComponent.js';
 
 /**
  * Master Central Configuration (SSOT Fallback & Global Constants)
@@ -85,6 +86,9 @@ class AppController {
       canvasSelector: '#heroBreezeCanvas',
       containerSelector: '#hero',
     });
+
+    // 13. Initialize Interactive Camera Teardown Scrollytelling
+    this.cameraTeardown = new CameraTeardownComponent();
   }
 
   renderDynamicDatabaseContent() {

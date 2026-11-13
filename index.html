@@ -65,6 +65,7 @@
       <nav class="nav-menu" aria-label="Navegación principal">
         <a href="#services">Servicios</a>
         <a href="#lab">App de Cuadrillas</a>
+        <a href="#audiovisual-lab">Fotografía &amp; Redes</a>
         <a href="#portfolio">Casos de Éxito</a>
         <a href="#estimator">Calculadora</a>
         <a href="#contact">Contacto</a>
@@ -89,6 +90,7 @@
     <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
       <a href="#services">Servicios (Web · Software · Vídeo)</a>
       <a href="#lab">App de Cuadrillas &amp; Horarios</a>
+      <a href="#audiovisual-lab">Fotografía &amp; Vídeo Profesional</a>
       <a href="#portfolio">Casos de Éxito (Portfolio)</a>
       <a href="#estimator">Calculadora de Presupuesto</a>
       <!-- <a href="#reviews">Opiniones de Clientes</a> -->
@@ -254,6 +256,101 @@
           <a href="control-horario/" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-block" style="text-decoration: none;">
             <span>Probar la App en Vivo en tu Teléfono ↗</span>
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Creative Studio & Audiovisual Lab: Interactive Camera Teardown Showcase -->
+  <section class="camera-showcase" id="audiovisual-lab">
+    <div class="container camera-showcase__container">
+      <!-- Header overlay -->
+      <div class="camera-showcase__header">
+        <span class="section-tag section-tag--cyan">Producción Audiovisual &amp; Redes · Tecnología Óptica</span>
+        <h2 class="camera-showcase__title">Diseccionamos la Imagen que Venderá tu Negocio</h2>
+        <p class="camera-showcase__subtitle">Usa el control horizontal o haz scroll interno con la rueda del ratón sobre la cámara para ver cómo se desmonta nuestra óptica de cine.</p>
+      </div>
+
+      <!-- Interactive Canvas Viewport -->
+      <div class="camera-showcase__canvas-wrap">
+        <canvas id="cameraTeardownCanvas" width="1280" height="720" aria-label="Despiece interactivo de cámara cinematográfica"></canvas>
+
+        <!-- Scrubbing Telemetry HUD Overlay -->
+        <div class="camera-showcase__hud">
+          <div class="hud-pill">
+            <span class="hud-dot"></span>
+            <span class="hud-label" id="hudComponentLabel">SISTEMA MONTADO · 35MM F/1.4 CINE</span>
+          </div>
+          <div class="hud-progress-wrap">
+            <span class="hud-step" id="hudStepCounter">01 / 04</span>
+            <div class="hud-progress-bar">
+              <div class="hud-progress-fill" id="hudProgressBar"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Narrative Cards / Telemetry Hotspots (Comentado temporalmente por conflicto visual en frames) -->
+        <!--
+        <div class="camera-hotspot-card is-active" id="hotspot-stage-1" data-step="1">
+          <span class="hotspot-badge">PASO 01 // EQUIPO DE CINE IN SITU</span>
+          <h3 class="hotspot-title">Desplazamiento a tu Empresa</h3>
+          <p class="hotspot-desc">Cuerpo sellado de aleación de magnesio y ópticas fijas de ultra-alta luminosidad. Nos desplazamos directamente a tus naves, oficinas u obras en Granada, Málaga y Almería.</p>
+          <span class="hotspot-stat">Resolución 4K/8K 10-bit · Cero fotos falsas de stock</span>
+        </div>
+
+        <div class="camera-hotspot-card" id="hotspot-stage-2" data-step="2">
+          <span class="hotspot-badge">PASO 02 // GRUPO ÓPTICO f/1.4</span>
+          <h3 class="hotspot-title">Nitidez Quirúrgica y Bokeh</h3>
+          <p class="hotspot-desc">Apertura extrema f/1.4 que aísla tus productos, maquinaria y equipo humano con desenfoque cinematográfico suave que capta miradas al instante en redes.</p>
+          <span class="hotspot-stat">Retrato corporativo y producto de alta gama</span>
+        </div>
+
+        <div class="camera-hotspot-card" id="hotspot-stage-3" data-step="3">
+          <span class="hotspot-badge">PASO 03 // CRISTALES ASFÉRICOS ED</span>
+          <h3 class="hotspot-title">Cero Distorsión en Instalaciones</h3>
+          <p class="hotspot-desc">Elementos de baja dispersión cromática (ED) que mantienen líneas rectas perfectas y colores fieles sin deformaciones en naves industriales, reformas o clínicas.</p>
+          <span class="hotspot-stat">Espacios arquitectónicos, reformas y maquinaria</span>
+        </div>
+
+        <div class="camera-hotspot-card" id="hotspot-stage-4" data-step="4">
+          <span class="hotspot-badge">PASO 04 // SENSOR FULL-FRAME 10-BIT</span>
+          <h3 class="hotspot-title">Colorimetría Real para Google Maps y Redes</h3>
+          <p class="hotspot-desc">Captura de rango dinámico extremo que brilla tanto en las pantallas OLED de tus clientes como en las miniaturas de búsqueda local de Google.</p>
+          <span class="hotspot-stat">+300% interacciones en perfiles de empresa</span>
+        </div>
+        -->
+      </div>
+
+      <!-- Horizontal Scrubber Controller & Internal Controls -->
+      <div class="camera-controls">
+        <div class="camera-slider-tabs">
+          <button type="button" class="slider-step-btn is-active" data-frame="0">
+            <span class="step-num">01</span>
+            <span class="step-name">Montado</span>
+          </button>
+          <button type="button" class="slider-step-btn" data-frame="20">
+            <span class="step-num">02</span>
+            <span class="step-name">Desacople Óptico</span>
+          </button>
+          <button type="button" class="slider-step-btn" data-frame="42">
+            <span class="step-num">03</span>
+            <span class="step-name">Cristales ED</span>
+          </button>
+          <button type="button" class="slider-step-btn" data-frame="59">
+            <span class="step-num">04</span>
+            <span class="step-name">Sensor 10-Bit</span>
+          </button>
+        </div>
+
+        <div class="slider-track-wrap">
+          <span class="slider-icon slider-icon--left" aria-hidden="true">◀</span>
+          <input type="range" id="cameraScrubberSlider" min="0" max="59" value="0" step="1" aria-label="Control deslizante horizontal de despiece óptico">
+          <span class="slider-icon slider-icon--right" aria-hidden="true">▶</span>
+        </div>
+
+        <div class="camera-slider-hint">
+          <span class="scroll-mouse-icon"></span>
+          <span>Desliza el control o usa la rueda del ratón sobre la imagen para desmontar/montar la cámara</span>
         </div>
       </div>
     </div>
