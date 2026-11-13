@@ -823,14 +823,14 @@ ul {
   width: 3.25rem;
   height: 3.25rem;
   border-radius: var(--radius-md);
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  color: #F5F5F7;
+  background-color: rgba(0, 240, 255, 0.06);
+  border: 1px solid rgba(0, 240, 255, 0.22);
+  color: #00F0FF;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.65rem;
-  transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
 }
 
 .service-icon svg {
@@ -841,8 +841,10 @@ ul {
 
 .service-card:hover .service-icon {
   transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.35);
-  background-color: rgba(255, 255, 255, 0.10);
+  border-color: rgba(0, 240, 255, 0.65);
+  background-color: rgba(0, 240, 255, 0.12);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.18);
+  color: #00F0FF;
 }
 
 .service-title {
@@ -2721,23 +2723,32 @@ ul {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: var(--radius-md);
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  color: #F5F5F7;
+  background-color: rgba(0, 240, 255, 0.06);
+  border: 1px solid rgba(0, 240, 255, 0.22);
+  color: #00F0FF;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.35rem;
   margin-bottom: 0.85rem;
+  transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-hub-card-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  display: block;
 }
 
 .contact-hub-card-icon--wa {
   background-color: #25D366;
+  border-color: #25D366;
   color: #ffffff;
 }
 
 .contact-hub-card--highlight .contact-hub-card-icon--wa {
   background-color: #25D366;
+  border-color: #25D366;
   color: #ffffff;
 }
 
@@ -2889,9 +2900,18 @@ ul {
 }
 
 .contact-hub-address {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--color-text);
+}
+
+.contact-hub-address svg,
+.contact-hub-coverage-badge .coverage-icon {
+  color: #00F0FF;
+  flex-shrink: 0;
 }
 
 .contact-hub-map-actions {

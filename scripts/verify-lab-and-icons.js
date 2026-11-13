@@ -47,6 +47,15 @@ async function verifyLabAndIcons() {
     console.log('Saved portfolio-spotlight-clean.png');
   }
 
+  // Capture #contact hub
+  const contactSection = await page.$('#contact .contact-hub-layout');
+  if (contactSection) {
+    await contactSection.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(200);
+    await contactSection.screenshot({ path: path.join(outDir, 'contact-hub-cyan.png') });
+    console.log('Saved contact-hub-cyan.png');
+  }
+
   await browser.close();
   console.log('Verification complete!');
 }
