@@ -42,6 +42,13 @@ async function verify() {
   await page.screenshot({ path: path.join(outDir, 'slider-stage-1.png') });
   console.log('Captured slider-stage-1.png (Initial)');
 
+  // Test clicking Step 2 Tab (Desacople Óptico)
+  console.log('Clicking Step 2 Tab...');
+  await page.click('button[data-frame="20"]');
+  await page.waitForTimeout(600);
+  await page.screenshot({ path: path.join(outDir, 'slider-stage-2.png') });
+  console.log('Captured slider-stage-2.png');
+
   // Test clicking Step 3 Tab (Cristales ED)
   console.log('Clicking Step 3 Tab...');
   await page.click('button[data-frame="42"]');

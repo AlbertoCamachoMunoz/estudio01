@@ -42,3 +42,7 @@ Step-by-step implementation: do not generate or overwrite multiple files at once
 Always supply full file paths before presenting file contents.
 
 When editing existing files, respect legacy code and structure strictly.
+
+NEVER run `git commit` or `git push` without explicit permission from the user.
+
+ALWAYS verify UI and visual changes using Playwright AND visually inspect the resulting screenshot images (`read_file` on the captured PNGs) before presenting results to the user.
