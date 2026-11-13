@@ -7,11 +7,13 @@
   "services": {
     "web_landing": {
       "name": "Webs Corporativas",
-      "shortDesc": "Landing pages ultrarrápidas y webs corporativas diseñadas para convertir visitas en clientes por WhatsApp y formulario. Mantenimiento técnico con servidor ultrarrápido y dominio incluidos (sin cuotas mensuales)."
+      "shortDesc": "Webs corporativas diseñadas para convertir visitas en clientes por WhatsApp y formulario. Mantenimiento técnico con servidor profesional y dominio incluidos (sin cuotas mensuales)."
     },
     "pwa_partes_cuadrillas": {
-      "name": "PWA de Partes de Trabajo y Control de Cuadrillas",
-      "shortDesc": "App móvil sin instalación de tienda: entrada/salida con GPS, checklists de tareas del día, fotos antes/después y firma táctil en pantalla."
+      "name": "App partes de trabajo",
+      "shortDesc": "App móvil sin instalación de tienda: entrada/salida con GPS, checklists de tareas del día, fotos antes/después y firma táctil en pantalla.",
+      "benefitsTitle": "Ventajas: App partes de trabajo",
+      "benefitsDesc": "Diseñadas para trabajar en campo bajo el sol, sin esperas de tiendas de apps y con máxima simplicidad operativa:"
     },
     "pwa_informes_comunidades": {
       "name": "Generador Automático de Informes Mensuales en PDF para Comunidades",
@@ -43,7 +45,7 @@
     },
     "pack_integral": {
       "name": "Pack Digitalización Integral (Web + Audiovisual + PWA)",
-      "shortDesc": "El ecosistema completo para liderar tu sector local: nueva web con calculadora, sesión de rodaje profesional in situ y App móvil para cuadrillas."
+      "shortDesc": "El ecosistema completo para liderar tu sector local: nueva web corporativa con calculadora, sesión de rodaje profesional in situ y App partes de trabajo."
     }
   },
   "extras": {

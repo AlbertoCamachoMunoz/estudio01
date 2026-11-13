@@ -113,6 +113,7 @@ export class DataLoaderService {
           const t = serviceTranslations[service.id] || {};
           return {
             ...service,
+            ...t,
             name: t.name || service.id,
             shortDesc: t.shortDesc || '',
           };
