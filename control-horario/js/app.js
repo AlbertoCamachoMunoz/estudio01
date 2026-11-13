@@ -178,19 +178,19 @@ class App {
       this.shiftStatusBadge.className = 'status-pill';
       switch (state.status) {
         case 'working':
-          this.shiftStatusBadge.textContent = '● Trabajando';
+          this.shiftStatusBadge.innerHTML = '<span class="status-dot"></span>Trabajando';
           this.shiftStatusBadge.classList.add('status-pill--working');
           break;
         case 'paused':
-          this.shiftStatusBadge.textContent = '⏸ En Pausa / Descanso';
+          this.shiftStatusBadge.innerHTML = '<span class="status-dot"></span>En Pausa';
           this.shiftStatusBadge.classList.add('status-pill--paused');
           break;
         case 'completed':
-          this.shiftStatusBadge.textContent = '✔ Jornada Finalizada';
+          this.shiftStatusBadge.innerHTML = '<span class="status-dot"></span>Jornada Finalizada';
           this.shiftStatusBadge.classList.add('status-pill--completed');
           break;
         default:
-          this.shiftStatusBadge.textContent = '○ Sin Iniciar';
+          this.shiftStatusBadge.innerHTML = '<span class="status-dot"></span>Sin Iniciar';
           this.shiftStatusBadge.classList.add('status-pill--idle');
       }
     }
@@ -299,7 +299,7 @@ class App {
 
     this.draft.tasks.push({
       id: 'task_custom_' + Date.now(),
-      category: '⭐ Tareas Específicas / Adicionales',
+      category: 'Tareas Específicas / Adicionales',
       text: text,
       completed: true
     });
@@ -400,7 +400,7 @@ class App {
       <div class="photo-card" data-photo-id="${p.id}">
         <img src="${p.dataUrl}" alt="Evidencia de trabajo" loading="lazy">
         <span class="photo-badge ${p.type === 'before' ? 'photo-badge--before' : 'photo-badge--after'}">
-          ${p.type === 'before' ? '📸 Antes' : '✨ Después'}
+          ${p.type === 'before' ? 'Antes' : 'Después'}
         </span>
         <button type="button" class="photo-delete-btn" data-delete-photo="${p.id}" aria-label="Eliminar foto">&times;</button>
       </div>
@@ -436,13 +436,13 @@ class App {
 
     const completedTasks = this.draft.tasks.filter((t) => t.completed);
 
-    let text = `📋 *PARTE DE TRABAJO Y CONTROL HORARIO*\n`;
-    text += `🏢 *${this.settings.companyName || 'Estudio 01'}*\n`;
-    text += `👤 *Operario:* ${operator}\n`;
-    text += `📍 *Lugar / Cliente:* ${workplace}\n`;
-    text += `📅 *Fecha:* ${date}\n\n`;
+    let text = `*PARTE DE TRABAJO DIARIO*\n`;
+    text += `*Empresa:* ${this.settings.companyName || 'Estudio 01'}\n`;
+    text += `*Operario:* ${operator}\n`;
+    text += `*Centro / Obra:* ${workplace}\n`;
+    text += `*Fecha:* ${date}\n\n`;
 
-    text += `⏱️ *REGISTRO DE HORAS:*\n`;
+    text += `*REGISTRO HORARIO:*\n`;
     text += `• Entrada: ${inTime}\n`;
     text += `• Salida: ${outTime}\n`;
     if (pausesCount > 0) {
@@ -450,7 +450,7 @@ class App {
     }
     text += `• *Tiempo Efectivo:* ${duration}\n\n`;
 
-    text += `✅ *TAREAS COMPLETADAS (${completedTasks.length}/${this.draft.tasks.length}):*\n`;
+    text += `*TAREAS COMPLETADAS (${completedTasks.length}/${this.draft.tasks.length}):*\n`;
     if (completedTasks.length > 0) {
       completedTasks.forEach((t) => {
         text += `• ${t.text}\n`;
@@ -461,7 +461,7 @@ class App {
     text += `\n`;
 
     if (this.draft.materials.length > 0) {
-      text += `📦 *MATERIALES CONSUMIDOS:*\n`;
+      text += `*MATERIALES CONSUMIDOS:*\n`;
       this.draft.materials.forEach((m) => {
         text += `• ${m.name} (${m.qty})\n`;
       });
@@ -469,15 +469,15 @@ class App {
     }
 
     if (this.draft.photos.length > 0) {
-      text += `📸 *FOTOS ADJUNTAS:* ${this.draft.photos.length} fotos guardadas en el parte oficial.\n\n`;
+      text += `*EVIDENCIA FOTOGRÁFICA:* ${this.draft.photos.length} fotos adjuntas en el parte.\n\n`;
     }
 
     if (this.draft.notes) {
-      text += `📝 *OBSERVACIONES / INCIDENCIAS:*\n${this.draft.notes}\n\n`;
+      text += `*OBSERVACIONES / INCIDENCIAS:*\n${this.draft.notes}\n\n`;
     }
 
-    text += `✍️ *Firma:* ${this.draft.signature ? 'Registrada digitalmente en pantalla' : 'Pendiente'}\n`;
-    text += `_Generado vía PWA Control Horario_`;
+    text += `*Firma:* ${this.draft.signature ? 'Registrada digitalmente en pantalla' : 'Pendiente'}\n`;
+    text += `_Generado vía App partes de trabajo · Estudio 01_`;
 
     return text;
   }
@@ -595,7 +595,7 @@ class App {
     if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
       navigator.serviceWorker
         .register('./sw.js')
-        .then(() => console.info('Control Horario PWA: Service Worker registrado con éxito'))
+        .then(() => console.info('App partes de trabajo PWA: Service Worker registrado con éxito'))
         .catch((err) => console.warn('Service Worker registration skipped/failed', err));
     }
   }

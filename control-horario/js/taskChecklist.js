@@ -5,47 +5,44 @@
 export class TaskChecklist {
   static DEFAULT_CATEGORIES = [
     {
-      category: '🌿 Jardinería y Zonas Verdes',
+      category: 'Instalación y Montaje Técnico',
       tasks: [
-        'Segado y perfilado de césped',
-        'Poda de setos y arbustos ornamentales',
-        'Poda en altura y saneamiento de palmeras',
-        'Desbroce y escarda de malas hierbas',
-        'Abonado y nutrición vegetal'
+        'Replanteo y verificación de medidas en obra',
+        'Montaje de estructuras, soportes o carpintería',
+        'Ajuste, nivelación y sellado de elementos',
+        'Pruebas de funcionamiento y puesta en marcha'
       ]
     },
     {
-      category: '💦 Riego y Fontanería',
+      category: 'Obra Civil, Albañilería y Acabados',
       tasks: [
-        'Revisión y programación de centralitas de riego',
-        'Comprobación de electroválvulas y arquetas',
-        'Sustitución o ajuste de difusores y aspersores',
-        'Detección y reparación de fugas en tuberías'
+        'Preparación de superficies y protecciones previas',
+        'Ejecución de revestimientos, alicatado o pladur',
+        'Aplicación de pintura y remates finales'
       ]
     },
     {
-      category: '🏊‍♂️ Piscinas e Instalaciones de Agua',
+      category: 'Electricidad, Clima y Fontanería',
       tasks: [
-        'Análisis químico de cloro y pH',
-        'Limpieza de fondo, superficie y cestillos de skimmers',
-        'Lavado y enjuague de filtro de arena/vidrio',
-        'Revisión de bomba depuradora y cuadro eléctrico'
+        'Tendido de canalizaciones y cableado eléctrico',
+        'Instalación de mecanismos, luminarias o cuadros',
+        'Comprobación de tomas de agua, desagües y estanqueidad'
       ]
     },
     {
-      category: '🧹 Limpieza y Gestión de Residuos',
+      category: 'Limpieza de Obra y Gestión de Residuos',
       tasks: [
-        'Soplado y limpieza de viales y accesos peatonales',
-        'Recogida y carga de restos de poda en remolque',
-        'Transporte de residuos a punto limpio / planta de compostaje'
+        'Recogida de embalajes, recortes y escombros',
+        'Limpieza técnica de la zona de intervención',
+        'Traslado de residuos a punto limpio autorizado'
       ]
     },
     {
-      category: '⚠️ Incidencias y Mantenimiento Correctivo',
+      category: 'Incidencias y Mantenimiento Correctivo',
       tasks: [
-        'Avería eléctrica / fallo de iluminación detectado',
-        'Plaga detectada (picudo rojo, procesionaria, pulgón)',
-        'Mobiliario exterior o vallado deteriorado'
+        'Avería o anomalía detectada en instalación existente',
+        'Necesidad de material adicional o repuesto específico',
+        'Modificación solicitada por el cliente o dirección de obra'
       ]
     }
   ];

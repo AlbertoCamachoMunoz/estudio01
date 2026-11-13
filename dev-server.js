@@ -30,12 +30,32 @@ const server = http.createServer((req, res) => {
   const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
   const pathname = parsedUrl.pathname;
 
-  let filePath = pathname === '/favicon.ico' 
+  let filePath = pathname === '/favicon.ico'
     ? path.join(__dirname, 'assets', 'images', 'logo', 'favicon.png')
     : path.join(__dirname, pathname === '/' ? 'index.html' : pathname);
-  const ext = path.extname(filePath).toLowerCase();
+
+  const sendFile = (targetPath) => {
+    const ext = path.extname(targetPath).toLowerCase();
+    const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+    res.statusCode = 200;
+    res.setHeader('Content-Type', contentType);
+    fs.createReadStream(targetPath).pipe(res);
+  };
 
   fs.stat(filePath, (err, stats) => {
+    if (!err && stats.isDirectory()) {
+      const indexFile = path.join(filePath, 'index.html');
+      return fs.stat(indexFile, (indexErr, indexStats) => {
+        if (indexErr || !indexStats.isFile()) {
+          res.statusCode = 404;
+          res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+          res.end(`404 Not Found: ${pathname}`);
+          return;
+        }
+        sendFile(indexFile);
+      });
+    }
+
     if (err || !stats.isFile()) {
       res.statusCode = 404;
       res.setHeader('Content-Type', 'text/plain; charset=utf-8');
@@ -43,12 +63,7 @@ const server = http.createServer((req, res) => {
       return;
     }
 
-    const contentType = MIME_TYPES[ext] || 'application/octet-stream';
-    res.statusCode = 200;
-    res.setHeader('Content-Type', contentType);
-
-    const stream = fs.createReadStream(filePath);
-    stream.pipe(res);
+    sendFile(filePath);
   });
 });
 

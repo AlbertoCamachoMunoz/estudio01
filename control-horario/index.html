@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Control Horario y Partes de Trabajo | Estudio 01</title>
-  
+  <title>App partes de trabajo | Estudio 01</title>
+
   <!-- PWA Meta Tags -->
-  <meta name="theme-color" content="#0f172a">
+  <meta name="theme-color" content="#08080A">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Control Horario">
+  <meta name="apple-mobile-web-app-title" content="Partes de Trabajo">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
   <link rel="apple-touch-icon" href="icons/icon.svg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono (Estudio 01 Typography) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -20,98 +25,123 @@
 
   <!-- App Header -->
   <header class="app-header">
-    <div class="app-header__brand">
-      <img src="icons/icon.svg" alt="App Icon" class="app-header__icon" width="34" height="34">
-      <div>
-        <h1 class="app-header__title">Control Horario &amp; Trabajo</h1>
-        <span class="app-header__subtitle">Estudio 01 · Modo Operativo</span>
+    <div class="app-header__inner">
+      <div class="app-header__brand">
+        <img src="icons/icon.svg" alt="Estudio 01 PWA" class="app-header__icon" width="36" height="36">
+        <div>
+          <h1 class="app-header__title">App partes de trabajo</h1>
+          <span class="app-header__subtitle font-mono">ESTUDIO 01 · MODO OPERATIVO</span>
+        </div>
       </div>
-    </div>
-    <div class="app-header__actions">
-      <button type="button" class="icon-btn" id="btnOpenHistory" title="Historial de Partes">
-        📋 <span class="icon-btn__label">Historial</span>
-      </button>
-      <button type="button" class="icon-btn" id="btnOpenSettings" title="Configuración">
-        ⚙️
-      </button>
+      <div class="app-header__actions">
+        <button type="button" class="icon-btn" id="btnOpenHistory" title="Historial de Partes">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"></path>
+            <rect x="9" y="3" width="6" height="4" rx="1"></rect>
+            <line x1="9" y1="12" x2="15" y2="12"></line>
+            <line x1="9" y1="16" x2="13" y2="16"></line>
+          </svg>
+          <span class="icon-btn__label">Historial</span>
+        </button>
+        <button type="button" class="icon-btn" id="btnOpenSettings" title="Configuración" aria-label="Configuración">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- Live Date & Clock Bar -->
   <div class="date-clock-bar">
-    <div class="date-clock-bar__date" id="liveDate">Cargando fecha...</div>
-    <div class="date-clock-bar__clock" id="liveClock">00:00:00</div>
+    <div class="date-clock-bar__inner">
+      <div class="date-clock-bar__date" id="liveDate">Cargando fecha...</div>
+      <div class="date-clock-bar__clock font-mono" id="liveClock">00:00:00</div>
+    </div>
   </div>
 
   <main class="app-main">
 
     <!-- Card 1: Datos del Operario y Lugar de Trabajo -->
     <section class="card">
-      <h2 class="card-title">👤 Datos del Operario &amp; Centro</h2>
+      <div class="card-heading">
+        <div class="pwa-section-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <h2 class="card-title">Datos del Operario y Centro</h2>
+      </div>
       <div class="form-grid">
         <div class="form-field">
-          <label for="operatorName" class="form-label">Nombre del Operario / Cuadrilla:</label>
-          <input type="text" id="operatorName" class="form-input" placeholder="Ej: Alberto C. / Cuadrilla #01">
+          <label for="operatorName" class="form-label">Operario o Equipo Asignado</label>
+          <input type="text" id="operatorName" class="form-input" placeholder="Ej: Carlos M. / Equipo Técnico #01">
         </div>
         <div class="form-field">
-          <label for="workplace" class="form-label">Cliente / Comunidad / Finca:</label>
-          <input type="text" id="workplace" class="form-input" placeholder="Ej: Residencial Costa Tropical · Bloque 3">
+          <label for="workplace" class="form-label">Cliente, Obra o Centro de Trabajo</label>
+          <input type="text" id="workplace" class="form-input" placeholder="Ej: Reforma Local Comercial · Motril">
         </div>
       </div>
 
       <!-- Quick Workplace Pills -->
       <div class="quick-pills">
-        <span class="quick-pills__label">Atajos rápidos:</span>
-        <button type="button" class="quick-pill" data-quick-workplace="Residencial Costa Tropical">Costa Tropical</button>
-        <button type="button" class="quick-pill" data-quick-workplace="Comunidad Las Palmeras">Las Palmeras</button>
-        <button type="button" class="quick-pill" data-quick-workplace="Chalet Privado (Paseo Reina Sofía)">Chalet Paseo</button>
-        <button type="button" class="quick-pill" data-quick-workplace="Base Operativa / Taller Central">Taller Central</button>
+        <span class="quick-pills__label font-mono">Atajos rápidos</span>
+        <button type="button" class="quick-pill" data-quick-workplace="Obra Centro · Motril">Obra Centro · Motril</button>
+        <button type="button" class="quick-pill" data-quick-workplace="Instalación Local Comercial">Local Comercial</button>
+        <button type="button" class="quick-pill" data-quick-workplace="Comunidad Costa Tropical">Comunidad Costa Tropical</button>
+        <button type="button" class="quick-pill" data-quick-workplace="Base Operativa · Taller Central">Taller Central</button>
       </div>
     </section>
 
-    <!-- Card 2: Control Horario y Fichaje (Ticar Entrada / Salida) -->
+    <!-- Card 2: Registro Horario de Jornada -->
     <section class="card card--highlight">
       <div class="card-header-flex">
-        <h2 class="card-title">⏱️ Registro Horario de Jornada</h2>
-        <span class="status-pill status-pill--idle" id="shiftStatusBadge">○ Sin Iniciar</span>
+        <div class="card-heading">
+          <div class="pwa-section-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h2 class="card-title">Registro Horario de Jornada</h2>
+        </div>
+        <span class="status-pill status-pill--idle" id="shiftStatusBadge"><span class="status-dot"></span>Sin Iniciar</span>
       </div>
 
       <!-- Timer Counter -->
       <div class="timer-box">
-        <span class="timer-box__label">Tiempo Efectivo Trabajado Hoy:</span>
-        <div class="timer-box__display" id="shiftTimerDisplay">00h 00m 00s</div>
+        <span class="timer-box__label font-mono">Tiempo Efectivo Trabajado Hoy</span>
+        <div class="timer-box__display font-mono" id="shiftTimerDisplay">00h 00m 00s</div>
       </div>
 
       <!-- Action Buttons for Clocking -->
       <div class="clock-actions">
-        <!-- Start Clock In -->
         <button type="button" class="btn-clock btn-clock--in" id="btnClockIn">
-          <span class="btn-clock__icon">▶</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
           <span class="btn-clock__text">FICHAR ENTRADA</span>
         </button>
 
-        <!-- Pause / Break -->
         <button type="button" class="btn-clock btn-clock--pause" id="btnPause" style="display: none;">
-          <span class="btn-clock__icon">⏸</span>
-          <span class="btn-clock__text">Pausa / Almuerzo</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+          <span class="btn-clock__text">Pausa / Descanso</span>
         </button>
 
-        <!-- Resume -->
         <button type="button" class="btn-clock btn-clock--resume" id="btnResume" style="display: none;">
-          <span class="btn-clock__icon">▶</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4"></polygon></svg>
           <span class="btn-clock__text">Reanudar Jornada</span>
         </button>
 
-        <!-- Clock Out -->
         <button type="button" class="btn-clock btn-clock--out" id="btnClockOut" style="display: none;">
-          <span class="btn-clock__icon">⏹</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="2"></rect></svg>
           <span class="btn-clock__text">FICHAR SALIDA</span>
         </button>
       </div>
 
       <!-- Audit Log of Stamps -->
       <div class="time-audit">
-        <h3 class="time-audit__title">Historial de Marcas de Hoy:</h3>
+        <h3 class="time-audit__title font-mono">Historial de Marcas de Hoy</h3>
         <ul class="time-audit__list" id="timeAuditLog">
           <li class="empty-state">No hay registros de fichaje para hoy.</li>
         </ul>
@@ -121,11 +151,19 @@
     <!-- Card 3: Checklist de Tareas del Día -->
     <section class="card">
       <div class="card-header-flex">
-        <div>
-          <h2 class="card-title">✅ Tareas Realizadas Hoy</h2>
-          <p class="card-desc">Marca las tareas conforme las vayas finalizando en el centro:</p>
+        <div class="card-heading">
+          <div class="pwa-section-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 11 12 14 22 4"></polyline>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            </svg>
+          </div>
+          <div>
+            <h2 class="card-title">Partes y Tareas Realizadas</h2>
+            <p class="card-desc">Marca las actuaciones ejecutadas durante la jornada en obra o centro:</p>
+          </div>
         </div>
-        <span class="progress-pill" id="tasksProgressSummary">0 de 0 completadas</span>
+        <span class="progress-pill font-mono" id="tasksProgressSummary">0 de 0 completadas</span>
       </div>
 
       <div class="tasks-container" id="tasksCategoryList">
@@ -141,12 +179,23 @@
 
     <!-- Card 4: Registro de Materiales y Consumibles -->
     <section class="card">
-      <h2 class="card-title">📦 Materiales y Piezas Consumidas</h2>
-      <p class="card-desc">Registra abonos, piezas de fontanería, cloro o repuestos empleados:</p>
+      <div class="card-heading">
+        <div class="pwa-section-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+        </div>
+        <div>
+          <h2 class="card-title">Materiales y Consumibles</h2>
+          <p class="card-desc">Registra materiales, repuestos o consumibles utilizados en la intervención:</p>
+        </div>
+      </div>
 
       <div class="materials-input-row">
-        <input type="text" id="materialName" class="form-input" placeholder="Ej: Abono NPK / Boquilla Difusor 15-VAN">
-        <input type="text" id="materialQty" class="form-input form-input--sm" placeholder="Cantidad (ej: 5 kg, 2 uds)">
+        <input type="text" id="materialName" class="form-input" placeholder="Ej: Cableado libre de halógenos / Sellador">
+        <input type="text" id="materialQty" class="form-input form-input--sm" placeholder="Cantidad (ej: 15 m)">
         <button type="button" class="btn btn-secondary" id="btnAddMaterial">+ Añadir</button>
       </div>
 
@@ -157,17 +206,31 @@
 
     <!-- Card 5: Evidencia Fotográfica (Antes y Después) -->
     <section class="card">
-      <h2 class="card-title">📸 Evidencia Fotográfica</h2>
-      <p class="card-desc">Toma fotos directamente con el móvil para justificar el trabajo ante la comunidad o cliente:</p>
+      <div class="card-heading">
+        <div class="pwa-section-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+            <circle cx="12" cy="13" r="4"></circle>
+          </svg>
+        </div>
+        <div>
+          <h2 class="card-title">Evidencia Fotográfica</h2>
+          <p class="card-desc">Adjunta fotografías desde el dispositivo para documentar el estado inicial y final:</p>
+        </div>
+      </div>
 
       <div class="photo-controls-row">
         <select id="photoType" class="form-select">
-          <option value="after">✨ Foto Estado Terminado (Después)</option>
-          <option value="before">📸 Foto Estado Inicial (Antes)</option>
+          <option value="after">Estado Terminado (Después)</option>
+          <option value="before">Estado Inicial (Antes)</option>
         </select>
 
         <label class="btn btn-photo-upload">
-          📷 Tomar / Subir Foto
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+            <circle cx="12" cy="13" r="4"></circle>
+          </svg>
+          Tomar / Subir Foto
           <input type="file" id="photoInput" accept="image/*" capture="environment" style="display: none;">
         </label>
       </div>
@@ -180,18 +243,40 @@
 
     <!-- Card 6: Observaciones e Incidencias -->
     <section class="card">
-      <h2 class="card-title">📝 Observaciones &amp; Incidencias</h2>
-      <textarea id="workNotes" class="form-textarea" rows="3" placeholder="Anota averías encontradas, peticiones del presidente o recomendaciones para la próxima visita..."></textarea>
+      <div class="card-heading">
+        <div class="pwa-section-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+        </div>
+        <h2 class="card-title">Observaciones e Incidencias</h2>
+      </div>
+      <textarea id="workNotes" class="form-textarea" rows="3" placeholder="Anota incidencias técnicas, peticiones del cliente o recomendaciones para la siguiente visita..."></textarea>
     </section>
 
     <!-- Card 7: Firma Digital en Pantalla -->
     <section class="card">
       <div class="card-header-flex">
-        <h2 class="card-title">✍️ Firma Digital (Operario o Cliente)</h2>
+        <div class="card-heading">
+          <div class="pwa-section-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+              <path d="M2 2l7.586 7.586"></path>
+              <circle cx="11" cy="11" r="2"></circle>
+            </svg>
+          </div>
+          <div>
+            <h2 class="card-title">Firma Digital de Conformidad</h2>
+            <p class="card-desc">Firma con el dedo o puntero en el recuadro para validar el parte:</p>
+          </div>
+        </div>
         <button type="button" class="btn-clear-sig" id="btnClearSignature">Borrar Firma</button>
       </div>
-      <p class="card-desc">Firma con el dedo o puntero en el recuadro para validar el parte:</p>
-      
+
       <div class="signature-canvas-container">
         <canvas id="signatureCanvas" width="400" height="160"></canvas>
       </div>
@@ -200,7 +285,11 @@
     <!-- Actions Footer -->
     <section class="main-actions-section">
       <button type="button" class="btn-action btn-action--whatsapp" id="btnShareWhatsApp">
-        <span class="btn-action__icon">📲</span>
+        <span class="btn-action__icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969s-4.453-10-9.969-10zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.531.078-1.203.109-1.938-.125-.453-.141-1.031-.344-1.766-.656-3.094-1.344-5.109-4.469-5.266-4.672-.156-.203-1.266-1.688-1.266-3.219 0-1.531.797-2.281 1.078-2.594.281-.313.609-.391.813-.391.203 0 .406.016.578.016.188 0 .438-.078.688.531.25.609.859 2.094.938 2.25.078.156.125.344.031.547-.094.203-.141.328-.281.5-.141.172-.297.391-.422.516-.141.141-.297.297-.125.594.172.297.766 1.266 1.641 2.047 1.125 1 2.078 1.313 2.375 1.453.297.141.469.125.641-.078.172-.203.75-.875.953-1.172.203-.297.406-.25.672-.156.266.094 1.703.813 2 .953.297.141.484.219.563.344.078.125.078.734-.172 1.438z"/>
+          </svg>
+        </span>
         <div class="btn-action__body">
           <strong>Enviar Parte Diario por WhatsApp</strong>
           <span>Envía el resumen completo con horas y tareas a la oficina</span>
@@ -209,10 +298,20 @@
 
       <div class="action-buttons-row">
         <button type="button" class="btn btn-outline btn-block" id="btnPrintReport">
-          📄 Imprimir / Guardar PDF
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          Imprimir / Guardar PDF
         </button>
         <button type="button" class="btn btn-primary btn-block" id="btnArchiveDay">
-          💾 Guardar y Cerrar Jornada
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+            <polyline points="7 3 7 8 15 8"></polyline>
+          </svg>
+          Guardar y Cerrar Jornada
         </button>
       </div>
     </section>
@@ -224,8 +323,8 @@
     <div class="modal__backdrop" id="btnCloseHistory"></div>
     <div class="modal__dialog">
       <div class="modal__header">
-        <h3 class="modal__title">📋 Historial de Partes Guardados</h3>
-        <button type="button" class="modal__close" onclick="document.getElementById('historyModal').classList.remove('is-open')">&times;</button>
+        <h3 class="modal__title">Historial de Partes Guardados</h3>
+        <button type="button" class="modal__close" onclick="document.getElementById('historyModal').classList.remove('is-open')" aria-label="Cerrar">&times;</button>
       </div>
       <div class="modal__body" id="historyLogsList">
         <!-- History items rendered here -->
@@ -238,16 +337,16 @@
     <div class="modal__backdrop" id="btnCloseSettings"></div>
     <div class="modal__dialog">
       <div class="modal__header">
-        <h3 class="modal__title">⚙️ Configuración del Sistema</h3>
-        <button type="button" class="modal__close" onclick="document.getElementById('settingsModal').classList.remove('is-open')">&times;</button>
+        <h3 class="modal__title">Configuración del Sistema</h3>
+        <button type="button" class="modal__close" onclick="document.getElementById('settingsModal').classList.remove('is-open')" aria-label="Cerrar">&times;</button>
       </div>
       <div class="modal__body">
         <div class="form-field">
-          <label for="settingsCompanyName" class="form-label">Nombre de tu Empresa:</label>
+          <label for="settingsCompanyName" class="form-label">Nombre de tu Empresa</label>
           <input type="text" id="settingsCompanyName" class="form-input" placeholder="Estudio 01 / Tu Empresa">
         </div>
-        <div class="form-field">
-          <label for="settingsSupervisorPhone" class="form-label">WhatsApp de la Oficina / Encargado (con prefijo):</label>
+        <div class="form-field" style="margin-top: 0.85rem;">
+          <label for="settingsSupervisorPhone" class="form-label">WhatsApp de la Oficina / Encargado (con prefijo)</label>
           <input type="text" id="settingsSupervisorPhone" class="form-input" placeholder="34635108640">
           <small class="form-help">A este número se enviarán los partes de trabajo por WhatsApp.</small>
         </div>

@@ -1,13 +1,13 @@
 {
-  "name": "Control Horario & Partes de Trabajo | Estudio 01",
-  "short_name": "Control Horario",
-  "description": "App PWA para ticar horarios, control de cuadrillas y checklist de tareas diarias en campo.",
+  "name": "App partes de trabajo | Estudio 01",
+  "short_name": "Partes de Trabajo",
+  "description": "Aplicación PWA para registro horario, partes de trabajo, materiales, evidencia fotográfica y firma digital.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
+  "background_color": "#08080A",
+  "theme_color": "#08080A",
   "categories": ["business", "productivity", "utilities"],
   "lang": "es-ES",
   "icons": [
