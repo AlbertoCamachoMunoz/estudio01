@@ -6,8 +6,8 @@
   },
   "services": {
     "web_landing": {
-      "name": "Webs de Alta Conversión (Mantenimiento 50 €/año)",
-      "shortDesc": "Landing pages ultrarrápidas (Lighthouse 95+) diseñadas para convertir visitas en clientes por WhatsApp y formulario. Mantenimiento de solo 50 €/año con servidor ultrarrápido y dominio incluidos (sin cuotas mensuales)."
+      "name": "Webs Corporativas",
+      "shortDesc": "Landing pages ultrarrápidas y webs corporativas diseñadas para convertir visitas en clientes por WhatsApp y formulario. Mantenimiento técnico con servidor ultrarrápido y dominio incluidos (sin cuotas mensuales)."
     },
     "pwa_partes_cuadrillas": {
       "name": "PWA de Partes de Trabajo y Control de Cuadrillas",

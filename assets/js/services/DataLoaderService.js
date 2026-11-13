@@ -94,7 +94,7 @@ export class DataLoaderService {
       const activeFormEndpoint = isDev && companyMaster.formEndpointDev ? companyMaster.formEndpointDev : companyMaster.formEndpoint;
 
       if (isDev && typeof console !== 'undefined' && console.info) {
-        console.info(`%c⚡ [Pixel & Web] MODO DESARROLLO ACTIVO%c — Solicitudes dirigidas a: ${activeEmail}`, 'color: #4f46e5; font-weight: bold;', 'color: inherit;');
+        console.info(`%c[Pixel & Web] MODO DESARROLLO ACTIVO%c — Solicitudes dirigidas a: ${activeEmail}`, 'color: #4f46e5; font-weight: bold;', 'color: inherit;');
       }
 
       this._company = {

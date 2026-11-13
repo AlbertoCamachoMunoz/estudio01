@@ -40,7 +40,7 @@ export class EmailService {
       Mensaje_Reto: payload.message || 'Sin observaciones adicionales',
       Zona_Agencia: company.region || 'Motril, Granada, Málaga y Almería',
       Fecha: new Date().toLocaleString('es-ES', { timeZone: 'Europe/Madrid' }),
-      _subject: `${company.isDevelopment ? '⚡ [DEV-TEST] ' : '⚡ '}[${agencyName}] Nuevo Lead: ${payload.service || 'Digitalización'} - ${payload.name}`,
+      _subject: `${company.isDevelopment ? '[DEV-TEST] ' : ''}[${agencyName}] Nuevo Lead: ${payload.service || 'Digitalización'} - ${payload.name}`,
       _replyto: isValidEmail ? payload.email : company.email || 'c4max0@gmail.com',
       _template: 'table',
       _captcha: 'false',

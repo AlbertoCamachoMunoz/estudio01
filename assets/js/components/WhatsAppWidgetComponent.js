@@ -43,7 +43,7 @@ export class WhatsAppWidgetComponent {
     const agencyName = (this.company && this.company.name) || 'Estudio 01';
 
     const t = {
-      tooltip: `⚡ ¿Hablamos sobre tu Web, Vídeo o IA?`,
+      tooltip: `¿Hablamos sobre tu Web, Vídeo o IA?`,
       bubble: `Hola 👋 Somos <strong>${agencyName}</strong>.<br>¿Quieres digitalizar tu negocio, grabar Reels profesionales o probar un Agente de IA en tu WhatsApp?`,
       btnText: 'Hablar por WhatsApp',
       btnAria: 'Abrir chat de WhatsApp con Estudio 01',

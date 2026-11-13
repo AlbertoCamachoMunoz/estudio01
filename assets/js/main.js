@@ -108,7 +108,7 @@ class AppController {
           (s) => `
         <article class="service-card">
           <div class="service-card-top">
-            <div class="service-icon">${s.icon || '⚡'}</div>
+            <div class="service-icon">${s.icon || ''}</div>
             ${s.pillar ? `<span class="service-pillar-badge">${s.pillar}</span>` : ''}
           </div>
           <h3 class="service-title">${s.name}</h3>

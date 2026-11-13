@@ -1,7 +1,7 @@
 /**
  * HeroBadgePixelComponent
  * Interactive pixel cube matrix background for the Hero Badge:
- * "⚡ Ingeniería de Software + Producción Audiovisual In Situ"
+ * "Ingeniería de Software + Producción Audiovisual In Situ"
  *
  * Recreates the logo's pixel cube gradient (large cubes on the left transitioning
  * to small dispersed cubes on the right, from Electric Blue to Crimson Red)
