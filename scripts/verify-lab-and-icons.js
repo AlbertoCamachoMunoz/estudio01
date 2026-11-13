@@ -29,8 +29,8 @@ async function verifyLabAndIcons() {
     if (h) h.style.display = 'none';
   });
 
-  // Capture #lab
-  const labSection = await page.$('#lab .lab-grid');
+  // Capture #lab (including section header and cards)
+  const labSection = await page.$('#lab .container');
   if (labSection) {
     await labSection.scrollIntoViewIfNeeded();
     await page.waitForTimeout(200);
