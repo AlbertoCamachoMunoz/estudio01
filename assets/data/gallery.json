@@ -45,15 +45,6 @@
     "metrics": "Escaneo QR en 5s · Alertas de cambio de aceite y filtros · Evita averías"
   },
   {
-    "id": "case-pwa-fitosanitarios",
-    "title": "Registro Digital de Tratamientos Fitosanitarios (Cuaderno de Campo Oficial)",
-    "category": "pwa",
-    "imageUrl": "assets/images/gallery/trabajo-3.jpg",
-    "location": "Andalucía Oriental",
-    "client": "Especialistas en Picudo Rojo y Tratamientos Químicos",
-    "metrics": "Anotación en 1 min · Documento oficial listo para Sanidad Vegetal"
-  },
-  {
     "id": "case-pwa-portal",
     "title": "App / Portal Privado de Seguimiento para Clientes y Propietarios de Chalets",
     "category": "pwa",

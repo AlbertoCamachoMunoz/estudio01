@@ -1441,6 +1441,10 @@ ul {
   box-shadow: var(--shadow-xl);
 }
 
+.case-study-spotlight:last-child {
+  margin-bottom: 0;
+}
+
 @media (min-width: 1024px) {
   .case-study-spotlight {
     grid-template-columns: 1fr 1.25fr;

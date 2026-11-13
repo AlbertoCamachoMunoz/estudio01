@@ -21,10 +21,6 @@
       "name": "Sistema de Control y Mantenimiento de Maquinaria con Pegatinas QR",
       "shortDesc": "Pegatinas QR en desbrozadoras, cortacéspedes y vehículos. El operario escanea en 5s con el móvil para reportar averías y controlar cambios de filtros y aceite."
     },
-    "pwa_fitosanitarios_oficial": {
-      "name": "Registro Digital de Fitosanitarios (Cuaderno de Campo Oficial)",
-      "shortDesc": "Anotación rápida de tratamientos químicos, picudo rojo o herbicidas, generando el documento legal oficial ante inspecciones de sanidad vegetal."
-    },
     "pwa_portal_clientes": {
       "name": "Portal Privado para Clientes y Propietarios de Chalets",
       "shortDesc": "Acceso web privado donde los propietarios ven fotos del estado de su jardín tras cada visita y pueden aprobar presupuestos extras en 1 clic."
@@ -84,10 +80,6 @@
     "case-pwa-maquinaria": {
       "title": "Control y Mantenimiento de Maquinaria con Pegatinas QR Resistentes",
       "location": "Granada, Málaga y Almería"
-    },
-    "case-pwa-fitosanitarios": {
-      "title": "Registro Digital de Tratamientos Fitosanitarios (Cuaderno de Campo Oficial)",
-      "location": "Andalucía Oriental"
     },
     "case-pwa-portal": {
       "title": "App / Portal Privado de Seguimiento para Clientes y Propietarios de Chalets",

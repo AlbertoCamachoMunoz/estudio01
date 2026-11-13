@@ -31,19 +31,37 @@
       "pillar": "PWA & Software Operativo"
     },
     {
+      "id": "audiovisual_reels",
+      "icon": "🎬",
+      "unitPricePerM2": 95,
+      "minPrice": 290,
+      "isFeatured": true,
+      "category": "audiovisual",
+      "pillar": "Pilar 2 · Foto, Vídeo & Redes"
+    },
+    {
+      "id": "social_gbp",
+      "icon": "📍",
+      "unitPricePerM2": 85,
+      "minPrice": 250,
+      "isFeatured": true,
+      "category": "audiovisual",
+      "pillar": "Pilar 2 · Foto, Vídeo & Redes"
+    },
+    {
+      "id": "audiovisual_bodas",
+      "icon": "💍",
+      "unitPricePerM2": 160,
+      "minPrice": 790,
+      "isFeatured": true,
+      "category": "audiovisual",
+      "pillar": "Pilar 2 · Foto, Vídeo & Redes"
+    },
+    {
       "id": "pwa_maquinaria_qr",
       "icon": "🏷️",
       "unitPricePerM2": 120,
       "minPrice": 420,
-      "isFeatured": true,
-      "category": "pwa",
-      "pillar": "PWA & Software Operativo"
-    },
-    {
-      "id": "pwa_fitosanitarios_oficial",
-      "icon": "🌿",
-      "unitPricePerM2": 130,
-      "minPrice": 450,
       "isFeatured": true,
       "category": "pwa",
       "pillar": "PWA & Software Operativo"
@@ -69,33 +87,6 @@
       "commented": true,
       "category": "pwa",
       "pillar": "PWA & Software Operativo"
-    },
-    {
-      "id": "audiovisual_bodas",
-      "icon": "💍",
-      "unitPricePerM2": 160,
-      "minPrice": 790,
-      "isFeatured": true,
-      "category": "audiovisual",
-      "pillar": "Pilar 2 · Foto, Vídeo & Redes"
-    },
-    {
-      "id": "audiovisual_reels",
-      "icon": "🎬",
-      "unitPricePerM2": 95,
-      "minPrice": 290,
-      "isFeatured": true,
-      "category": "audiovisual",
-      "pillar": "Pilar 2 · Foto, Vídeo & Redes"
-    },
-    {
-      "id": "social_gbp",
-      "icon": "📍",
-      "unitPricePerM2": 85,
-      "minPrice": 250,
-      "isFeatured": true,
-      "category": "audiovisual",
-      "pillar": "Pilar 2 · Foto, Vídeo & Redes"
     },
     {
       "id": "pack_integral",
