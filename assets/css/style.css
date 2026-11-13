@@ -259,35 +259,88 @@ ul {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  justify-content: flex-end;
+  flex: 1;
 }
 
-@media (min-width: 1024px) and (max-width: 1360px) {
-  .nav-menu {
-    gap: 0.95rem;
-  }
-  .nav-menu a {
-    font-size: 0.82rem;
-  }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-right: 4.75rem; /* ~76px (2cm) separation from action buttons, shifting links block towards logo */
+  white-space: nowrap;
 }
 
-.nav-menu a {
+.nav-links a {
   color: var(--color-text-muted);
-  font-size: 0.9rem;
+  font-size: 0.8125rem;
   font-weight: 500;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
   transition: color var(--transition-fast);
 }
 
-.nav-menu a:hover {
+.nav-links a:hover {
   color: #FFFFFF;
 }
 
-.nav-menu .btn-primary {
-  color: #08080A !important;
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
+.nav-actions .btn,
+.nav-menu .btn {
+  font-size: 0.8rem;
+  padding: 0.45rem 0.85rem;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  line-height: 1.2;
+}
+
+.nav-actions .btn-primary,
+.nav-menu .btn-primary {
+  color: #08080A !important;
+  font-weight: 600;
+}
+
+.nav-actions .btn-primary:hover,
 .nav-menu .btn-primary:hover {
   color: #000000 !important;
+}
+
+.nav-actions .btn-whatsapp,
+.nav-menu .btn-whatsapp {
+  font-weight: 600;
+}
+
+.nav-actions .btn-whatsapp__icon,
+.nav-menu .btn-whatsapp__icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) and (max-width: 1220px) {
+  .nav-links {
+    gap: 0.85rem;
+    margin-right: 2.5rem;
+  }
+  .nav-links a {
+    font-size: 0.775rem;
+  }
+  .nav-actions {
+    gap: 0.5rem;
+  }
+  .nav-actions .btn {
+    font-size: 0.775rem;
+    padding: 0.4rem 0.7rem;
+  }
 }
 
 .brand-logo {
@@ -3541,16 +3594,6 @@ ul {
 @media (min-width: 1024px) {
   .nav-menu {
     display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-  .nav-menu a {
-    font-weight: 600;
-    color: var(--color-text);
-    transition: color var(--transition-fast);
-  }
-  .nav-menu a:hover {
-    color: var(--color-primary);
   }
   .nav-toggle {
     display: none;
